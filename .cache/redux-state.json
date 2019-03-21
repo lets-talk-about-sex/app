@@ -1428,26 +1428,6 @@
         "owner": "internal-data-bridge"
       }
     },
-    "SitePage /": {
-      "jsonName": "index",
-      "internalComponentName": "ComponentIndex",
-      "path": "/",
-      "component": "/Users/ragnhildurrosgudmundsdottir/Desktop/lets_talk/app/src/pages/index.tsx",
-      "componentChunkName": "component---src-pages-index-tsx",
-      "context": {},
-      "pluginCreator___NODE": "bcf6f9f9-bfec-56f1-a9ee-6c5b026c9e79",
-      "pluginCreatorId": "bcf6f9f9-bfec-56f1-a9ee-6c5b026c9e79",
-      "componentPath": "/Users/ragnhildurrosgudmundsdottir/Desktop/lets_talk/app/src/pages/index.tsx",
-      "id": "SitePage /",
-      "parent": null,
-      "children": [],
-      "internal": {
-        "type": "SitePage",
-        "contentDigest": "61db3cd2db04a6b343bab19c2acf5648",
-        "description": "bcf6f9f9-bfec-56f1-a9ee-6c5b026c9e79",
-        "owner": "internal-data-bridge"
-      }
-    },
     "SitePage /404.html": {
       "jsonName": "404-html-516",
       "internalComponentName": "Component404Html",
@@ -1465,6 +1445,26 @@
         "type": "SitePage",
         "contentDigest": "7c9dcf3ba39c275c43bbb3f10fb7d931",
         "description": "f795702c-a3b8-5a88-88ee-5d06019d44fa",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "SitePage /": {
+      "jsonName": "index",
+      "internalComponentName": "ComponentIndex",
+      "path": "/",
+      "component": "/Users/ragnhildurrosgudmundsdottir/Desktop/lets_talk/app/src/pages/index.js",
+      "componentChunkName": "component---src-pages-index-js",
+      "context": {},
+      "pluginCreator___NODE": "bcf6f9f9-bfec-56f1-a9ee-6c5b026c9e79",
+      "pluginCreatorId": "bcf6f9f9-bfec-56f1-a9ee-6c5b026c9e79",
+      "componentPath": "/Users/ragnhildurrosgudmundsdottir/Desktop/lets_talk/app/src/pages/index.js",
+      "id": "SitePage /",
+      "parent": null,
+      "children": [],
+      "internal": {
+        "type": "SitePage",
+        "contentDigest": "d9b81afd3449f081d6e4d717319523f6",
+        "description": "bcf6f9f9-bfec-56f1-a9ee-6c5b026c9e79",
         "owner": "internal-data-bridge"
       }
     }
@@ -1506,9 +1506,9 @@
       "query": "",
       "componentPath": "/Users/ragnhildurrosgudmundsdottir/Desktop/lets_talk/app/src/pages/about.tsx"
     },
-    "/Users/ragnhildurrosgudmundsdottir/Desktop/lets_talk/app/src/pages/index.tsx": {
-      "query": "query usersRagnhildurrosgudmundsdottirDesktopLetsTalkAppSrcPagesIndexTsx868659990 {\n  prismic {\n    allArticles {\n      edges {\n        node {\n          _meta {\n            uid\n          }\n          title\n        }\n      }\n    }\n  }\n}\n",
-      "componentPath": "/Users/ragnhildurrosgudmundsdottir/Desktop/lets_talk/app/src/pages/index.tsx"
+    "/Users/ragnhildurrosgudmundsdottir/Desktop/lets_talk/app/src/pages/index.js": {
+      "query": "query usersRagnhildurrosgudmundsdottirDesktopLetsTalkAppSrcPagesIndexJs868659990 {\n  prismic {\n    allArticles {\n      edges {\n        node {\n          _meta {\n            uid\n          }\n          title\n        }\n      }\n    }\n  }\n}\n",
+      "componentPath": "/Users/ragnhildurrosgudmundsdottir/Desktop/lets_talk/app/src/pages/index.js"
     }
   },
   "staticQueryComponents": {}
