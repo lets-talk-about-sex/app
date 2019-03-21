@@ -9,6 +9,6 @@ exports.components = {
   "component---cache-dev-404-page-js": hot(preferDefault(require("/Users/ragnhildurrosgudmundsdottir/Desktop/lets_talk/app/.cache/dev-404-page.js"))),
   "component---src-pages-404-tsx": hot(preferDefault(require("/Users/ragnhildurrosgudmundsdottir/Desktop/lets_talk/app/src/pages/404.tsx"))),
   "component---src-pages-about-tsx": hot(preferDefault(require("/Users/ragnhildurrosgudmundsdottir/Desktop/lets_talk/app/src/pages/about.tsx"))),
-  "component---src-pages-index-tsx": hot(preferDefault(require("/Users/ragnhildurrosgudmundsdottir/Desktop/lets_talk/app/src/pages/index.tsx")))
+  "component---src-pages-index-js": hot(preferDefault(require("/Users/ragnhildurrosgudmundsdottir/Desktop/lets_talk/app/src/pages/index.js")))
 }
 
