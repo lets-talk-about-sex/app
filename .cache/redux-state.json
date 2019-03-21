@@ -1069,8 +1069,24 @@
         "license": "MIT",
         "dependencies": [
           {
+            "name": "@emotion/core",
+            "version": "^10.0.9"
+          },
+          {
+            "name": "@emotion/styled",
+            "version": "^10.0.9"
+          },
+          {
             "name": "babel-loader",
             "version": "^8.0.5"
+          },
+          {
+            "name": "emotion",
+            "version": "^10.0.9"
+          },
+          {
+            "name": "emotion-theming",
+            "version": "^10.0.9"
           },
           {
             "name": "gatsby",
@@ -1327,12 +1343,12 @@
       "host": "localhost",
       "pathPrefix": "",
       "polyfill": true,
-      "buildTime": "2019-03-20T10:25:28.099Z",
+      "buildTime": "2019-03-21T09:37:54.622Z",
       "id": "Site",
       "parent": null,
       "children": [],
       "internal": {
-        "contentDigest": "3f65c40cf7452303333c79682a46cb88",
+        "contentDigest": "1cd2d886badc579d637d8142f809420e",
         "type": "Site",
         "owner": "internal-data-bridge"
       }
@@ -1345,7 +1361,7 @@
       "children": [],
       "internal": {
         "type": "GraphQLSource",
-        "contentDigest": "5cc55ca4bb0940dac2d606776e58e8b2",
+        "contentDigest": "9ed64c2f8c3cd1780b37c73f708cca2f",
         "ignoreType": true,
         "owner": "gatsby-source-prismic-graphql"
       }
@@ -1412,26 +1428,6 @@
         "owner": "internal-data-bridge"
       }
     },
-    "SitePage /": {
-      "jsonName": "index",
-      "internalComponentName": "ComponentIndex",
-      "path": "/",
-      "component": "/Users/ragnhildurrosgudmundsdottir/Desktop/lets_talk/app/src/pages/index.tsx",
-      "componentChunkName": "component---src-pages-index-tsx",
-      "context": {},
-      "pluginCreator___NODE": "bcf6f9f9-bfec-56f1-a9ee-6c5b026c9e79",
-      "pluginCreatorId": "bcf6f9f9-bfec-56f1-a9ee-6c5b026c9e79",
-      "componentPath": "/Users/ragnhildurrosgudmundsdottir/Desktop/lets_talk/app/src/pages/index.tsx",
-      "id": "SitePage /",
-      "parent": null,
-      "children": [],
-      "internal": {
-        "type": "SitePage",
-        "contentDigest": "61db3cd2db04a6b343bab19c2acf5648",
-        "description": "bcf6f9f9-bfec-56f1-a9ee-6c5b026c9e79",
-        "owner": "internal-data-bridge"
-      }
-    },
     "SitePage /404.html": {
       "jsonName": "404-html-516",
       "internalComponentName": "Component404Html",
@@ -1451,14 +1447,38 @@
         "description": "f795702c-a3b8-5a88-88ee-5d06019d44fa",
         "owner": "internal-data-bridge"
       }
+    },
+    "SitePage /": {
+      "jsonName": "index",
+      "internalComponentName": "ComponentIndex",
+      "path": "/",
+      "component": "/Users/ragnhildurrosgudmundsdottir/Desktop/lets_talk/app/src/pages/index.tsx",
+      "componentChunkName": "component---src-pages-index-tsx",
+      "context": {},
+      "pluginCreator___NODE": "bcf6f9f9-bfec-56f1-a9ee-6c5b026c9e79",
+      "pluginCreatorId": "bcf6f9f9-bfec-56f1-a9ee-6c5b026c9e79",
+      "componentPath": "/Users/ragnhildurrosgudmundsdottir/Desktop/lets_talk/app/src/pages/index.tsx",
+      "id": "SitePage /",
+      "parent": null,
+      "children": [],
+      "internal": {
+        "type": "SitePage",
+        "contentDigest": "61db3cd2db04a6b343bab19c2acf5648",
+        "description": "bcf6f9f9-bfec-56f1-a9ee-6c5b026c9e79",
+        "owner": "internal-data-bridge"
+      }
     }
   },
   "status": {
     "plugins": {},
-    "PLUGINS_HASH": "0414d2710dadd726fdc3adced198d9e2"
+    "PLUGINS_HASH": "3aa9781d1e138448fb98d92b1ee8956d"
   },
   "componentDataDependencies": {
-    "nodes": {},
+    "nodes": {
+      "9a7fdc12-8d8d-555a-b3a1-68493aad9640": [
+        "/"
+      ]
+    },
     "connections": {}
   },
   "jsonDataPaths": {
@@ -1466,7 +1486,7 @@
     "preview-5eb": "467/path---preview-5-eb-701-tQKCrcA6W1pXmwv0yAd0s5DbDzI",
     "about-f34": "125/path---about-f-34-4c2-NZuapzHg3X9TaN1iIixfv1W23E",
     "404-22d": "44/path---404-22-d-bce-NZuapzHg3X9TaN1iIixfv1W23E",
-    "index": "173/path---index-6a9-NZuapzHg3X9TaN1iIixfv1W23E",
+    "index": "355/path---index-6a9-8fkZnJKsi0nh6sLezuynORKOY4c",
     "404-html-516": "164/path---404-html-516-62a-NZuapzHg3X9TaN1iIixfv1W23E"
   },
   "components": {
