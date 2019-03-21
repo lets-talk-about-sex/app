@@ -8,6 +8,7 @@ import iceboob from 'assets/images/iceboob.png';
 import hot from 'assets/icon/hot.svg';
 
 
+
 const CardContainer = styled.div`
     width: 354px;
     height: 450px;
@@ -28,7 +29,7 @@ const SexImg = styled.img`
 const CardTitle = styled.h2`  
 `
 //muna að þegar spjald er með slug þá þarf height að vera 100px;
-const TitleWrapper = styled.h5`
+const TitleWrapper = styled.div`
     height: 90px; 
     padding: 30px 0 30px 29px;
     position: relative; 
@@ -43,11 +44,30 @@ const Slug = styled.h5`
 
 
 
-const Card = (props) => {
+const Cards = (props) => {
    const {data} = props;
     console.log(data);
+    console.log(get(data, 'id', []));
     return (
     <div>
+        {get(data, 'prismic.allArticles.edges', []).filter(edge => {
+            return true; //gera if statement með true og false eftir þvi hvað við viljum birta
+        }).map((edge, i) => {
+            return(
+            <CardContainer key={i}>
+                <ImgWrapper>
+                    <SexImg src={iceboob} alt=""/>
+                </ImgWrapper>
+                <TitleWrapper>
+                    <HotIcon src={hot} alt=""/>                
+                    <Slug>Kynþroski</Slug>
+                    <CardTitle>{RichText.asText(edge.node.title)}</CardTitle>
+                </TitleWrapper>
+            </CardContainer>
+            )
+        })}
+
+
         <CardContainer>
             <ImgWrapper>
                 <SexImg src={iceboob} alt=""/>
@@ -55,7 +75,7 @@ const Card = (props) => {
             <TitleWrapper>
                 <HotIcon src={hot} alt=""/>                
                 <Slug>Kynþroski</Slug>
-                <CardTitle>{RichText.asText(get(data, 'prismic.article.title', [{}]))}</CardTitle>
+                <CardTitle>{RichText.asText(get(data, 'prismic.allArticles.edges[0].node.title', []))}</CardTitle>
             </TitleWrapper>
         </CardContainer>
 
@@ -73,4 +93,4 @@ const Card = (props) => {
 };
 
 
-export default Card;
+export default Cards;

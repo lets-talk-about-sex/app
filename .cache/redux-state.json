@@ -1069,8 +1069,24 @@
         "license": "MIT",
         "dependencies": [
           {
+            "name": "@emotion/core",
+            "version": "^10.0.9"
+          },
+          {
+            "name": "@emotion/styled",
+            "version": "^10.0.9"
+          },
+          {
             "name": "babel-loader",
             "version": "^8.0.5"
+          },
+          {
+            "name": "emotion",
+            "version": "^10.0.9"
+          },
+          {
+            "name": "emotion-theming",
+            "version": "^10.0.9"
           },
           {
             "name": "gatsby",
@@ -1327,12 +1343,12 @@
       "host": "localhost",
       "pathPrefix": "",
       "polyfill": true,
-      "buildTime": "2019-03-20T10:25:28.099Z",
+      "buildTime": "2019-03-21T09:37:54.622Z",
       "id": "Site",
       "parent": null,
       "children": [],
       "internal": {
-        "contentDigest": "3f65c40cf7452303333c79682a46cb88",
+        "contentDigest": "1cd2d886badc579d637d8142f809420e",
         "type": "Site",
         "owner": "internal-data-bridge"
       }
@@ -1345,7 +1361,7 @@
       "children": [],
       "internal": {
         "type": "GraphQLSource",
-        "contentDigest": "5cc55ca4bb0940dac2d606776e58e8b2",
+        "contentDigest": "9ed64c2f8c3cd1780b37c73f708cca2f",
         "ignoreType": true,
         "owner": "gatsby-source-prismic-graphql"
       }
@@ -1455,7 +1471,7 @@
   },
   "status": {
     "plugins": {},
-    "PLUGINS_HASH": "0414d2710dadd726fdc3adced198d9e2"
+    "PLUGINS_HASH": "3aa9781d1e138448fb98d92b1ee8956d"
   },
   "componentDataDependencies": {
     "nodes": {
@@ -1491,7 +1507,7 @@
       "componentPath": "/Users/ragnhildurrosgudmundsdottir/Desktop/lets_talk/app/src/pages/about.tsx"
     },
     "/Users/ragnhildurrosgudmundsdottir/Desktop/lets_talk/app/src/pages/index.tsx": {
-      "query": "query usersRagnhildurrosgudmundsdottirDesktopLetsTalkAppSrcPagesIndexTsx4089738081 {\n  prismic {\n    allArticles {\n      edges {\n        node {\n          _meta {\n            uid\n          }\n          title\n        }\n      }\n    }\n  }\n}\n",
+      "query": "query usersRagnhildurrosgudmundsdottirDesktopLetsTalkAppSrcPagesIndexTsx868659990 {\n  prismic {\n    allArticles {\n      edges {\n        node {\n          _meta {\n            uid\n          }\n          title\n        }\n      }\n    }\n  }\n}\n",
       "componentPath": "/Users/ragnhildurrosgudmundsdottir/Desktop/lets_talk/app/src/pages/index.tsx"
     }
   },

@@ -3,7 +3,7 @@ import { ThemeProvider } from 'emotion-theming'
 import { theme } from 'components/theme/theme';
 import Global from 'components/base/base';
 import { Container } from 'components/theme/container';
-import Card  from 'components/card/card';
+import Cards  from 'components/card/card';
 import Search from 'components/search/search';
 import DidYouKnow from 'components/card/didyouknow';
 // import Fact from 'components/card/facts';
@@ -15,27 +15,28 @@ import { graphql } from 'gatsby';
 export const query = graphql`
   query {
     prismic {
-            allArticles{
+      allArticles{
         edges{
-        node{ 
+          node{ 
             _meta{uid
             }
-        title
+            title
+          }
         }
       }
     }
-  }
 }
 `
 
 class App extends Component {
   render () {
+    console.log(this.props);
     return (
       <ThemeProvider theme={theme}>
           <Global>
             <Container>
               <Search/>
-              <Card/>
+              <Cards data={this.props.data}/>
               <DidYouKnow/>
               {/* <Fact/> */}
             </Container>
@@ -46,3 +47,4 @@ class App extends Component {
 }
 
 export default App;
+
