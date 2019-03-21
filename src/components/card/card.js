@@ -1,49 +1,74 @@
 import React from 'react';
+import { get } from 'lodash';
+import { RichText } from 'prismic-reactjs';
+import { graphql } from 'gatsby';
 import styled from '@emotion/styled/macro';
-import communication from 'assets/images/communication.png';
-import condom from 'assets/images/condom.png';
+import sex from 'assets/images/sex.png';
+import iceboob from 'assets/images/iceboob.png';
+import hot from 'assets/icon/hot.svg';
 
 
 const CardContainer = styled.div`
-    width: 352px;
-    height: 422px;
+    width: 354px;
+    height: 450px;
     padding-bottom: 24px;
     margin: 30px auto;
     box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.1);
-    border-radius:  0 0 15px 15px;
+    border-radius:  15px;
+`
+const ImgWrapper = styled.div`
+    height:350px;
+    width: 354px;
 `
 
-const Condom = styled.img`
-  
+const SexImg = styled.img`
+    border-radius:  15px 15px 0 0;
 `
 
-const CardTitle = styled.h2`
-   
+const CardTitle = styled.h2`  
 `
-
+//muna að þegar spjald er með slug þá þarf height að vera 100px;
 const TitleWrapper = styled.h5`
-    padding: 35px 0 10px 20px;
-  
+    height: 90px; 
+    padding: 30px 0 30px 29px;
+    position: relative; 
+`
+const HotIcon = styled.img`
+    position: absolute;
+    top:-15px;
+`
+const Slug = styled.h5`
+    text-transform: uppercase;
 `
 
-const Card = () => {
+
+
+const Card = (props) => {
+   const {data} = props;
+    console.log(data);
     return (
     <div>
         <CardContainer>
-            <Condom src={communication} alt=""/>
+            <ImgWrapper>
+                <SexImg src={iceboob} alt=""/>
+            </ImgWrapper>
             <TitleWrapper>
-                <CardTitle>Samskipti</CardTitle>
+                <HotIcon src={hot} alt=""/>                
+                <Slug>Kynþroski</Slug>
+                <CardTitle>{RichText.asText(get(data, 'prismic.article.title', [{}]))}</CardTitle>
             </TitleWrapper>
         </CardContainer>
 
         <CardContainer>
-            <Condom src={condom} alt=""/>
+            <ImgWrapper>
+                <SexImg src={sex} alt=""/>
+            </ImgWrapper>
             <TitleWrapper>
-                <CardTitle>Smokkur</CardTitle>
+                <Slug>Kynlíf</Slug>
+                {/* <CardTitle>Smokkur</CardTitle> */}
             </TitleWrapper>
         </CardContainer>
     </div>
-        
     );
 };
 

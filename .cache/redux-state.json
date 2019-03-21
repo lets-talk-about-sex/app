@@ -1458,7 +1458,11 @@
     "PLUGINS_HASH": "0414d2710dadd726fdc3adced198d9e2"
   },
   "componentDataDependencies": {
-    "nodes": {},
+    "nodes": {
+      "9a7fdc12-8d8d-555a-b3a1-68493aad9640": [
+        "/"
+      ]
+    },
     "connections": {}
   },
   "jsonDataPaths": {
@@ -1466,7 +1470,7 @@
     "preview-5eb": "467/path---preview-5-eb-701-tQKCrcA6W1pXmwv0yAd0s5DbDzI",
     "about-f34": "125/path---about-f-34-4c2-NZuapzHg3X9TaN1iIixfv1W23E",
     "404-22d": "44/path---404-22-d-bce-NZuapzHg3X9TaN1iIixfv1W23E",
-    "index": "173/path---index-6a9-NZuapzHg3X9TaN1iIixfv1W23E",
+    "index": "355/path---index-6a9-8fkZnJKsi0nh6sLezuynORKOY4c",
     "404-html-516": "164/path---404-html-516-62a-NZuapzHg3X9TaN1iIixfv1W23E"
   },
   "components": {
@@ -1487,7 +1491,7 @@
       "componentPath": "/Users/ragnhildurrosgudmundsdottir/Desktop/lets_talk/app/src/pages/about.tsx"
     },
     "/Users/ragnhildurrosgudmundsdottir/Desktop/lets_talk/app/src/pages/index.tsx": {
-      "query": "",
+      "query": "query usersRagnhildurrosgudmundsdottirDesktopLetsTalkAppSrcPagesIndexTsx4089738081 {\n  prismic {\n    allArticles {\n      edges {\n        node {\n          _meta {\n            uid\n          }\n          title\n        }\n      }\n    }\n  }\n}\n",
       "componentPath": "/Users/ragnhildurrosgudmundsdottir/Desktop/lets_talk/app/src/pages/index.tsx"
     }
   },

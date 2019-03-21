@@ -15,35 +15,44 @@ class Global extends React.Component {
        @import url('https://fonts.googleapis.com/css?family=PT+Sans|Poppins:400,600,700');
 
        body {
-          background-color: #f9f9f9;
        }
 
        h1, h2, h3 {
            font-family: 'Poppins', sans-serif;
+           color: #000;
        }
        /* Titill á undirsíðu með stöku orði */
        h1 {
            font-size: 32px; 
-       }
-       /* Flokkar og titlar á spjöldum */
-       h2 {
-           font-size: 28px;
            font-weight: 600;
+       }
 
+       /* Flokkar */
+       h2 {
+        font-size: 26px;
+        font-weight: 600;
+       }
+
+       /* Titlar á spjöldum */
+       h2 {
+           font-size: 22px;
+           font-weight: 600;
        }
    
        h3 {
            font-size: 26px;  
        }
+
          /* Undirtitlar á undirsíðu */
         h4 {
             font-size: 18px;  
        }
+
           /* Slug á spjaldi */
           h5 {
-            font-size: 12px;
+            font-size: 14px;
             font-weight: 600;
-            text-transform: uppercase;  
+            color: #FC4255;
        }
 
 

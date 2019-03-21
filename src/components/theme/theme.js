@@ -1,6 +1,8 @@
 export const theme = {
     baseColors: {
-      red: '#DC1C34;',
-      blue: '#122A57',
+      bodyBackground:'#f9f9f9;',  
+      
+      coral: '#fc4255;',
+
     },
   };
