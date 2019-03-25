@@ -42,8 +42,6 @@ const Slug = styled.h5`
     text-transform: uppercase;
 `
 
-
-
 const Cards = (props) => {
    const {data} = props;
     console.log(data);

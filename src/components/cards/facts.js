@@ -7,7 +7,7 @@ import {DidYouKnowContainer, Title, Text, Icon} from './didyouknow';
 
 
 
-const DidYouKnow = () => {
+const Fact = () => {
     return (
     <div>
         <DidYouKnowContainer>
@@ -23,4 +23,4 @@ const DidYouKnow = () => {
     );
 };
 
-export default DidYouKnow;
+export default Fact;
