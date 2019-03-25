@@ -6,7 +6,8 @@
 
 // You can delete this file if you're not using it
 
-const { registerResolvers } = require('gatsby-source-prismic-graphql');
+const test = require('gatsby-source-prismic-graphql');
+const { registerLinkResolver } = require('gatsby-source-prismic-graphql');
+console.log(test)
 const { linkResolver } = require('./src/utils/linkResolver');
-
-registerResolvers(linkResolver);
+registerLinkResolver(linkResolver);
