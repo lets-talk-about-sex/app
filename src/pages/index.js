@@ -3,10 +3,10 @@ import { ThemeProvider } from 'emotion-theming'
 import { theme } from 'components/theme/theme';
 import Global from 'components/base/base';
 import { Container } from 'components/theme/container';
-import Cards  from 'components/card/card';
+import Cards from 'components/cards/cards';
 import Search from 'components/search/search';
-import DidYouKnow from 'components/card/didyouknow';
-// import Fact from 'components/card/facts';
+import DidYouKnow from 'components/cards/didyouknow';
+import Fact from 'components/cards/facts';
 
  
 // import { RichText } from 'prismic-reactjs';
@@ -21,6 +21,7 @@ export const query = graphql`
             _meta{uid
             }
             title
+            article_img
           }
         }
       }
@@ -38,7 +39,7 @@ class App extends Component {
               <Search/>
               <Cards data={this.props.data}/>
               <DidYouKnow/>
-              {/* <Fact/> */}
+              <Fact/>
             </Container>
           </Global>
       </ThemeProvider> 
