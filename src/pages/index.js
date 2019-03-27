@@ -18,10 +18,13 @@ export const query = graphql`
       allArticles{
         edges{
           node{ 
-            _meta{uid
+            _meta{
+              uid
+              tags
             }
             title
             article_img
+           
           }
         }
       }
@@ -37,8 +40,8 @@ class App extends Component {
           <Global>
             <Container>
               <Search/>
-              <Cards data={this.props.data}/>
-              <DidYouKnow/>
+              <Cards data={this.props.data} />
+              <DidYouKnow />
               <Fact/>
             </Container>
           </Global>
