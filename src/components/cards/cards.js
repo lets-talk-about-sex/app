@@ -7,6 +7,7 @@ import Card from './card';
 
 const Cards = (props) => {
    const {data} = props;
+    console.log(props);
     console.log(data);
     console.log(get(data, 'id', []));
     return (
