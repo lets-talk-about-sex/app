@@ -1,8 +1,20 @@
 import React from 'react';
 import { get } from 'lodash';
 import Card from './card';
+// import DidYouKnow from './didyouknow';
 
-
+const CheckIfMatchesTags = (tagsArray, activefilter) => {
+    if(activefilter === ''){
+        return true
+    }
+let i;
+ for ( i = 0;  i < tagsArray.length;i++) {
+     console.log(tagsArray[i])
+    if(activefilter === tagsArray[i]) {
+         return true;
+    } 
+ }
+}
 
 
 const Cards = (props) => {
@@ -12,11 +24,17 @@ const Cards = (props) => {
     console.log(get(data, 'id', []));
     return (
         <div>
-            {get(data, 'prismic.allArticles.edges', []).filter(edge => {
-                return true; //gera if statement með true og false eftir þvi hvað við viljum birta
+            {get(data, 'prismic.allArticles.edges', []).filter((edge, filtering) => {
+                if (CheckIfMatchesTags(edge.node._meta.tags, props.filtering)){
+                    return true; //gera if statement með true og false eftir þvi hvað við viljum birta
+                }
+               
             }).map((edge, i) => {
                 return(
-                <Card key={i} node={edge.node}></Card>
+                <div>
+                    <Card key={i} node={edge.node}/>
+                    {/* <DidYouKnow data={this.props.data} /> */}
+                </div>
                 )
             })}
         </div>
