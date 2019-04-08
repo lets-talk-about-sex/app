@@ -32,7 +32,6 @@ export const query = graphql`
 
 class App extends Component {
   render () {
-    console.log(this.props);
     return (
       <ThemeProvider theme={theme}>
           <Global>
@@ -41,7 +40,6 @@ class App extends Component {
               <Cards data={this.props.data}/>
               <DidYouKnow/>
               <Fact/>
-              <Article/>
             </Container>
           </Global>
       </ThemeProvider> 
