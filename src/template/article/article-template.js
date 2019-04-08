@@ -5,7 +5,7 @@ import React from 'react';
 import styled from '@emotion/styled/macro';
 import Footer from 'components/footer/Footer';
 import SmallCard from 'components/cards/small-card';
-import SliceContent from 'components/slices/text';
+// import SliceContent from 'components/slices/text';
 import { renderSlices } from '../../components/slices/index.js';
 
 const HeroBanner = styled.div`
@@ -30,7 +30,7 @@ const Close = styled.button`
 const Article = (props) => {
     console.log(props);
     const slices = renderSlices(props.pageContext.node.body);
-    console.log("slices2", slices)
+    // console.log("slices2", slices)
     
     return (
         <div>   
@@ -57,6 +57,8 @@ const Article = (props) => {
             <h4>Typpi</h4>
             <i className="far fa-angle-right"></i>
           </div>
+
+          {/* <SliceTextSub/> */}
 
           {/* <Slicetext data={props.pageContext.node}/>   */}
           {/* Á eftir að tengja */}
