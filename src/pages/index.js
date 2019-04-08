@@ -35,12 +35,21 @@ export const query = graphql`
               uid
               tags
             }
-            title
             didyouknow
           }
         }
       }
-       
+      allFactss{
+        edges{
+          node{
+            _meta{
+              uid
+              tags
+            }
+            fact
+          }
+        }
+      }
     }
 }
 `
@@ -68,8 +77,8 @@ class App extends Component {
             <Container>
               <Search renderbyfilter={this.RenderByFilter}/>
               <Cards filtering={this.state.activefilter} data={this.props.data} />
-              <DidYouKnow data={this.props.data} />
-              <Fact/>
+              <DidYouKnow filtering={this.state.activefilter} data={this.props.data} />
+              <Fact filtering={this.state.activefilter} data={this.props.data}/>
             </Container>
           </Global>
       </ThemeProvider> 

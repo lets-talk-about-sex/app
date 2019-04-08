@@ -3,6 +3,7 @@ import styled from '@emotion/styled/macro';
 import { RichText } from 'prismic-reactjs';
 import { graphql } from 'gatsby';
 import didyouknow from 'assets/icon/question.svg';
+import {CheckIfMatchesTags} from '../theme/filter';
 
 const DidYouKnowContainer = styled.div`
     display:flex;
@@ -41,7 +42,10 @@ const DidYouKnow = (props) => {
     console.log(edges)
     return (
         <div>
-        {edges.map((edge) => {
+        {edges.filter((edge) => {
+                return CheckIfMatchesTags(edge.node._meta.tags, props.filtering)
+                //gera if statement með true og false eftir þvi hvað við viljum birta
+            }).map((edge) => {
             return (
             <div>
                 <DidYouKnowContainer>
