@@ -61,6 +61,14 @@ class Global extends React.Component {
             font-size: 16px; 
        }
 
+       a {
+          text-decoration:none;
+          color:#C7C7C7;
+            &:visited{
+             color:#C7C7C7;
+            }
+       }
+
       `;
       return React.Children.only(this.props.children);
     }

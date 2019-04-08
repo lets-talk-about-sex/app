@@ -29,19 +29,46 @@ export const query = graphql`
           }
         }
       }
+      allDid_you_knows{
+        edges{
+          node{
+            _meta{
+              uid
+              tags
+            }
+            title
+            didyouknow
+          }
+        }
+      }
+       
     }
 }
 `
 
 class App extends Component {
+  state={
+    activefilter:"",
+    activesearch:""
+  }
+//þegar er smellt er á flokka þá keyrist þetta fall
+  RenderByFilter = (filter, search) => {
+    console.log(filter)
+    this.setState({
+      activefilter: filter,
+      activesearch: search
+    })
+  }
+
+
   render () {
     return (
       <ThemeProvider theme={theme}>
           <Global>
             <Container>
-              <Search/>
-              <Cards data={this.props.data} />
-              <DidYouKnow />
+              <Search renderbyfilter={this.RenderByFilter}/>
+              <Cards filtering={this.state.activefilter} data={this.props.data} />
+              <DidYouKnow data={this.props.data} />
               <Fact/>
             </Container>
           </Global>
