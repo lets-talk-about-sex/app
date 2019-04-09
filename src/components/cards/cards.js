@@ -3,6 +3,10 @@ import { get } from 'lodash';
 import Card from './card';
 import DidYouKnow from './didyouknow';
 import {CheckIfMatchesTags} from '../theme/filter';
+import { Link } from "gatsby";
+
+
+
 // import DidYouKnow from './didyouknow';
 
 
@@ -17,17 +21,16 @@ const Cards = (props) => {
         <div>
             {allArticles.filter((edge) => {
                 return CheckIfMatchesTags(edge.node._meta.tags, props.filtering)
-                //gera if statement með true og false eftir þvi hvað við viljum birta
-                
-               
+                //gera if statement með true og false eftir þvi hvað við viljum birta 
             }).map((edge, i) => {
                 return(
-                <div>
+
+                
+                <Link to={edge.node._meta.uid} key={i} >
                     <Card key={i} node={edge.node}/>
-                    {/* <DidYouKnow key={i} node={edge.node} />
-                    <Fact key={i} node={edge.node}/> */}
-                  
-                </div>
+
+                    {/* <DidYouKnow data={this.props.data} /> */}
+                </Link>
                 )
             })}
         </div>

@@ -71,7 +71,6 @@ class App extends Component {
 
 
   render () {
-    console.log(this.props);
     return (
       <ThemeProvider theme={theme}>
           <Global>
@@ -80,6 +79,7 @@ class App extends Component {
               <Cards filtering={this.state.activefilter} data={this.props.data} />
               <DidYouKnow filtering={this.state.activefilter} data={this.props.data} />
               <Fact filtering={this.state.activefilter} data={this.props.data}/>
+
             </Container>
           </Global>
       </ThemeProvider> 

@@ -30,12 +30,26 @@ exports.createPages = ({ graphql, actions }) => {
                       article_img
                       synonyms
                       intro_text
-                      body{
+                                    body {
                         ... on PRISMIC_ArticleBodyContent___heading {
                           type
                           primary {
-                            text
                             subheading
+                            text
+                          }
+                        }
+                        ... on PRISMIC_ArticleBodyMedia {
+                          type
+                          primary {
+                            media {
+                                    __typename
+                              ... on PRISMIC__ImageLink {
+                                name
+                                url
+                                height
+                                width
+                              }
+                            }
                           }
                         }
                       }
@@ -43,13 +57,16 @@ exports.createPages = ({ graphql, actions }) => {
                   }
                 }
               }
-          }
+            }
           `
         ).then(result => {
+          console.log('#############################');
+          console.log("creatpages", result)
+          console.log('#############################');
           if (result.errors) {
             reject(result.errors)
           }
-  
+       
           // Create pages for each markdown file.
           result.data.prismic.allArticles.edges.forEach(({ node }) => {
             createPage({
