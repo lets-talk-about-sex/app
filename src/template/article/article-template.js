@@ -5,13 +5,13 @@ import React from 'react';
 import styled from '@emotion/styled/macro';
 import Footer from 'components/footer/Footer';
 import SmallCard from 'components/cards/small-card';
-import Global from '../../components/base/base';
+
 // import SliceContent from 'components/slices/text';
 import { renderSlices } from '../../components/slices/index.js';
 
-// import { ThemeProvider } from 'emotion-theming'
-// import { theme } from 'components/theme/theme';
-// import Global from 'components/base/base';
+import { ThemeProvider } from 'emotion-theming'
+import { theme } from 'components/theme/theme';
+import Global from 'components/base/base';
 
 const HeroBanner = styled.div`
     width: 100%;
@@ -31,7 +31,6 @@ const Close = styled.button`
 // container - á að taka í burtu 
 const Container = styled.div`
    margin: 0 30px;
-   background-color: #f9f9f9;
 `
 
 // titill
@@ -63,7 +62,7 @@ const SynonymDiv = styled.div`
 const LongCard = styled.div`
   display: flex;
   height: 80px;
-  width: 100vw;
+  width: 100%;
   border-radius: 10px;
   background-color: #fff;
   box-shadow: 0px 4px 30px rgba(0,0,0,0.1);
@@ -110,15 +109,13 @@ const Article = (props) => {
     
     return (
         <div> 
-          {/* <ThemeProvider theme={theme}>
-            <Global> */}
-
-              <HeroBanner>
-                <HeroImg src={props.pageContext.node.article_img.url}></HeroImg>
-                <Close><i class="fas fa-times"></i></Close>
-              </HeroBanner>
-
+          <ThemeProvider theme={theme}>
+            <Global>
               <Container>
+                <HeroBanner>
+                  <HeroImg src={props.pageContext.node.article_img.url}></HeroImg>
+                  <Close><i class="fas fa-times"></i></Close>
+                </HeroBanner>
                 <div>
                   {/* <Category>KYNLÍF</Category> */}
                   <TitleDiv>
@@ -153,8 +150,8 @@ const Article = (props) => {
 
               <Footer/>
             </Container>
-          {/* </Global>
-        </ThemeProvider>  */}
+          </Global>
+        </ThemeProvider> 
       </div>
     )};
     

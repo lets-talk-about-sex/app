@@ -10,11 +10,13 @@ class Global extends React.Component {
         box-sizing: border-box;
         margin: 0 20px;
         padding: 0;
+        
     }
 
        @import url('https://fonts.googleapis.com/css?family=PT+Sans|Poppins:400,600,700');
 
        body {
+        background-color: #f9f9f9;
        }
 
        h1, h2, h3 {
