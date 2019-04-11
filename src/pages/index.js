@@ -62,6 +62,7 @@ class App extends Component {
 
 
   render () {
+    console.log(this.props);
     return (
       <ThemeProvider theme={theme}>
           <Global>
@@ -74,7 +75,7 @@ class App extends Component {
           </Global>
       </ThemeProvider> 
     );
-  }
+  } 
 }
 
 export default App;
