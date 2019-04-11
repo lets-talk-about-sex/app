@@ -1,2 +1,4 @@
 # app
 kynfræðsla
+
+yarn dev

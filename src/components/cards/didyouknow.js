@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled/macro';
+import { RichText } from 'prismic-reactjs';
+import { graphql } from 'gatsby';
 import didyouknow from 'assets/icon/question.svg';
 
 const DidYouKnowContainer = styled.div`
@@ -33,19 +35,29 @@ const Icon = styled.img`
   margin-bottom: 5px;
 `
 
-const DidYouKnow = () => {
+const DidYouKnow = (props) => {
+    console.log('did you know')
+    const edges = props.data.prismic.allDid_you_knows.edges;
+    console.log(edges)
     return (
-    <div>
-        <DidYouKnowContainer>
         <div>
-             <Icon src={didyouknow} alt=""/>                
+        {edges.map((edge) => {
+            return (
+            <div>
+                <DidYouKnowContainer>
+                    <div>
+                        <Icon src={didyouknow} alt=""/>                
+                    </div>
+                    <div>
+                        <Title>Vissir þú?</Title>
+                        <Text>{RichText.asText(edge.node.didyouknow)}</Text>
+                    </div>
+                </DidYouKnowContainer>
+            </div>
+            )
+        })}
+        
         </div>
-        <div>
-            <Title>Vissir þú?</Title>
-            <Text>Það að meyjarhaftið rifni við samfarir er mýta. Það er ekki hægt að sanna það að þú sért hrein mey með því að skoða meyjarhaftið.</Text>
-        </div>
-        </DidYouKnowContainer>
-    </div>
     );
 };
 

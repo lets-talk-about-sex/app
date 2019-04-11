@@ -13,7 +13,7 @@ class Global extends React.Component {
         
     }
 
-       @import url('https://fonts.googleapis.com/css?family=PT+Sans|Poppins:400,600,700');
+       @import url('https://fonts.googleapis.com/css?family=PT+Sans|Poppins:400,600,700,800');
 
        body {
         background-color: #f9f9f9;
@@ -61,6 +61,14 @@ class Global extends React.Component {
        p {
             font-family: 'PT Sans', sans-serif;
             font-size: 16px; 
+       }
+
+       a {
+          text-decoration:none;
+          color:#C7C7C7;
+            &:visited{
+             color:#C7C7C7;
+            }
        }
 
       `;

@@ -103,5 +103,10 @@ exports.createPages = ({ graphql, actions }) => {
           })
         })
       )
+      const aboutTemplate = path.resolve(`src/pages/about.js`)
+      createPage({
+        path: "about",
+        component: aboutTemplate,
+      })
     })
   }

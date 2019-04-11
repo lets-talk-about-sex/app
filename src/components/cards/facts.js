@@ -7,7 +7,7 @@ import {DidYouKnowContainer, Title, Text, Icon} from './didyouknow';
 
 
 
-const Fact = () => {
+const Fact = (props) => {
     return (
     <div>
         <DidYouKnowContainer>
@@ -16,6 +16,7 @@ const Fact = () => {
         </div>
         <div>
             <Title>Sturluð staðreynd</Title>
+            {/* <Text>{RichText.asText(props.node.fact)}</Text> */}
             <Text>Meðal maður fer í reisn 11 sinnum á dag og 9 sinnum yfir nóttina.</Text>
         </div>
         </DidYouKnowContainer>
