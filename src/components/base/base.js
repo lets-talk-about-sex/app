@@ -12,7 +12,7 @@ class Global extends React.Component {
         padding: 0;
     }
 
-       @import url('https://fonts.googleapis.com/css?family=PT+Sans|Poppins:400,600,700');
+       @import url('https://fonts.googleapis.com/css?family=PT+Sans|Poppins:400,600,700,800');
 
        body {
        }
