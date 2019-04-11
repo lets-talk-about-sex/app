@@ -1,16 +1,12 @@
 import React from 'react';
-import { get } from 'lodash';
-import { RichText } from 'prismic-reactjs';
 import { graphql } from 'gatsby';
-import styled from '@emotion/styled/macro';
+// import styled from '@emotion/styled/macro';
 
-
-const SliceText = (props) => {
+const SliceText = ({text}) => {
   
     return (
         <div>   
-            <p></p>
-            {/* hvernig sæki ég content sem er slice og text inní því? */}
+            <p>{text}</p>
         </div>
     )};
     

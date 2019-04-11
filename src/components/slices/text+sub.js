@@ -5,10 +5,12 @@ import { graphql } from 'gatsby';
 import styled from '@emotion/styled/macro';
 
 const SubHeading = styled.div`
-    width: 100%;
-    height: 60vh;
-    position: relative;
-    top: 0;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    margin-bottom: 15px;
+    margin-top: 30px;
 `
 
 const SliceTextSub = ({subheader, paragraph}) => {

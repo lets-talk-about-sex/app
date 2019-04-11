@@ -13,20 +13,25 @@ const SmallCardContainer = styled.div`
     width: 140px;
     height: 196px;
     padding-bottom: 24px;
-    margin: 30px auto;
+    margin-right: 10px;
     box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.1);
-    border-radius:  15px;
+    border-radius: 10px;
+    margin-top: 15px;
 `
 const SmallImgWrapper = styled.div`
     height:140px;
-    width: 196px;
+    width: 140px;
 `
 
 const SmallSexImg = styled.img`
-    border-radius:  15px 15px 0 0;
+    border-radius:  10px 10px 0 0;
+    
 `
 
-const SmallCardTitle = styled.h4`  
+const SmallCardTitle = styled.h4` 
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 600;
 `
 //muna að þegar spjald er með slug þá þarf height að vera 100px;
 const SmallTitleWrapper = styled.div`

@@ -5,76 +5,157 @@ import React from 'react';
 import styled from '@emotion/styled/macro';
 import Footer from 'components/footer/Footer';
 import SmallCard from 'components/cards/small-card';
+import Global from '../../components/base/base';
 // import SliceContent from 'components/slices/text';
 import { renderSlices } from '../../components/slices/index.js';
+
+// import { ThemeProvider } from 'emotion-theming'
+// import { theme } from 'components/theme/theme';
+// import Global from 'components/base/base';
 
 const HeroBanner = styled.div`
     width: 100%;
     height: 60vh;
-    position: relative;
-    top: 0;
 `
 
 const HeroImg = styled.img`
     width: 100%;
     height: 100%; 
-    object-fit: cover;
+    // object-fit: ;
 `
 
 const Close = styled.button`
    height: auto;
    width: 18px;
 `
+// container - á að taka í burtu 
+const Container = styled.div`
+   margin: 0 30px;
+   background-color: #f9f9f9;
+`
+
+// titill
+const Title = styled.h1`
+   margin: 20px 0;
+   font-family: 'Poppins', sans-serif;
+   font-weight: 600;
+   font-size: 32px;
+`
+// heldur utan um tiitl og share
+const TitleDiv = styled.div`
+  display: flex;
+  justify-content: space-between;
+`
+// samheiti
+const Synonym = styled.p`
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 15px;
+  margin-right: 15px;
+`
+
+const SynonymDiv = styled.div`
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 30px;
+`
+const LongCard = styled.div`
+  display: flex;
+  height: 80px;
+  width: 100vw;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0px 4px 30px rgba(0,0,0,0.1);
+  align-items: center;
+`
+
+const LongCardImg = styled.img`
+  height: 80px;
+  width: 80px;
+  object-fit: fill;
+  background-color: grey;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  margin-right: 25px;
+`
+
+const LongCardTitle = styled.h4`
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+`
+
+const Read = styled.p`
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #FC4255;
+  margin-top: 30px;
+`
+
+const SmallCardDiv = styled.div`
+ display: flex;
+ height: 200px;
+`
+
 
 
 const Article = (props) => {
-    console.log(props);
+
     const slices = renderSlices(props.pageContext.node.body);
-    // console.log("slices2", slices)
     
     return (
-        <div>   
-            <HeroBanner>
-              <HeroImg src={props.pageContext.node.article_img.url}></HeroImg>
-              <Close><i class="fas fa-times"></i></Close>
-            </HeroBanner>
+        <div> 
+          {/* <ThemeProvider theme={theme}>
+            <Global> */}
 
-            <div>
-              {/* <Category>KYNLÍF</Category> */}
-              <div>
-                <h1>{props.pageContext.node.title[0].text}</h1>
-                <button><img src="../../assets/icon/share.svg"></img></button>
-              </div>
-              <div>
-                <p>Samheiti</p>
-                <p>{props.pageContext.node.synonyms[0].text}</p>
-              </div>
-              <p>{props.pageContext.node.intro_text[0].text}</p>
-            </div>
+              <HeroBanner>
+                <HeroImg src={props.pageContext.node.article_img.url}></HeroImg>
+                <Close><i class="fas fa-times"></i></Close>
+              </HeroBanner>
 
-          <div>
-            <img></img>
-            <h4>Typpi</h4>
-            <i className="far fa-angle-right"></i>
-          </div>
+              <Container>
+                <div>
+                  {/* <Category>KYNLÍF</Category> */}
+                  <TitleDiv>
+                    <Title>{props.pageContext.node.title[0].text}</Title>
+                    <button><img src="../../assets/icon/share.svg"></img></button>
+                  </TitleDiv>
 
-          {/* <SliceTextSub/> */}
+                  <SynonymDiv>
+                    <Synonym>Samheiti</Synonym>
+                    <p>{props.pageContext.node.synonyms[0].text}</p>
+                  </SynonymDiv>
 
-          {/* <Slicetext data={props.pageContext.node}/>   */}
-          {/* Á eftir að tengja */}
+                  <p>{props.pageContext.node.intro_text[0].text}</p>
+                </div>
 
-          <div>
-              <p>LESTU LÍKA</p>
-                <SmallCard data={props.pageContext.node}/>
-                <SmallCard data={props.pageContext.node}/>
-                <SmallCard data={props.pageContext.node}/>
-          </div>
+                <LongCard>
+                  <LongCardImg></LongCardImg>
+                  <LongCardTitle>Typpi</LongCardTitle>
+                  <i className="far fa-angle-right"></i>
+                </LongCard>
 
-          {slices}
+                {slices}
 
-          <Footer/>
+                <Read>LESTU LÍKA</Read>
+                <SmallCardDiv>
+                    <SmallCard data={props.pageContext.node}/>
+                    <SmallCard data={props.pageContext.node}/>
+                    {/* <SmallCard data={props.pageContext.node}/> */}
+                </SmallCardDiv>
 
-        </div>
+                
+
+              <Footer/>
+            </Container>
+          {/* </Global>
+        </ThemeProvider>  */}
+      </div>
     )};
     
 

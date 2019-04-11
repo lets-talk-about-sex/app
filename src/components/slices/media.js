@@ -9,7 +9,6 @@ const SliceMedia = ({image}) => {
     return (
         <div>   
             <img src={image}></img>
-            {/* <div>{image}</div> */}
         </div>
     )};
     

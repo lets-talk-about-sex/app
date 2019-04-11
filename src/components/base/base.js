@@ -8,7 +8,7 @@ class Global extends React.Component {
       injectGlobal`
       * {
         box-sizing: border-box;
-        margin: 0;
+        margin: 0 20px;
         padding: 0;
     }
 

@@ -23,7 +23,8 @@ exports.createPages = ({ graphql, actions }) => {
               prismic {
                 allArticles{
                   edges{
-                    node{ 
+                    node
+                    { 
                       _meta{uid
                       }
                       title
@@ -36,6 +37,27 @@ exports.createPages = ({ graphql, actions }) => {
                           primary {
                             subheading
                             text
+                          }
+                        }
+                        ... on PRISMIC_ArticleBodyContent{
+                          type
+                          primary{
+                            text
+                          }
+                        }
+                        ... on PRISMIC_ArticleBodyRepeat{
+                          type
+                          primary{
+                            repeat{
+                              _linkType
+                             ... on PRISMIC_Did_you_know{
+                              didyouknow
+                              title
+                              _meta {
+                                id
+                              }
+                            }
+                            }
                           }
                         }
                         ... on PRISMIC_ArticleBodyMedia {
