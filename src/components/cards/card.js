@@ -56,7 +56,7 @@ const Card = (props) => {
                 </ImgWrapper>
                 <TitleWrapper>
                     <HotIcon src={hot} alt=""/>                
-                    <Slug>Kynþroski</Slug>
+                    {/* <Slug>Kynþroski</Slug> */}
                     <CardTitle>{RichText.asText(props.node.title)}</CardTitle>
                 </TitleWrapper>
             </CardContainer>

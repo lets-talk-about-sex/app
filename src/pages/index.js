@@ -7,7 +7,9 @@ import { Container } from 'components/theme/container';
 import Search from 'components/search/search';
 // import DidYouKnows from 'components/cards/didyouknow';
 // import Facts from 'components/cards/facts';
-import AllCards from 'components/cards/allCards';
+// import AllCards from 'components/cards/allCards';
+import AllCards from 'components/cards/cardsprufa';
+
 
  
 // import { RichText } from 'prismic-reactjs';
