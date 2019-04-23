@@ -14,7 +14,8 @@ import { theme } from 'components/theme/theme';
 import Global from 'components/base/base';
 
 const HeroBanner = styled.div`
-    width: 100%;
+    margin-left: -30px;
+    width: calc(100% + 60px);
     height: 60vh;
 `
 
