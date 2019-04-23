@@ -47,7 +47,6 @@ const Slug = styled.h5`
 // const articleImg = get(article_img, 'url')
 
 const Card = (props) => {
-    console.log(props)
     return (
         <div>   
             <CardContainer>

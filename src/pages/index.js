@@ -3,10 +3,11 @@ import { ThemeProvider } from 'emotion-theming'
 import { theme } from 'components/theme/theme';
 import Global from 'components/base/base';
 import { Container } from 'components/theme/container';
-import Cards from 'components/cards/cards';
+// import Cards from 'components/cards/cards';
 import Search from 'components/search/search';
-import DidYouKnow from 'components/cards/didyouknow';
-import Fact from 'components/cards/facts';
+// import DidYouKnows from 'components/cards/didyouknow';
+// import Facts from 'components/cards/facts';
+import AllCards from 'components/cards/allCards';
 
  
 // import { RichText } from 'prismic-reactjs';
@@ -68,7 +69,6 @@ class App extends Component {
     })
   }
 
-
   render () {
     console.log(this.props);
     return (
@@ -76,9 +76,7 @@ class App extends Component {
           <Global>
             <Container>
               <Search renderbyfilter={this.RenderByFilter}/>
-              <Cards filtering={this.state.activefilter} data={this.props.data} />
-              <DidYouKnow filtering={this.state.activefilter} data={this.props.data} />
-              <Fact filtering={this.state.activefilter} data={this.props.data}/>
+                <AllCards filtering={this.state.activefilter} data={this.props.data}/>
             </Container>
           </Global>
       </ThemeProvider> 

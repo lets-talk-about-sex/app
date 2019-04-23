@@ -1,6 +1,7 @@
 import React, { Component} from 'react'
 import styled from '@emotion/styled/macro';
-import {css} from 'emotion'
+// import {css} from 'emotion'
+// import sex from 'assets/images/icon/search.png';
 
 
 const SearchContainer = styled.div`
@@ -14,11 +15,18 @@ const SearchInput = styled.input`
     width:100%;
     height: 40px; 
     padding-left:15px;
+    color: ${props => props.theme.baseColors.searchText};
+    background-color: ${props => props.theme.baseColors.bodyBackground};
+    &[type=text] {
+        font-size: 20px;
+        font-weight: 600;
+        color: ${props => props.theme.baseColors.black};
+    }
 `
 const CategoryWrapper = styled.div`
     display:flex;
     width:100%;
-    list-style-type:none;
+    list-style-type: none;
     justify-content:flex-start;
     padding-top: 20px;
     font-family: 'Poppins', sans-serif;
@@ -95,11 +103,11 @@ class Search extends Component {
                 </SearchContainer>
                 <div>
                     <CategoryWrapper>
-                        <li className={this.state.activeCategory==''?'active':''} onClick={() => { this.handleClick('') }}>Allt</li>
-                        <li className={this.state.activeCategory=='kynlíf'?'active':''} onClick={() => { this.handleClick('kynlíf') }}>Kynlíf</li>
-                        <li className={this.state.activeCategory=='kynþroski'?'active':''} onClick={() => { this.handleClick('kynþroski') }}>Kynþroski</li>
-                        <li className={this.state.activeCategory=='samskipti'?'active':''} onClick={() => { this.handleClick('samskipti') }}>Samskipti</li>
-                        <li className={this.state.activeCategory=='kynhneigð'?'active':''} onClick={() => { this.handleClick('kynhneigð') }}>Kynhneigð</li>
+                        <li className={this.state.activeCategory===''?'active':''} onClick={() => { this.handleClick('') }}>Allt</li>
+                        <li className={this.state.activeCategory==='kynlíf'?'active':''} onClick={() => { this.handleClick('kynlíf') }}>Kynlíf</li>
+                        <li className={this.state.activeCategory==='kynþroski'?'active':''} onClick={() => { this.handleClick('kynþroski') }}>Kynþroski</li>
+                        <li className={this.state.activeCategory==='samskipti'?'active':''} onClick={() => { this.handleClick('samskipti') }}>Samskipti</li>
+                        <li className={this.state.activeCategory==='kynhneigð'?'active':''} onClick={() => { this.handleClick('kynhneigð') }}>Kynhneigð</li>
                     </CategoryWrapper> 
                 </div>
             </div> 
