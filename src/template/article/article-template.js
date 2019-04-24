@@ -3,8 +3,11 @@ import React from 'react';
 // import { RichText } from 'prismic-reactjs';
 // import { graphql } from 'gatsby';
 import styled from '@emotion/styled/macro';
+import { Link } from "gatsby"
+
 import Footer from 'components/footer/Footer';
 import SmallCard from 'components/cards/small-card';
+
 
 import closeButton from '../../assets/icon/article/close.svg';
 import shareButton from '../../assets/icon/article/share.svg';
@@ -14,10 +17,7 @@ import ExitButton from '../../assets/icon/article/closeshare.svg';
 
 import Helpful from 'components/cards/helpful';
 
-
-// import SliceContent from 'components/slices/text';
 import { renderSlices } from '../../components/slices/index.js';
-
 import { ThemeProvider } from 'emotion-theming'
 import { theme } from 'components/theme/theme';
 import Global from 'components/base/base';
@@ -36,14 +36,14 @@ const HeroImg = styled.img`
 `
 
 // loka modal takki
-const Close = styled.img`
-   height: auto;
-   width: 18px;
-   cursor: pointer;
-   position: absolute;
-  top: 50px;
-  right: 30px;
-`
+// const Close = styled.img`
+//    height: auto;
+//    width: 18px;
+//    cursor: pointer;
+//    position: absolute;
+//   top: 50px;
+//   right: 30px;
+// `
 
 
 
@@ -105,10 +105,9 @@ const Exit = styled.img`
   height: auto;
   width: 18px;
   cursor: pointer;
-  position: absolute; 
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50px;
+  right: 30px;
 `
 
 // container - á að taka í burtu 
@@ -222,12 +221,6 @@ const Intro = styled.p`
 `
 
 
-function goBack() {
-  window.history.back();
-}
-
-
-
 const Article = (props) => {
 
     const slices = renderSlices(props.pageContext.node.body);
@@ -239,11 +232,12 @@ const Article = (props) => {
               <Container>
                 <HeroBanner>
                   <HeroImg alt="" src={props.pageContext.node.article_img.url}></HeroImg>
-                  <Close src={closeButton} alt="" onclick="goBack()"></Close>
+                  <Link to="/"><Exit src={closeButton} alt=""></Exit></Link>
                 </HeroBanner>
                 <FirstSectionDiv>
                   <CategoryDiv>
-                    <Category>DUMMY CAT</Category>
+                    {/* spurning um að gera function hér sem gerir það að verkum að ef article er með fleiri en eitt tag þá birtast þau öll? */}
+                    <Category>{props.pageContext.node._meta.tags[0]}</Category>
                   </CategoryDiv>
                   <TitleDiv>
                     <Title>{props.pageContext.node.title[0].text}</Title>

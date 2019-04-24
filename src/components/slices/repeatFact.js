@@ -10,7 +10,7 @@ const DidYouKnowContainer = styled.div`
     flex-direction:column;
     justify-content: center;
     align-items:center;
-    width: 354px;
+    width: 100%;
     height: auto;
     min-height: 150px;
     padding: 50px 31px;
