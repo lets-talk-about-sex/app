@@ -45,8 +45,6 @@ const Close = styled.img`
   right: 30px;
 `
 
-
-
 // share animations button container
 const ShareAnimation = styled.div`
   height: 200px;
@@ -58,7 +56,7 @@ const ShareAnimation = styled.div`
 `
 
 // share button container
-const ShareDiv = styled.div`
+const ShareDivShare = styled.div`
    height: 50px;
    width: 50px;
    cursor: pointer;
@@ -68,6 +66,17 @@ const ShareDiv = styled.div`
    border-radius: 50%;
    position: relative;
    top:0;
+`
+// share button container
+const ShareDivExit = styled.div`
+   height: 50px;
+   width: 50px;
+   cursor: pointer;
+   -webkit-box-shadow: 5px 0px 30px 0px rgba(0,0,0,0.1);
+    -moz-box-shadow: 5px 0px 30px 0px rgba(0,0,0,0.1);
+   box-shadow: 5px 0px 30px 0px rgba(0,0,0,0.1);
+   border-radius: 50%;
+   position: relative;
    
 `
 
@@ -222,9 +231,9 @@ const Intro = styled.p`
 `
 
 
-function goBack() {
-  window.history.back();
-}
+// function goBack() {
+//   window.history.back();
+// }
 
 
 
@@ -239,26 +248,27 @@ const Article = (props) => {
               <Container>
                 <HeroBanner>
                   <HeroImg alt="" src={props.pageContext.node.article_img.url}></HeroImg>
-                  <Close src={closeButton} alt="" onclick="goBack()"></Close>
+                  <Close src={closeButton} alt="" ></Close>
                 </HeroBanner>
+                
                 <FirstSectionDiv>
+
                   <CategoryDiv>
                     <Category>DUMMY CAT</Category>
                   </CategoryDiv>
+
                   <TitleDiv>
                     <Title>{props.pageContext.node.title[0].text}</Title>
+                    
                     <ShareAnimation>
-                    <ShareDiv>
-                      <Share src={shareButton} alt=""></Share>
-                    </ShareDiv>
-                    
+                      <ShareDivShare>
+                        <Share src={shareButton} alt=""></Share>
+                      </ShareDivShare>
                       <MessengerLogo src={MessengerButton} alt=""></MessengerLogo>
-                   
                       <GmailLogo src={GmailButton} alt=""></GmailLogo>
-                    
-                    <ShareDiv>
-                      <Exit src={ExitButton} alt=""></Exit>
-                    </ShareDiv>
+                      <ShareDivExit>
+                        <Exit src={ExitButton} alt=""></Exit>
+                      </ShareDivExit>
                     </ShareAnimation>
                     
                   </TitleDiv>
@@ -267,15 +277,14 @@ const Article = (props) => {
                     <Synonym>Samheiti</Synonym>
                     <p>{props.pageContext.node.synonyms[0].text}</p>
                   </SynonymDiv>
-                </FirstSectionDiv>
 
                   <Intro>{props.pageContext.node.intro_text[0].text}</Intro>
-                
+
+                </FirstSectionDiv>
 
                 <LongCard>
                   <LongCardImg src={props.pageContext.node.link.article_img.url}></LongCardImg>
                   <LongCardTitle>{props.pageContext.node.link.title[0].text}</LongCardTitle>
-                  <i className="far fa-angle-right"></i>
                 </LongCard>
 
                 {slices}
