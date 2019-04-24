@@ -9,7 +9,7 @@ import Cards from 'components/cards/cards';
 import Search from 'components/search/search';
 import DidYouKnow from 'components/cards/didyouknow';
 import Fact from 'components/cards/facts';
-import Article from 'template/article/article-template';
+// import Article from 'template/article/article-template';
 
  
 // import { RichText } from 'prismic-reactjs';

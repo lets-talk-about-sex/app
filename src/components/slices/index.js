@@ -21,8 +21,8 @@ export const renderSlices = (body) => {
             case 'media':
                 return <SliceMedia image={sliceItem.primary.media.url}/>;
 
-            case 'repeat':
-            return <SliceRepeat repeat={sliceItem.primary.repeat.didyouknow.text}/>;
+            // case 'repeat':
+            // return <SliceRepeat repeat={sliceItem.primary.repeat.didyouknow.text}/>;
 
         }
 
