@@ -25,7 +25,9 @@ exports.createPages = ({ graphql, actions }) => {
                   edges{
                     node
                     { 
-                      _meta{uid
+                      _meta{
+                        uid
+                        tags
                       }
                       
                       title
@@ -48,6 +50,10 @@ exports.createPages = ({ graphql, actions }) => {
                         }
                         ... on PRISMIC_ArticleBodyContent{
                           type
+<<<<<<< HEAD
+=======
+                         
+>>>>>>> 3148e28ea4ad0e2afa07103a21d1869dee276f39
                         }
                        ... on PRISMIC_ArticleBodyRepeat{
                           type
