@@ -12,17 +12,18 @@ class Global extends React.Component {
         padding: 0;
         
     }
-
+      // Fontur
        @import url('https://fonts.googleapis.com/css?family=PT+Sans|Poppins:400,600,700,800');
 
        body {
         background-color: #f9f9f9;
        }
 
-       h1, h2, h3 {
+       h1, h2, h3, h4, h5 {
            font-family: 'Poppins', sans-serif;
            color: #000;
        }
+
        /* Titill á undirsíðu með stöku orði */
        h1 {
            font-size: 32px; 
@@ -37,39 +38,46 @@ class Global extends React.Component {
 
        /* Titlar á spjöldum */
        h2 {
-           font-size: 22px;
+           font-size: 20px;
            font-weight: 600;
        }
    
        h3 {
-           font-size: 26px;  
+           font-size: 18px;
+           font-weight: 600;
        }
 
-         /* Undirtitlar á undirsíðu */
+        /* Small card*/
         h4 {
-            font-size: 18px;  
-       }
-
-          /* Slug á spjaldi */
-          h5 {
-            font-size: 14px;
-            font-weight: 600;
-            color: #FC4255;
-       }
-
-
-       p {
-            font-family: 'PT Sans', sans-serif;
             font-size: 16px; 
-       }
+            font-weight: 600; 
+        }
 
-       a {
+          /* Heading info card */
+        h5 {
+          font-size: 16px;
+          font-weight: 600;
+          color: #FC4255;
+        }
+
+        h6 {
+          font-size: 14px;
+          text transform: uppercase; 
+          color: #FC4255;
+        }
+
+        p {
+          font-family: 'PT Sans', sans-serif;
+          font-size: 16px; 
+        }
+
+        a {
           text-decoration:none;
           color:#C7C7C7;
             &:visited{
-             color:#C7C7C7;
+            color:#C7C7C7;
             }
-       }
+        }
 
       `;
       return React.Children.only(this.props.children);

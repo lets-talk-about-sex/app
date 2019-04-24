@@ -5,6 +5,7 @@ import React from 'react';
 import styled from '@emotion/styled/macro';
 import Footer from 'components/footer/Footer';
 import SmallCard from 'components/cards/small-card';
+import Helpful from 'components/cards/helpful';
 
 // import SliceContent from 'components/slices/text';
 import { renderSlices } from '../../components/slices/index.js';
@@ -99,7 +100,18 @@ const Read = styled.p`
 
 const SmallCardDiv = styled.div`
  display: flex;
- height: 200px;
+ height: 250px;
+ width: auto;
+ margin-bottom: 50px;
+ overflow-x: auto;
+ scroll-behavior: smooth;
+  & ::-webkit-scrollbar {
+  display: none;
+  }
+`
+
+const Intro = styled.p`
+ margin-bottom: 30px;
 `
 
 
@@ -115,7 +127,7 @@ const Article = (props) => {
               <Container>
                 <HeroBanner>
                   <HeroImg src={props.pageContext.node.article_img.url}></HeroImg>
-                  <Close><i class="fas fa-times"></i></Close>
+                  <Close></Close>
                 </HeroBanner>
                 <div>
                   {/* <Category>KYNLÍF</Category> */}
@@ -129,19 +141,23 @@ const Article = (props) => {
                     <p>{props.pageContext.node.synonyms[0].text}</p>
                   </SynonymDiv>
 
-                  <p>{props.pageContext.node.intro_text[0].text}</p>
+                  <Intro>{props.pageContext.node.intro_text[0].text}</Intro>
                 </div>
 
                 <LongCard>
-                  <LongCardImg></LongCardImg>
-                  <LongCardTitle>Typpi</LongCardTitle>
+                  <LongCardImg src={props.pageContext.node.link.article_img.url}></LongCardImg>
+                  <LongCardTitle>{props.pageContext.node.link.title[0].text}</LongCardTitle>
                   <i className="far fa-angle-right"></i>
                 </LongCard>
 
                 {slices}
 
+                <Helpful></Helpful>
+
                 <Read>LESTU LÍKA</Read>
                 <SmallCardDiv>
+                    <SmallCard data={props.pageContext.node}/>
+                    <SmallCard data={props.pageContext.node}/>
                     <SmallCard data={props.pageContext.node}/>
                     <SmallCard data={props.pageContext.node}/>
                     {/* <SmallCard data={props.pageContext.node}/> */}
@@ -149,10 +165,11 @@ const Article = (props) => {
 
                 
 
-              <Footer/>
+              
             </Container>
           </Global>
         </ThemeProvider> 
+        <Footer/>
       </div>
     )};
     

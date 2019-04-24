@@ -21,10 +21,13 @@ const FooterContainer = styled.div`
     width: 100vw;
     height: 230px;
     background-color: #FC4255;
+    padding-top: 30px;
 `
 const SocialMediaContainer = styled.div`
     display:flex;
-    justify-content: space-between;
+    justify-content: center;
+    width: 103px;
+    margin: 0 auto;
 `
 
 const FooterLinkContainer = styled.div`
