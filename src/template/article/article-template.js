@@ -5,11 +5,15 @@ import React from 'react';
 import styled from '@emotion/styled/macro';
 import Footer from 'components/footer/Footer';
 import SmallCard from 'components/cards/small-card';
+
 import closeButton from '../../assets/icon/article/close.svg';
 import shareButton from '../../assets/icon/article/share.svg';
 import MessengerButton from '../../assets/icon/article/messenger.svg';
 import GmailButton from '../../assets/icon/article/gmail.svg';
 import ExitButton from '../../assets/icon/article/closeshare.svg';
+
+import Helpful from 'components/cards/helpful';
+
 
 // import SliceContent from 'components/slices/text';
 import { renderSlices } from '../../components/slices/index.js';
@@ -203,7 +207,18 @@ const Read = styled.p`
 // lítið kort 
 const SmallCardDiv = styled.div`
  display: flex;
- height: 200px;
+ height: 250px;
+ width: auto;
+ margin-bottom: 50px;
+ overflow-x: auto;
+ scroll-behavior: smooth;
+  & ::-webkit-scrollbar {
+  display: none;
+  }
+`
+
+const Intro = styled.p`
+ margin-bottom: 30px;
 `
 
 
@@ -252,32 +267,35 @@ const Article = (props) => {
                     <Synonym>Samheiti</Synonym>
                     <p>{props.pageContext.node.synonyms[0].text}</p>
                   </SynonymDiv>
-
-                  <p>{props.pageContext.node.intro_text[0].text}</p>
                 </FirstSectionDiv>
 
+                  <Intro>{props.pageContext.node.intro_text[0].text}</Intro>
+                
+
                 <LongCard>
-                  <LongCardImg></LongCardImg>
-                  <LongCardTitle>Typpi</LongCardTitle>
+                  <LongCardImg src={props.pageContext.node.link.article_img.url}></LongCardImg>
+                  <LongCardTitle>{props.pageContext.node.link.title[0].text}</LongCardTitle>
                   <i className="far fa-angle-right"></i>
                 </LongCard>
 
                 {slices}
 
+                <Helpful></Helpful>
+
                 <Read>LESTU LÍKA</Read>
                 <SmallCardDiv>
+                    <SmallCard data={props.pageContext.node}/>
+                    <SmallCard data={props.pageContext.node}/>
                     <SmallCard data={props.pageContext.node}/>
                     <SmallCard data={props.pageContext.node}/>
                     {/* <SmallCard data={props.pageContext.node}/> */}
                 </SmallCardDiv>
 
-                
-
-              <Footer/>
               
             </Container>
           </Global>
         </ThemeProvider> 
+        <Footer/>
       </div>
     )};
 

@@ -2,7 +2,8 @@ import React from 'react';
 import SliceTextSub from './text+sub';
 import SliceMedia from './media';
 import SliceText from './text';
-import SliceRepeat from './repeat';
+import SliceRepeatFact from './repeatFact';
+import SliceRepeatDYK from './repeatDYK';
 import { RichText, Link } from 'prismic-reactjs';
 
 export const renderSlices = (body) => {
@@ -21,8 +22,14 @@ export const renderSlices = (body) => {
             case 'media':
                 return <SliceMedia image={sliceItem.primary.media.url}/>;
 
-            // case 'repeat':
-            // return <SliceRepeat repeat={sliceItem.primary.repeat.didyouknow.text}/>;
+
+            case 'repeat':
+                switch(sliceItem.primary.repeat.__typename){
+                    case 'PRISMIC_Facts':
+                        return <SliceRepeatFact repeat={sliceItem.primary.repeat.fact[0].text}/>
+                    case 'PRISMIC_Did_you_know':
+                        return <SliceRepeatDYK repeat={sliceItem.primary.repeat.didyouknow[0].text}/>
+                }
 
         }
 

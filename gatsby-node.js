@@ -27,10 +27,17 @@ exports.createPages = ({ graphql, actions }) => {
                     { 
                       _meta{uid
                       }
+                      
                       title
                       article_img
                       synonyms
                       intro_text
+                      link{
+                        ... on PRISMIC_Article{
+                          title
+                          article_img
+                        }
+                      }
                                     body {
                         ... on PRISMIC_ArticleBodyContent___heading {
                           type
@@ -45,18 +52,22 @@ exports.createPages = ({ graphql, actions }) => {
                             text
                           }
                         }
-                        ... on PRISMIC_ArticleBodyRepeat{
+                       ... on PRISMIC_ArticleBodyRepeat{
                           type
                           primary{
                             repeat{
-                              _linkType
-                             ... on PRISMIC_Did_you_know{
-                              didyouknow
-                              title
-                              _meta {
-                                id
+                              ... on PRISMIC_Did_you_know{
+                               
+                                didyouknow 
+                                
                               }
-                            }
+                           		... on PRISMIC_Facts{
+                              
+                                fact
+                                _linkType
+                              }
+                              _linkType
+                              __typename
                             }
                           }
                         }
