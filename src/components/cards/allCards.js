@@ -4,12 +4,14 @@ import Card from './card';
 import {CheckIfMatchesTags} from '../theme/filter';
 import DidYouKnowCard from './didyouknow_card';
 import FactCard from './fact_card';
+import {Link} from 'gatsby';
+
 
 
 // Function React Component AllCards sem tekur inn props
 const AllCards = (props) => {
     let allArticlesArr = get(props.data, 'prismic.allArticles.edges', [])
-    .filter(oneCard => CheckIfMatchesTags(oneCard.node._meta.tags, props.filtering));
+    .filter(oneCard => CheckIfMatchesTags(oneCard.node._meta.tags, props.filtering))
     let allDidYouKnowsArr = get(props.data, 'prismic.allDid_you_knows.edges', [])
     .filter(oneDYK => CheckIfMatchesTags(oneDYK.node._meta.tags, props.filtering));
     let allFactsArr = get(props.data, 'prismic.allFactss.edges', [])
@@ -40,7 +42,7 @@ const AllCards = (props) => {
         }
          
      }
-
+ 
 
     const getFeed = () => {
         let allArticles = allCardsArr.map((edge, i) => {
@@ -55,12 +57,13 @@ const AllCards = (props) => {
             else if (edge.node.fact) {
                 SomeCard = FactCard;
             }
-
-            return (
+           
+            return(
                 <React.Fragment key={i}>
-                    <SomeCard node={edge.node}/>
+                    <Link to={edge.node._meta.uid} key={i} >
+                        <SomeCard key={i} node={edge.node}/>
+                    </Link>
                 </React.Fragment>
-
             )
         })
 
