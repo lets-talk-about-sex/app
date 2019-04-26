@@ -4,22 +4,8 @@ import { theme } from 'components/theme/theme';
 import Global from 'components/base/base';
 import { graphql } from 'gatsby'; 
 import { Container } from 'components/theme/container';
-<<<<<<< HEAD
-
-
-import Cards from 'components/cards/cards';
-import Search from 'components/search/search';
-import DidYouKnow from 'components/cards/didyouknow';
-import Fact from 'components/cards/facts';
-// import Article from 'template/article/article-template';
-
- 
-// import { RichText } from 'prismic-reactjs';
-import { graphql } from 'gatsby'; 
-=======
 import Search from 'components/search/search';
 import AllCards from 'components/cards/allCards';
->>>>>>> 4e04408cdf12af6448755c6314c64de89991e00a
 
 export const query = graphql`
   query {
@@ -93,8 +79,7 @@ class App extends Component {
 
   render () {
     console.log(this.props);
-<<<<<<< HEAD
-=======
+
     let data;
     if (this.state.results.length) {
       data={ 
@@ -115,8 +100,6 @@ class App extends Component {
       data=this.props.data
     }
      
-
->>>>>>> 4e04408cdf12af6448755c6314c64de89991e00a
     return (
       <ThemeProvider theme={theme}>
           <Global>
