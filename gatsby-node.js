@@ -34,6 +34,14 @@ exports.createPages = ({ graphql, actions }) => {
                       article_img
                       synonyms
                       intro_text
+                      small_card{
+                        link_to_article{
+                          ... on PRISMIC_Article{
+                            title
+                            article_img
+                          }
+                        }
+                      }
                       link{
                         ... on PRISMIC_Article{
                           title
@@ -48,26 +56,23 @@ exports.createPages = ({ graphql, actions }) => {
                             text
                           }
                         }
+<<<<<<< HEAD
+=======
                         ... on PRISMIC_ArticleBodyContent{
                           type
 
                         }
+>>>>>>> f6aad304ece93a926e53b64c83c87f7ca5f172c2
                        ... on PRISMIC_ArticleBodyRepeat{
                           type
                           primary{
                             repeat{
                               ... on PRISMIC_Did_you_know{
-                               
                                 didyouknow 
-                                
                               }
                            		... on PRISMIC_Facts{
-                              
                                 fact
-                                _linkType
                               }
-                              _linkType
-                              __typename
                             }
                           }
                         }

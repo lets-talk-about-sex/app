@@ -8,7 +8,7 @@ import { Link } from "gatsby"
 import closeButton from '../../assets/icon/article/close.svg';
 
 import Footer from 'components/footer/Footer';
-import SmallCard from 'components/cards/small-card';
+import SmallCard from '../../components/cards/small-card.js';
 
 import Helpful from 'components/cards/helpful';
 import ShareComponent from 'components/cards/share';
@@ -68,7 +68,6 @@ const FirstSectionDiv = styled.div`
    margin-top: 50px;
    position: relative;
 `
-
 
 // titill
 const Title = styled.h1`
@@ -135,28 +134,27 @@ const Read = styled.p`
   margin-top: 30px;
 `
 
-// lítið kort 
-const SmallCardDiv = styled.div`
- display: flex;
- height: 250px;
- width: auto;
- margin-bottom: 50px;
- overflow-x: auto;
- scroll-behavior: smooth;
-  & ::-webkit-scrollbar {
-  display: none;
-  }
-`
-
 const Intro = styled.p`
  margin-bottom: 30px;
 `
 
 
 const Article = (props) => {
+  let slices;
+    if(!props.pageContext.node.body) {
+      slices = [];
+    } else {
+      slices = renderSlices(props.pageContext.node.body);
+    }
 
-    const slices = renderSlices(props.pageContext.node.body);
-    
+    console.log(props)
+
+    // let longCard;
+    // if(!props.pageContext.node.link) {
+    //   longCard = [];
+    // } else {
+    //   longCard = renderLongCard(props.pageContext.node.link);
+
     return (
         <div> 
           <ThemeProvider theme={theme}>
@@ -188,6 +186,7 @@ const Article = (props) => {
 
                   <Intro>{props.pageContext.node.intro_text[0].text}</Intro>
 
+
                 </FirstSectionDiv>
 
                 <LongCard>
@@ -201,14 +200,7 @@ const Article = (props) => {
                 <OutsideLinks></OutsideLinks>
 
                 <Read>LESTU LÍKA</Read>
-                <SmallCardDiv>
-                    <SmallCard data={props.pageContext.node}/>
-                    <SmallCard data={props.pageContext.node}/>
-                    <SmallCard data={props.pageContext.node}/>
-                    <SmallCard data={props.pageContext.node}/>
-                    {/* <SmallCard data={props.pageContext.node}/> */}
-                </SmallCardDiv>
-
+                <SmallCard smallCards={props.pageContext.node.small_card}/>
               
             </Container>
           </Global>
