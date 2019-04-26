@@ -25,7 +25,6 @@ const Cards = (props) => {
             }).map((edge, i) => {
                 return(
 
-                
                 <Link to={edge.node._meta.uid} key={i} >
                     <Card key={i} node={edge.node}/>
 

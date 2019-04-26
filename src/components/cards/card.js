@@ -50,7 +50,7 @@ const Card = (props) => {
                     <SexImg src={props.node.article_img?props.node.article_img.url:""}></SexImg>
                 </ImgWrapper>
                 <TitleWrapper>
-                    {/* <HotIcon src={hot} alt=""/>                 */}
+                    {/* <HotIcon src={hot} alt=""/> */}
                     {/* <Slug>Kynþroski</Slug> */}
                     <CardTitle>{RichText.asText(props.node.title)}</CardTitle>
                 </TitleWrapper>
