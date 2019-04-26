@@ -5,17 +5,14 @@ import React from 'react';
 import styled from '@emotion/styled/macro';
 import { Link } from "gatsby"
 
+import closeButton from '../../assets/icon/article/close.svg';
+
 import Footer from 'components/footer/Footer';
 import SmallCard from '../../components/cards/small-card.js';
 
-
-import closeButton from '../../assets/icon/article/close.svg';
-import shareButton from '../../assets/icon/article/share.svg';
-import MessengerButton from '../../assets/icon/article/messenger.svg';
-import GmailButton from '../../assets/icon/article/gmail.svg';
-import ExitButton from '../../assets/icon/article/closeshare.svg';
-
 import Helpful from 'components/cards/helpful';
+import ShareComponent from 'components/cards/share';
+import OutsideLinks from 'components/slices/outsideLinks';
 
 import { renderSlices } from '../../components/slices/index.js';
 import { ThemeProvider } from 'emotion-theming'
@@ -35,86 +32,12 @@ const HeroImg = styled.img`
     // object-fit: ;
 `
 
-// loka modal takki
-// const Close = styled.img`
-//    height: auto;
-//    width: 18px;
-//    cursor: pointer;
-//    position: absolute;
-//   top: 50px;
-//   right: 30px;
-// `
-
-// share animations button container
-const ShareAnimation = styled.div`
-  height: 200px;
-  widht: auto;
-  position: absolute;
-  right: 0;
-  top: 50;
-  background-color: tomato;
-`
-
-// share button container
-const ShareDivShare = styled.div`
-   height: 50px;
-   width: 50px;
-   cursor: pointer;
-   -webkit-box-shadow: 5px 0px 30px 0px rgba(0,0,0,0.1);
-    -moz-box-shadow: 5px 0px 30px 0px rgba(0,0,0,0.1);
-   box-shadow: 5px 0px 30px 0px rgba(0,0,0,0.1);
-   border-radius: 50%;
-   position: relative;
-   top:0;
-`
-// share button container
-const ShareDivExit = styled.div`
-   height: 50px;
-   width: 50px;
-   cursor: pointer;
-   -webkit-box-shadow: 5px 0px 30px 0px rgba(0,0,0,0.1);
-    -moz-box-shadow: 5px 0px 30px 0px rgba(0,0,0,0.1);
-   box-shadow: 5px 0px 30px 0px rgba(0,0,0,0.1);
-   border-radius: 50%;
-   position: relative;
-   
-`
-
-// share button
-const Share = styled.img`
+//loka modal takki
+const Close = styled.img`
    height: auto;
    width: 18px;
    cursor: pointer;
-   position: absolute; 
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-`
-
-// messenger logo
-const MessengerLogo = styled.img`
-  width: 100px;
-  cursor: pointer;
-  // left: 50%;
-  // top: 50%;
-  // transform: translate(-50%, -50%);
-`
-
-// gmail logo
-const GmailLogo = styled.img`
-  width: 100px;
-  cursor: pointer;
-  // left: 50%;
-  // top: 50%;
-  // transform: translate(-50%, -50%);
-`
-
-// exit logo 
-const Exit = styled.img`
-  height: auto;
-  width: 18px;
-  cursor: pointer;
-  position: absolute;
+   position: absolute;
   top: 50px;
   right: 30px;
 `
@@ -216,7 +139,6 @@ const Intro = styled.p`
 `
 
 
-
 const Article = (props) => {
   let slices;
     if(!props.pageContext.node.body) {
@@ -240,7 +162,7 @@ const Article = (props) => {
               <Container>
                 <HeroBanner>
                   <HeroImg alt="" src={props.pageContext.node.article_img.url}></HeroImg>
-                  <Link to="/"><Exit src={closeButton} alt=""></Exit></Link>
+                  <Link to="/"><Close src={closeButton} alt=""></Close></Link>
                 </HeroBanner>
                 
                 <FirstSectionDiv>
@@ -253,16 +175,7 @@ const Article = (props) => {
                   <TitleDiv>
                     <Title>{props.pageContext.node.title[0].text}</Title>
                     
-                    <ShareAnimation>
-                      <ShareDivShare>
-                        <Share src={shareButton} alt=""></Share>
-                      </ShareDivShare>
-                      <MessengerLogo src={MessengerButton} alt=""></MessengerLogo>
-                      <GmailLogo src={GmailButton} alt=""></GmailLogo>
-                      <ShareDivExit>
-                        <Exit src={ExitButton} alt=""></Exit>
-                      </ShareDivExit>
-                    </ShareAnimation>
+                    <ShareComponent></ShareComponent>
                     
                   </TitleDiv>
 
@@ -284,6 +197,7 @@ const Article = (props) => {
                 {slices}
 
                 <Helpful></Helpful>
+                <OutsideLinks></OutsideLinks>
 
                 <Read>LESTU LÍKA</Read>
                 <SmallCard smallCards={props.pageContext.node.small_card}/>
