@@ -16,11 +16,8 @@ class Global extends React.Component {
        @import url('https://fonts.googleapis.com/css?family=PT+Sans|Poppins:400,600,700,800');
 
        body {
-<<<<<<< HEAD
+
         background-color: #f9f9f9;
-=======
-  
->>>>>>> 4e04408cdf12af6448755c6314c64de89991e00a
        }
 
        h1, h2, h3, h4, h5 {
@@ -54,7 +51,6 @@ class Global extends React.Component {
         /* Small card*/
         h4 {
             font-size: 16px; 
-<<<<<<< HEAD
             font-weight: 600; 
         }
 
@@ -82,7 +78,6 @@ class Global extends React.Component {
           color:#C7C7C7;
             &:visited{
             color:#C7C7C7;
-=======
        }
 
        li {
@@ -94,7 +89,6 @@ class Global extends React.Component {
           color:#C7C7C7;
             &:visited {
              color:#C7C7C7;
->>>>>>> 4e04408cdf12af6448755c6314c64de89991e00a
             }
         }
 
