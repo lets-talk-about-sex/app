@@ -4,10 +4,11 @@ import SliceMedia from './media';
 import SliceText from './text';
 import SliceRepeatFact from './repeatFact';
 import SliceRepeatDYK from './repeatDYK';
+import SliceVideo from './video';
 import { RichText, Link } from 'prismic-reactjs';
 
 export const renderSlices = (body) => {
-    console.log('slices er', body)
+    // console.log('slices er', body)
     const slices = body.map(sliceItem => {
         console.log("halló", sliceItem)
         if(sliceItem){
@@ -22,6 +23,9 @@ export const renderSlices = (body) => {
 
             case 'media':
                 return <SliceMedia image={sliceItem.primary.media.url}/>;
+
+            case 'media':
+                return <SliceVideo video={sliceItem.primary.media.url}/>;
 
             case 'repeat':
                 switch(sliceItem.primary.repeat.__typename){

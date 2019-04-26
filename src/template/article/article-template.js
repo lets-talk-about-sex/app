@@ -141,7 +141,7 @@ const Intro = styled.p`
 
 const Article = (props) => {
   let slices;
-    if(!props.pageContext.node.body) {
+    if(!props.pageContext && !props.pageContext.node.body) {
       slices = [];
     } else {
       slices = renderSlices(props.pageContext.node.body);
