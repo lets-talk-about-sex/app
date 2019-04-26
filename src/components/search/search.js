@@ -29,7 +29,7 @@ const CategoryWrapper = styled.div`
 `
 
 
-var travel = document.getElementById("travel"); //object, sækja elment úr index skjalinu sem hefur id travel
+// var travel = document.getElementById("travel"); //object, sækja elment úr index skjalinu sem hefur id travel
 
 // var search = function () {
 // travel.innerHTML="" //hreinsar út öll gögn i travel
