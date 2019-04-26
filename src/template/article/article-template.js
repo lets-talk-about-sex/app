@@ -6,7 +6,7 @@ import styled from '@emotion/styled/macro';
 import { Link } from "gatsby"
 
 import Footer from 'components/footer/Footer';
-import SmallCard from 'components/cards/small-card';
+import SmallCard from '../../components/cards/small-card.js';
 
 
 import closeButton from '../../assets/icon/article/close.svg';
@@ -34,18 +34,6 @@ const HeroImg = styled.img`
     height: 100%; 
     // object-fit: ;
 `
-
-// loka modal takki
-// const Close = styled.img`
-//    height: auto;
-//    width: 18px;
-//    cursor: pointer;
-//    position: absolute;
-//   top: 50px;
-//   right: 30px;
-// `
-
-
 
 // share animations button container
 const ShareAnimation = styled.div`
@@ -137,7 +125,6 @@ const FirstSectionDiv = styled.div`
    position: relative;
 `
 
-
 // titill
 const Title = styled.h1`
    margin: 20px 0;
@@ -203,28 +190,27 @@ const Read = styled.p`
   margin-top: 30px;
 `
 
-// lítið kort 
-const SmallCardDiv = styled.div`
- display: flex;
- height: 250px;
- width: auto;
- margin-bottom: 50px;
- overflow-x: auto;
- scroll-behavior: smooth;
-  & ::-webkit-scrollbar {
-  display: none;
-  }
-`
-
 const Intro = styled.p`
  margin-bottom: 30px;
 `
 
 
 const Article = (props) => {
+  let slices;
+    if(!props.pageContext.node.body) {
+      slices = [];
+    } else {
+      slices = renderSlices(props.pageContext.node.body);
+    }
 
-    const slices = renderSlices(props.pageContext.node.body);
-    
+    console.log(props)
+
+    // let longCard;
+    // if(!props.pageContext.node.link) {
+    //   longCard = [];
+    // } else {
+    //   longCard = renderLongCard(props.pageContext.node.link);
+
     return (
         <div> 
           <ThemeProvider theme={theme}>
@@ -265,7 +251,8 @@ const Article = (props) => {
 
                   <Intro>{props.pageContext.node.intro_text[0].text}</Intro>
                 
-
+                {/* if LongCard is null then display nothing else display LongCard */}
+               
                 <LongCard>
                   <LongCardImg src={props.pageContext.node.link.article_img.url}></LongCardImg>
                   <LongCardTitle>{props.pageContext.node.link.title[0].text}</LongCardTitle>
@@ -277,14 +264,7 @@ const Article = (props) => {
                 <Helpful></Helpful>
 
                 <Read>LESTU LÍKA</Read>
-                <SmallCardDiv>
-                    <SmallCard data={props.pageContext.node}/>
-                    <SmallCard data={props.pageContext.node}/>
-                    <SmallCard data={props.pageContext.node}/>
-                    <SmallCard data={props.pageContext.node}/>
-                    {/* <SmallCard data={props.pageContext.node}/> */}
-                </SmallCardDiv>
-
+                <SmallCard smallCards={props.pageContext.node.small_card}/>
               
             </Container>
           </Global>
