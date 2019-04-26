@@ -1,1 +1,0 @@
-{"pageContext":{"rootQuery":"\n  query {\n    prismic {\n      allArticles{\n        edges{\n          node{ \n            _meta{uid\n            }\n            title\n            article_img\n          }\n        }\n      }\n    }\n}\n"}}
