@@ -1,4 +1,4 @@
-<b>Sexeducation application</b>
+<b>Sexeducation application</b></br>
 Mobile friendly sexeducation for young adults.
 
 Getting Started
