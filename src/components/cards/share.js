@@ -33,17 +33,17 @@ const ShareDiv = styled.div`
    height: 50px;
    width: 50px;
    cursor: pointer;
-//    -webkit-box-shadow: 5px 0px 30px 0px rgba(0,0,0,0.1);
-//     -moz-box-shadow: 5px 0px 30px 0px rgba(0,0,0,0.1);
-//    box-shadow: 5px 0px 30px 0px rgba(0,0,0,0.1);
    border-radius: 50%;
    position: absolute;
    top:0;
    left: 0;
    transition:transform .35s ease;
    &.firstState {
-       z-index: 99;
-       background-color: white;
+        z-index: 99;
+        background-color: white;
+        -webkit-box-shadow: 5px 0px 30px 0px rgba(0,0,0,0.1);
+        -moz-box-shadow: 5px 0px 30px 0px rgba(0,0,0,0.1);
+        box-shadow: 5px 0px 30px 0px rgba(0,0,0,0.1);
    }
 `
 // share button

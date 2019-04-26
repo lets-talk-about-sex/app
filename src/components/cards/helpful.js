@@ -1,22 +1,30 @@
-import React from 'react';
+import React, {Component} from 'react';
 // import { get } from 'lodash';
 // import { RichText } from 'prismic-reactjs';
 // import { graphql } from 'gatsby';
 
 import styled from '@emotion/styled/macro';
 import ThumbsUpRed from '../../assets/icon/article/thumbsup.svg';
-import ThumbsDownRed from '../../assets/icon/article/thumbsdown2.svg';
+import ThumbsDownRed from '../../assets/icon/article/thumbsdown.svg';
+import ThumbUpWhite from '../../assets/icon/article/thumbUpWhite.svg';
+import ThumbDownWhite from '../../assets/icon/article/thumbDownWhite.svg';
 
 const HelpfulDiv = styled.div`
   display: flex;
-  height: 80px;
+  flex-wrap: wrap;
+  // height: 80px;
+  padding: 30px;
   width: 100%;
   border-radius: 10px;
   background-color: #fff;
   box-shadow: 0px 4px 30px rgba(0,0,0,0.1);
   align-items: center;
-  padding-left: 30px;
   margin-top: 30px;
+  align-items: center;
+`
+const NoMessage = styled.div`
+  width: 100%;
+  margin-top: 15px;
 `
 const ThumbDiv = styled.div`
   height: 36px;
@@ -25,7 +33,7 @@ const ThumbDiv = styled.div`
   border: solid 1px ${props => props.theme.baseColors.coral};
   position: relative;
   margin-right: 15px;
-  &:active {
+  &.activeButton {
     background-color: ${props => props.theme.baseColors.coral};
   }
 `
@@ -39,81 +47,68 @@ const Thumb = styled.img`
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  
 `
-
 const HelpfulText = styled.h3`
   margin-right: 30px;
 `
 
-// var ThumbsUpSwap = document.querySelectorAll("img");
-// ThumbsUpSwap.addEventListener('click', function() {
-//   if (img.getAttribute("data-text-swap") == img.innerHTML) {
-//     img.innerHTML = img.getAttribute("data-text-original");
-//   } else {
-//     button.setAttribute("data-text-original", button.innerHTML);
-//     button.innerHTML = button.getAttribute("data-text-swap");
-//   }
-// }, false);
+const Bolda = styled.span`
+  font-weight: 700;
+  color: ${props => props.theme.baseColors.coral};
+`
 
-// export default class Button extends Component{
-//   render(){
-//     return(
-//       <div>
-//         <button onClick={this.props.click}>{this.props.text}</button>
-//       </div>
-//     )
-//   }
-//  }
+class Helpful extends Component {
 
+  constructor(props) {
+    super(props);
+    this.state = {Voting: undefined};
 
-//  class App extends Component {
-  
-//   // verkefni 1
-//    constructor(props){
-//      super(props)
-//        this.state = {
-//          text: “ýta hér”
-//      }
-//    }
-  
-//    changeText = () =>{
-//      this.setState({text: “hallo”})
-//    };
-  
-//    render() {
-//      return (
-//        <div className=“App”>
-//          <Button
-//            //ýta hér
-//            text={this.state.text}
-//            //hallo
-//            click={this.changeText}
-//          ></Button>
-//        </div>
-//      );
-//    }
-//   }
-  
-  
-  
-  // export default App;
+    // This binding is necessary to make `this` work in the callback
+    this.handleClick = this.handleClick.bind(this);
+  }
 
-const Helpful = (props) => {
-    return (
-        <div>
-            <HelpfulDiv>
-              <HelpfulText id="pText" >Var efnið hjálplegt?</HelpfulText>
-              <ThumbDiv>
-                <img  src={ThumbsUpRed} alt="" onclick="changeText(this.value);" value="Thumbs Up" ></img>
-                {/* <Thumb src={ThumbsUpRed} alt="" onclick="changeText(this.value);" value="Thumbs Up"></Thumb> */}
+  handleClick(VoteYesOrNo) {
+    if (this.state.Voting != undefined){
+      return
+    } 
+    this.setState({
+      Voting: VoteYesOrNo
+    });
+  }
+
+  render() {
+      return (
+          <div>   
+             <HelpfulDiv>
+               {this.state.Voting == undefined ? (
+                 <HelpfulText  >Var efnið hjálplegt?</HelpfulText>
+               ) : (
+                <HelpfulText>Takk fyrir að svara!</HelpfulText>
+               )}
+              <ThumbDiv className={this.state.Voting=="yes"? "activeButton":""}>
+                <Thumb  src={this.state.Voting=="yes"? ThumbUpWhite: ThumbsUpRed} alt="" onClick={() => this.handleClick("yes")}></Thumb>
               </ThumbDiv>
-              <ThumbDiv>
-              <Thumb src={ThumbsDownRed} alt="" value="Thumbs Down"></Thumb>
+
+              <ThumbDiv className={this.state.Voting=="no"? "activeButton":""}>
+                <Thumb src={this.state.Voting=="no"? ThumbDownWhite: ThumbsDownRed} alt="" onClick={() => this.handleClick("no")}></Thumb>
               </ThumbDiv>
-            </HelpfulDiv>     
-        </div>
-    )};
+              
+              {this.state.Voting == "no" && 
+              <NoMessage>
+                <p>Fékkstu ekki svarið sem þú varst að leita að? <br/> Endilega sendu línu á <Bolda>live chatið </Bolda> okkar og þú færð svar eins fljótt og auðið er, nafnlaust!</p>
+              </NoMessage> 
+              } 
+              
+            
+            </HelpfulDiv> 
+             
+            
+            
+          </div>
+      )
+  }
+
+};
     
 
 export default Helpful;
