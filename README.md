@@ -1,4 +1,4 @@
-Sexeducation application
+<b>Sexeducation application</b>
 
 Mobile friendly sexeducation for young adults.
 
