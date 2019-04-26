@@ -35,6 +35,16 @@ const HeroImg = styled.img`
     // object-fit: ;
 `
 
+// loka modal takki
+// const Close = styled.img`
+//    height: auto;
+//    width: 18px;
+//    cursor: pointer;
+//    position: absolute;
+//   top: 50px;
+//   right: 30px;
+// `
+
 // share animations button container
 const ShareAnimation = styled.div`
   height: 200px;
@@ -46,7 +56,7 @@ const ShareAnimation = styled.div`
 `
 
 // share button container
-const ShareDiv = styled.div`
+const ShareDivShare = styled.div`
    height: 50px;
    width: 50px;
    cursor: pointer;
@@ -56,6 +66,17 @@ const ShareDiv = styled.div`
    border-radius: 50%;
    position: relative;
    top:0;
+`
+// share button container
+const ShareDivExit = styled.div`
+   height: 50px;
+   width: 50px;
+   cursor: pointer;
+   -webkit-box-shadow: 5px 0px 30px 0px rgba(0,0,0,0.1);
+    -moz-box-shadow: 5px 0px 30px 0px rgba(0,0,0,0.1);
+   box-shadow: 5px 0px 30px 0px rgba(0,0,0,0.1);
+   border-radius: 50%;
+   position: relative;
    
 `
 
@@ -195,6 +216,7 @@ const Intro = styled.p`
 `
 
 
+
 const Article = (props) => {
   let slices;
     if(!props.pageContext.node.body) {
@@ -220,25 +242,26 @@ const Article = (props) => {
                   <HeroImg alt="" src={props.pageContext.node.article_img.url}></HeroImg>
                   <Link to="/"><Exit src={closeButton} alt=""></Exit></Link>
                 </HeroBanner>
+                
                 <FirstSectionDiv>
+
                   <CategoryDiv>
                     {/* spurning um að gera function hér sem gerir það að verkum að ef article er með fleiri en eitt tag þá birtast þau öll? */}
                     <Category>{props.pageContext.node._meta.tags[0]}</Category>
                   </CategoryDiv>
+
                   <TitleDiv>
                     <Title>{props.pageContext.node.title[0].text}</Title>
+                    
                     <ShareAnimation>
-                    <ShareDiv>
-                      <Share src={shareButton} alt=""></Share>
-                    </ShareDiv>
-                    
+                      <ShareDivShare>
+                        <Share src={shareButton} alt=""></Share>
+                      </ShareDivShare>
                       <MessengerLogo src={MessengerButton} alt=""></MessengerLogo>
-                   
                       <GmailLogo src={GmailButton} alt=""></GmailLogo>
-                    
-                    <ShareDiv>
-                      <Exit src={ExitButton} alt=""></Exit>
-                    </ShareDiv>
+                      <ShareDivExit>
+                        <Exit src={ExitButton} alt=""></Exit>
+                      </ShareDivExit>
                     </ShareAnimation>
                     
                   </TitleDiv>
@@ -247,16 +270,15 @@ const Article = (props) => {
                     <Synonym>Samheiti</Synonym>
                     <p>{props.pageContext.node.synonyms[0].text}</p>
                   </SynonymDiv>
-                </FirstSectionDiv>
 
                   <Intro>{props.pageContext.node.intro_text[0].text}</Intro>
-                
-                {/* if LongCard is null then display nothing else display LongCard */}
-               
+
+
+                </FirstSectionDiv>
+
                 <LongCard>
                   <LongCardImg src={props.pageContext.node.link.article_img.url}></LongCardImg>
                   <LongCardTitle>{props.pageContext.node.link.title[0].text}</LongCardTitle>
-                  <i className="far fa-angle-right"></i>
                 </LongCard>
 
                 {slices}

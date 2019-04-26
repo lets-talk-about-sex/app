@@ -56,6 +56,16 @@ exports.createPages = ({ graphql, actions }) => {
                             text
                           }
                         }
+<<<<<<< HEAD
+=======
+                        ... on PRISMIC_ArticleBodyContent{
+                          type
+<<<<<<< HEAD
+=======
+                         
+>>>>>>> 3148e28ea4ad0e2afa07103a21d1869dee276f39
+                        }
+>>>>>>> f6aad304ece93a926e53b64c83c87f7ca5f172c2
                        ... on PRISMIC_ArticleBodyRepeat{
                           type
                           primary{

@@ -3,8 +3,8 @@ import { get } from 'lodash';
 import { RichText } from 'prismic-reactjs';
 import { graphql } from 'gatsby';
 import styled from '@emotion/styled/macro';
-// import {Thumbs_up_red} from '../../assets/icon/Vector.svg';
-// import {Thumbs_up_red} from '../../assets/icon/Thumbs_up_red.svg';
+import ThumbsUpRed from '../../assets/icon/article/thumbsup.svg';
+import ThumbsDownRed from '../../assets/icon/article/thumbsdown.svg';
 
 const HelpfulDiv = styled.div`
   display: flex;
@@ -17,13 +17,28 @@ const HelpfulDiv = styled.div`
   padding-left: 30px;
   margin-top: 30px;
 `
-const Thumb = styled.div`
+const ThumbDiv = styled.div`
   height: 36px;
   width: 36px;
   border-radius: 50%;
   border: solid 1px ${props => props.theme.baseColors.coral};
   position: relative;
   margin-right: 15px;
+  &:active {
+    background-color: ${props => props.theme.baseColors.coral};
+  }
+`
+
+// thumbs mynd 
+const Thumb = styled.img`
+  height: auto;
+  width: 18px;
+  cursor: pointer;
+  position: absolute; 
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  
 `
 
 const HelpfulText = styled.h3`
@@ -35,12 +50,12 @@ const Helpful = (props) => {
         <div>
             <HelpfulDiv>
               <HelpfulText>Var efnið hjálplegt?</HelpfulText>
-              <Thumb>
-                <img src="../../assets/icon/Vector.svg"></img>
-              </Thumb>
-              <Thumb>
-                {/* <img src={Thumbs_down_red}></img> */}
-              </Thumb>
+              <ThumbDiv>
+                <Thumb src={ThumbsUpRed} alt="" onClick=""></Thumb>
+              </ThumbDiv>
+              <ThumbDiv>
+              <Thumb src={ThumbsDownRed} alt=""></Thumb>
+              </ThumbDiv>
             </HelpfulDiv>     
         </div>
     )};
