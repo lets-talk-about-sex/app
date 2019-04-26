@@ -11,6 +11,7 @@ const SearchContainer = styled.div`
   float: right;
   margin-top: 30px;
   padding-right: 20px;
+  margin-right: 30px;
 `
 
 const SearchInput = styled.input`
@@ -73,7 +74,8 @@ const CategoryWrapper = styled.div`
     font-weight: 600;
     overflow-x: scroll;
     overflow: auto;
-    white-space: nowrap; 
+    white-space: nowrap;
+    margin-bottom: 25px;
     & ::-webkit-scrollbar {
         display: none;   
     }
