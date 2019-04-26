@@ -68,7 +68,8 @@ class Global extends React.Component {
 
         p {
           font-family: 'PT Sans', sans-serif;
-          font-size: 16px; 
+          font-size: 16px;
+          color: #000; 
         }
 
         a {

@@ -3,7 +3,7 @@ import React from 'react';
 // import { RichText } from 'prismic-reactjs';
 import { graphql } from 'gatsby';
 import styled from '@emotion/styled/macro';
-import didyouknow from 'assets/icon/question.svg';
+import quote from 'assets/icon/quote.svg';
 
 const DidYouKnowContainer = styled.div`
     display:flex;
@@ -43,7 +43,7 @@ const SliceRepeatFact = ({repeat}) => {
         <div> 
             <DidYouKnowContainer>
                 <div>
-                    <Icon src={didyouknow} alt=""/>                
+                    <Icon src={quote} alt=""/>                
                 </div>
                 <div>
                     <Title>Sturluð staðreynd</Title>
