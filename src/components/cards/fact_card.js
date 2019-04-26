@@ -2,7 +2,6 @@ import React from 'react';
 import styled from '@emotion/styled/macro';
 import quote from 'assets/icon/quote.svg';
 import { RichText } from 'prismic-reactjs';
-// import { graphql } from 'gatsby';
 import {DidYouKnowContainer, Title, Text, Icon} from './didyouknow_card';
 
 const FactCard = (props) => {

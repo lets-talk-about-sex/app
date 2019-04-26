@@ -27,6 +27,7 @@ const Title = styled.p`
     margin-bottom: 20px;
     text-align: center;
 `
+
 const Text = styled.p`
     font-size: 20px;
     font-weight: 600;
