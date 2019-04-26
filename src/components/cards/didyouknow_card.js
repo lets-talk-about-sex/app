@@ -1,8 +1,10 @@
 import React from 'react';
 import styled from '@emotion/styled/macro';
+import { get } from 'lodash';
 import { RichText } from 'prismic-reactjs';
 import { graphql } from 'gatsby';
 import didyouknow from 'assets/icon/question.svg';
+import {CheckIfMatchesTags} from '../theme/filter';
 
 const DidYouKnowContainer = styled.div`
     display:flex;
@@ -25,6 +27,7 @@ const Title = styled.p`
     margin-bottom: 20px;
     text-align: center;
 `
+
 const Text = styled.p`
     font-size: 20px;
     font-weight: 600;
@@ -35,14 +38,8 @@ const Icon = styled.img`
   margin-bottom: 5px;
 `
 
-const DidYouKnow = (props) => {
-    console.log('did you know')
-    const edges = props.data.prismic.allDid_you_knows.edges;
-    console.log(edges)
+const DidYouKnowCard = (props) => {
     return (
-        <div>
-        {edges.map((edge) => {
-            return (
             <div>
                 <DidYouKnowContainer>
                     <div>
@@ -50,18 +47,14 @@ const DidYouKnow = (props) => {
                     </div>
                     <div>
                         <Title>Vissir þú?</Title>
-                        <Text>{RichText.asText(edge.node.didyouknow)}</Text>
+                        <Text>{RichText.asText(props.node.didyouknow)}</Text>
                     </div>
                 </DidYouKnowContainer>
             </div>
-            )
-        })}
-        
-        </div>
     );
 };
 
-export default DidYouKnow;
+export default DidYouKnowCard;
 
 export {DidYouKnowContainer, Title, Text, Icon};
 

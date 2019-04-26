@@ -3,11 +3,7 @@ import { get } from 'lodash';
 import { RichText } from 'prismic-reactjs';
 import { graphql } from 'gatsby';
 import styled from '@emotion/styled/macro';
-// import sex from 'assets/images/sex.png';
-// import iceboob from 'assets/images/iceboob.png';
 import hot from 'assets/icon/hot.svg';
-
-
 
 const CardContainer = styled.div`
     width: 354px;
@@ -36,33 +32,30 @@ const TitleWrapper = styled.div`
     padding: 30px 0 30px 29px;
     position: relative; 
 `
+
 const HotIcon = styled.img`
     position: absolute;
     top:-15px;
 `
+
 const Slug = styled.h5`
     text-transform: uppercase;
 `
 
-// const articleImg = get(article_img, 'url')
-
 const Card = (props) => {
-    console.log(props)
     return (
         <div>   
             <CardContainer>
                 <ImgWrapper>
                     <SexImg src={props.node.article_img?props.node.article_img.url:""}></SexImg>
-                    {/* <SexImg src={iceboob} alt=""/> */}
                 </ImgWrapper>
                 <TitleWrapper>
-                    <HotIcon src={hot} alt=""/>                
-                    <Slug>Kynþroski</Slug>
+                    {/* <HotIcon src={hot} alt=""/>                 */}
+                    {/* <Slug>Kynþroski</Slug> */}
                     <CardTitle>{RichText.asText(props.node.title)}</CardTitle>
                 </TitleWrapper>
             </CardContainer>
         </div>
     )};
     
-
 export default Card;
