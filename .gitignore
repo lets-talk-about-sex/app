@@ -7,3 +7,5 @@ yarn-error.log
 .DS_Store
 
 kodi_ekki_i_notkun
+
+public/static

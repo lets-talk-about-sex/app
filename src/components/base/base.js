@@ -12,11 +12,10 @@ class Global extends React.Component {
         padding: 0;
         
     }
-      // Fontur
+      /*  Fontur */
        @import url('https://fonts.googleapis.com/css?family=PT+Sans|Poppins:400,600,700,800');
 
        body {
-
         background-color: #f9f9f9;
        }
 
@@ -63,7 +62,7 @@ class Global extends React.Component {
 
         h6 {
           font-size: 14px;
-          text transform: uppercase; 
+          text-transform: uppercase; 
           color: #FC4255;
         }
 
@@ -76,7 +75,7 @@ class Global extends React.Component {
         a {
           text-decoration:none;
           color:#C7C7C7;
-            &:visited{
+            &:visited {
             color:#C7C7C7;
        }
 
@@ -88,7 +87,7 @@ class Global extends React.Component {
           text-decoration:none;
           color:#C7C7C7;
             &:visited {
-             color:#C7C7C7;
+             color:#000;
             }
         }
 
@@ -96,9 +95,7 @@ class Global extends React.Component {
          font-family: 'Poppins', sans-serif;
        }
 
- 
-
-      `;
+       `;
       return React.Children.only(this.props.children);
     }
   }
