@@ -4,13 +4,13 @@ Mobile friendly sexeducation for young adults.
 <b>Getting Started</b></br>
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-<b>Prerequisites</b></br>
+<b>Prerequisites</b>
 1. Clone the Reposetory
 2. Make sure you are inside the folder app (Terminal: cd app)
 2. Install yarn 
 
 
-<b>Installing</b></br>
+<b>Installing</b>
 1. yarn dev
 2. View app by localhost:8000
 
