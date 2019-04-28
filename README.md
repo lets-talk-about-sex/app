@@ -7,10 +7,10 @@ These instructions will get you a copy of the project up and running on your loc
 <b>Prerequisites</b>
 1. Clone the Reposetory to your Terminal
 2. Make sure you are inside the folder app (Terminal: cd app)
-2. Install yarn in your Terminal to setup the package.json file (Terminal: yarn)
+2. Install yarn in the Terminal to set up the package.json file (Terminal: yarn)
 
 <b>Installing</b>
-1. yarn dev
+1. yarn dev - to get the project up and running on localhost
 2. View app by localhost:8000
 
 <b>Built with</b></br>
