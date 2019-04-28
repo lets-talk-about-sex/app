@@ -16,12 +16,12 @@ These instructions will get you a copy of the project up and running on your loc
 
 
 <b>Built with</b></br>
-Uneo start kit 
-React (JavaScript library)
-GraphiQL (A queary language for API)
-Gatsby (Framework based on React to improve websites and apps)
-Loadash (Javascript utility library)
-Prismic (Headless CMS system)
+Uneo start kit</br>
+React (JavaScript library)</br>
+GraphiQL (A queary language for API)</br>
+Gatsby (Framework based on React to improve websites and apps)</br>
+Loadash (Javascript utility library)</br>
+Prismic (Headless CMS system)</br>
 Emotions (css library)
 
 <b>Version</b></br>
