@@ -20,7 +20,7 @@ const SearchInput = styled.input`
         font-weight: 600;
         border: none;
         outline: none;
-        color: #555;
+        color: #000;
         padding: 3px;
         width: 0px;
         position: absolute;
@@ -39,10 +39,10 @@ const SearchInput = styled.input`
     }
 
     &[type="submit"] {
-        height: 67px;
-        width: 50px;
-        /* float: right; */
+        height: 45px;
+        width: 45px;
         display: inline-block;
+        color: red;
         background: url(${search}) no-repeat;
         background-position: 50% 50%;
         border: none;
@@ -50,7 +50,7 @@ const SearchInput = styled.input`
         top: 0;
         right: 0;
         z-index: 2;
-        cursor: pointer;
+        cursor: grab;
         opacity: 0.4;
         transition: opacity .4s ease;
         text-indent: -10000px;
@@ -111,7 +111,7 @@ class Search extends Component {
                 <SearchContainer>
                     <form action="">
                         <SearchInput onKeyUp={this.props.update}  id="search" name="search" type="text" placeholder="Sláðu inn leitarorð"/>
-                        <SearchInput  id="search_submit" name="" type="submit"/>
+                        <SearchInput  id="search_submit"  type="submit"/>
                     </form>
                     {/* <SearchIcon src={search} alt=""/> */}
                 </SearchContainer>
