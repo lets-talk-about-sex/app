@@ -9,11 +9,9 @@ These instructions will get you a copy of the project up and running on your loc
 2. Make sure you are inside the folder app (Terminal: cd app)
 2. Install yarn 
 
-
 <b>Installing</b>
 1. yarn dev
 2. View app by localhost:8000
-
 
 <b>Built with</b></br>
 Uneo start kit</br>
@@ -28,17 +26,17 @@ Emotions (css library)
 Beta April 2019
 
 <b>Authors</b></br>
-Anna Sóley Karlsdóttir
-Birgitta Rún Sveinbjörnsdóttir
-Hugrún Rúnarsdóttir
-Ragnhildur Rós Guðmundsdóttir
+Anna Sóley Karlsdóttir</br>
+Birgitta Rún Sveinbjörnsdóttir</br>
+Hugrún Rúnarsdóttir</br>
+Ragnhildur Rós Guðmundsdóttir</br>
 
 <b>Acknowledgments</b></br>
-Albert Guðlaugsson
-Ellert Smári Kristbergsson
-Pedro Netto
-Staff of Uneo
-Staff of Sendiráðið
+Albert Guðlaugsson</br>
+Ellert Smári Kristbergsson</br>
+Pedro Netto</br>
+Staff of Uneo</br>
+Staff of Sendiráðið</br>
 
 
 
