@@ -1,21 +1,21 @@
 <b>Sexeducation application</b></br>
 Mobile friendly sexeducation for young adults.
 
-Getting Started
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+<b>Getting Started</b></br>
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-Prerequisites
-1. Clone the Reposetory and open it in your Terminal
+<b>Prerequisites</b></br>
+1. Clone the Reposetory
+2. Make sure you are inside the folder app (Terminal: cd app)
 2. Install yarn 
 
 
-Installing
+<b>Installing</b></br>
 1. yarn dev
 2. View app by localhost:8000
 
 
-Built with
-
+<b>Built with</b></br>
 Uneo start kit 
 React (JavaScript library)
 GraphiQL (A queary language for API)
@@ -24,16 +24,16 @@ Loadash (Javascript utility library)
 Prismic (Headless CMS system)
 Emotions (css library)
 
-Version
+<b>Version</b></br>
 Beta April 2019
 
-Authors
+<b>Authors</b></br>
 Anna Sóley Karlsdóttir
 Birgitta Rún Sveinbjörnsdóttir
 Hugrún Rúnarsdóttir
 Ragnhildur Rós Guðmundsdóttir
 
-Acknowledgments
+<b>Acknowledgments</b></br>
 Albert Guðlaugsson
 Ellert Smári Kristbergsson
 Pedro Netto
