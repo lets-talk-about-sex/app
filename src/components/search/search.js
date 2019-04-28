@@ -41,8 +41,8 @@ const SearchInput = styled.input`
     }
 
     &[type="submit"] {
-        height: 67px;
-        width: 50px;
+        height: 40px;
+        width: 40px;
         /* float: right; */
         display: inline-block;
         background: url(${search}) no-repeat;
@@ -68,7 +68,7 @@ const CategoryWrapper = styled.div`
     width: 100%;
     list-style-type: none;
     justify-content:flex-start;
-    padding-top: 20px;
+    /* padding-top: 20px; */
     font-family: 'Poppins', sans-serif;
     font-size: 26px;
     font-weight: 600;
