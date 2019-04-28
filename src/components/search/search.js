@@ -7,7 +7,7 @@ import search from 'assets/icon/search.svg';
 const SearchContainer = styled.div`
   display: inline-block;
   position: relative;
-  height: 60px;
+  height: 50px;
   float: right;
   margin-top: 30px;
   padding-right: 20px;
@@ -35,7 +35,7 @@ const SearchInput = styled.input`
     }
 
     &[type="text"]:focus {
-        width: 320px;
+        width: 353px;
         z-index: 1;
         cursor: text;
     }

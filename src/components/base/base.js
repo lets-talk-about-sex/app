@@ -70,6 +70,10 @@ class Global extends React.Component {
          color: #000;
        }
 
+       li {
+            color: #C7C7C7;
+       }
+
        a {
          text-decoration:none;
          color:#C7C7C7;
