@@ -7,9 +7,11 @@ import search from 'assets/icon/search.svg';
 const SearchContainer = styled.div`
   display: inline-block;
   position: relative;
-  height: 60px;
+  height: 50px;
   float: right;
+  margin-top: 30px;
   padding-right: 20px;
+  margin-right: 30px;
 `
 
 const SearchInput = styled.input`
@@ -33,14 +35,14 @@ const SearchInput = styled.input`
     }
 
     &[type="text"]:focus {
-        width: 320px;
+        width: 353px;
         z-index: 1;
         cursor: text;
     }
 
     &[type="submit"] {
-        height: 67px;
-        width: 50px;
+        height: 40px;
+        width: 40px;
         /* float: right; */
         display: inline-block;
         background: url(${search}) no-repeat;
@@ -66,13 +68,14 @@ const CategoryWrapper = styled.div`
     width: 100%;
     list-style-type: none;
     justify-content:flex-start;
-    padding-top: 20px;
+    /* padding-top: 20px; */
     font-family: 'Poppins', sans-serif;
     font-size: 26px;
     font-weight: 600;
     overflow-x: scroll;
     overflow: auto;
-    white-space: nowrap; 
+    white-space: nowrap;
+    margin-bottom: 25px;
     & ::-webkit-scrollbar {
         display: none;   
     }

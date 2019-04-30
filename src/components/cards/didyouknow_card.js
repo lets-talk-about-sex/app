@@ -17,7 +17,8 @@ const DidYouKnowContainer = styled.div`
     padding: 50px 31px;
     box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.1);
     border-radius:  15px;
-    margin: 30px auto;
+    margin-bottom: 30px ;
+    background-color: #fff;
 `
 
 const Title = styled.p`
