@@ -20,7 +20,7 @@
     "url": "https://github.com/ueno-llc/ueno-gatsby-starter"
   },
   "scripts": {
-    "dev": "gatsby develop",
+    "dev": "gatsby develop -H 0.0.0.0",
     "build": "gatsby build",
     "start": "gatsby serve --port ${PORT:-3000}",
     "clean": "rimraf .cache public",
@@ -51,6 +51,7 @@
     "gatsby-plugin-ueno": "2.0.1",
     "gatsby-source-prismic-graphql": "^3.0.1",
     "gatsby-transformer-sharp": "2.1.15",
+    "gh-pages": "^2.0.1",
     "gsap": "2.1.2",
     "gsap-tools": "1.0.9",
     "i": "^0.3.6",

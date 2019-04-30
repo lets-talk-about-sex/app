@@ -2,6 +2,7 @@ const path = require('path');
 const { linkResolver } = require('./src/utils/linkResolver');
 
 module.exports = {
+  pathPrefix: "/reponame",
   siteMetadata: {
     title: 'Ueno Gatsby Starter',
   },
