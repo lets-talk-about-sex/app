@@ -62,7 +62,7 @@ class Global extends React.Component {
 
         h6 {
           font-size: 14px;
-          text transform: uppercase; 
+          text-transform: uppercase; 
           color: #FC4255;
         }
 
