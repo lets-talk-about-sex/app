@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[8],{277:function(e,n,t){"use strict";t.r(n);var a=t(1),u=t.n(a),l=t(272);n.default=function(){return u.a.createElement("div",null,u.a.createElement(l.default,null))}}}]);
+//# sourceMappingURL=component---src-pages-articles-js-4cf83a245e6986ae3873.js.map
