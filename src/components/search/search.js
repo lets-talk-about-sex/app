@@ -9,7 +9,9 @@ const SearchContainer = styled.div`
   position: relative;
   height: 60px;
   float: right;
+  margin-top: 30px;
   padding-right: 20px;
+  margin-right: 30px;
 `
 
 const SearchInput = styled.input`
@@ -73,6 +75,7 @@ const CategoryWrapper = styled.div`
     overflow-x: scroll;
     overflow: auto;
     white-space: nowrap; 
+    margin-bottom: 25px;
     & ::-webkit-scrollbar {
         display: none;   
     }
