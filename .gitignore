@@ -4,8 +4,9 @@ yarn-error.log
 
 .cache/*
 
-public/*
-
 .DS_Store
 
 kodi_ekki_i_notkun
+
+public/*
+

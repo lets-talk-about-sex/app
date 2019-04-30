@@ -9,9 +9,10 @@ const CardContainer = styled.div`
     width: 354px;
     height: 450px;
     padding-bottom: 24px;
-    margin: 30px auto;
+    margin-bottom: 30px;
     box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.1);
     border-radius:  15px;
+    background-color: #fff;
 `
 const ImgWrapper = styled.div`
     height:350px;
@@ -50,7 +51,7 @@ const Card = (props) => {
                     <SexImg src={props.node.article_img?props.node.article_img.url:""}></SexImg>
                 </ImgWrapper>
                 <TitleWrapper>
-                    {/* <HotIcon src={hot} alt=""/>                 */}
+                    {/* <HotIcon src={hot} alt=""/> */}
                     {/* <Slug>Kynþroski</Slug> */}
                     <CardTitle>{RichText.asText(props.node.title)}</CardTitle>
                 </TitleWrapper>

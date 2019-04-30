@@ -4,6 +4,5 @@ export const theme = {
       coral: '#fc4255;',
       black: '#000;',
       searchText: '#c1c1c1;',
-
     },
   };
