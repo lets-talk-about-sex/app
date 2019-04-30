@@ -4,6 +4,7 @@ import { RichText } from 'prismic-reactjs';
 import { graphql } from 'gatsby';
 import styled from '@emotion/styled/macro';
 import hot from 'assets/icon/hot.svg';
+import { Link } from "gatsby";
 
 const CardContainer = styled.div`
     width: 354px;
@@ -44,7 +45,7 @@ const Slug = styled.h5`
 
 const Card = (props) => {
     return (
-        <div>   
+        <div> 
             <CardContainer>
                 <ImgWrapper>
                     <SexImg src={props.node.article_img?props.node.article_img.url:""}></SexImg>
@@ -56,6 +57,8 @@ const Card = (props) => {
                 </TitleWrapper>
             </CardContainer>
         </div>
+
+   
     )};
     
 export default Card;

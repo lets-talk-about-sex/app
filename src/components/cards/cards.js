@@ -27,8 +27,6 @@ const Cards = (props) => {
 
                 <Link to={edge.node._meta.uid} key={i} >
                     <Card key={i} node={edge.node}/>
-
-                    {/* <DidYouKnow data={this.props.data} /> */}
                 </Link>
                 )
             })}

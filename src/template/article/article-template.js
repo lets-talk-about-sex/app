@@ -149,12 +149,6 @@ const Article = (props) => {
 
     console.log(props)
 
-    // let longCard;
-    // if(!props.pageContext.node.link) {
-    //   longCard = [];
-    // } else {
-    //   longCard = renderLongCard(props.pageContext.node.link);
-
     return (
         <div> 
           <ThemeProvider theme={theme}>
