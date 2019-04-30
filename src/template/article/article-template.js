@@ -1,5 +1,5 @@
 import React from 'react';
-// import { get } from 'lodash';
+import { get } from 'lodash';
 // import { RichText } from 'prismic-reactjs';
 // import { graphql } from 'gatsby';
 import styled from '@emotion/styled/macro';
@@ -141,32 +141,28 @@ const Intro = styled.p`
 
 const Article = (props) => {
   let slices;
-    if(!props.pageContext && !props.pageContext.node.body) {
+    if(props.pageContext && !props.pageContext.node.body) {
       slices = [];
     } else {
-      slices = renderSlices(props.pageContext.node.body);
+      slices = renderSlices(get(props, "pageContext.node.body", []));
     }
 
     console.log(props)
-
-    // let longCard;
-    // if(!props.pageContext.node.link) {
-    //   longCard = [];
-    // } else {
-    //   longCard = renderLongCard(props.pageContext.node.link);
 
     return (
         <div> 
           <ThemeProvider theme={theme}>
             <Global>
+            {props.pageContext? (
               <Container>
                 <HeroBanner>
                   <HeroImg alt="" src={props.pageContext.node.article_img.url}></HeroImg>
                   <Link to="/"><Close src={closeButton} alt=""></Close></Link>
                 </HeroBanner>
                 
+              
                 <FirstSectionDiv>
-
+                
                   <CategoryDiv>
                     {/* spurning um að gera function hér sem gerir það að verkum að ef article er með fleiri en eitt tag þá birtast þau öll? */}
                     <Category>{props.pageContext.node._meta.tags[0]}</Category>
@@ -203,6 +199,7 @@ const Article = (props) => {
                 <SmallCard smallCards={props.pageContext.node.small_card}/>
               
             </Container>
+            ):<div>loading</div>}
           </Global>
         </ThemeProvider> 
         <Footer/>
