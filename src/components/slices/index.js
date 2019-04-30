@@ -24,8 +24,8 @@ export const renderSlices = (body) => {
             case 'media':
                 return <SliceMedia image={sliceItem.primary.media.url}/>;
 
-            case 'media':
-                return <SliceVideo video={sliceItem.primary.media.url}/>;
+            // case 'media':
+            //     return <SliceVideo video={sliceItem.primary.media.url}/>;
 
             case 'repeat':
                 switch(sliceItem.primary.repeat.__typename){

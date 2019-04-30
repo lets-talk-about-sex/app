@@ -4,6 +4,9 @@ yarn-error.log
 
 .cache/*
 
+.DS_Store
+
+kodi_ekki_i_notkun
+
 public/*
 
-.DS_Store
