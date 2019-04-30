@@ -8,7 +8,7 @@ import SliceVideo from './video';
 import { RichText, Link } from 'prismic-reactjs';
 
 export const renderSlices = (body) => {
-    // console.log('slices er', body)
+    body=body?body:[]
     const slices = body.map(sliceItem => {
         console.log("halló", sliceItem)
         if(sliceItem){
@@ -24,8 +24,8 @@ export const renderSlices = (body) => {
             case 'media':
                 return <SliceMedia image={sliceItem.primary.media.url}/>;
 
-            // case 'media':
-            //     return <SliceVideo video={sliceItem.primary.media.url}/>;
+            case 'video':
+                return <SliceVideo video={sliceItem.primary.media.url}/>;
 
             case 'repeat':
                 switch(sliceItem.primary.repeat.__typename){

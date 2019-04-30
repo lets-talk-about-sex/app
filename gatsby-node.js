@@ -29,7 +29,6 @@ exports.createPages = ({ graphql, actions }) => {
                         uid
                         tags
                       }
-                      
                       title
                       article_img
                       synonyms
@@ -39,6 +38,12 @@ exports.createPages = ({ graphql, actions }) => {
                           ... on PRISMIC_Article{
                             title
                             article_img
+                            _meta{
+                              uid
+                            }
+                            link{
+                              _linkType
+                            }
                           }
                         }
                       }
