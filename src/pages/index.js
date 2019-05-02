@@ -38,7 +38,7 @@ export const query = graphql`
             }
             title
             article_img
-           
+            synonyms
           }
         }
       }
@@ -71,7 +71,10 @@ class App extends Component {
   state = {
     activefilter: "",
     activesearch: "",
-    results: []
+    results: [],
+    resultsCounter: 0,
+    searchIsEmpty: true
+
   }
   //þegar er smellt er á flokka þá keyrist þetta fall
   RenderByFilter = (filter, search) => {
@@ -81,18 +84,26 @@ class App extends Component {
       activesearch: search
     })
   }
-
-  update = (e) => {
-    const search = e.target.value
-    console.log(this.props.data.prismic.allArticles)
+//Search - leita eftir titlum hér (title[0].text) og leita eftir samheitum/synonyms. Fyrst tjékkar hvort það er til samheiti eða ekki í Prismic, ef er ekki til þá hættir að keyra, ef er til þá sækir það.
+  update = (searchTerm) => {
+      this.setState({
+        searchIsEmpty: searchTerm === ""
+      })
+  
+    // console.log(this.props.data.prismic.allArticles)
     const results = this.props.data.prismic.allArticles.edges.filter(card => {
-      return card.node.title[0].text.toUpperCase().includes(e.target.value.toUpperCase())
+      // console.log(card.node.synonyms)
+      if (card.node.synonyms.text) {
+        console.log("hello", card.node.synonyms.text[0])}
+        return card.node.title[0].text.toUpperCase().includes(searchTerm.toUpperCase()) ||
+        (card.node.synonyms.length && card.node.synonyms[0].text.toUpperCase().includes(searchTerm.toUpperCase()))
     })
     this.setState({
-      results
+      results,
+      resultsCounter: results.length 
     })
     console.log(results)
-    console.log(e.target.value)
+    console.log(searchTerm)
 
   }
 
@@ -123,7 +134,11 @@ class App extends Component {
       <ThemeProvider theme={theme}>
         <Global>
           <Container>
-            <Search renderbyfilter={this.RenderByFilter} update={this.update} />
+            <Search 
+            renderbyfilter={this.RenderByFilter}
+            update={this.update}
+            showResults={this.state.resultsCounter}
+            searchStringIsEmpty={this.state.searchIsEmpty}/>
             <AllCards filtering={this.state.activefilter} data={data} />
           </Container>
         </Global>

@@ -12,6 +12,12 @@ import {Link} from 'gatsby';
 const AllCards = (props) => {
     let allArticlesArr = get(props.data, 'prismic.allArticles.edges', [])
     .filter(oneCard => CheckIfMatchesTags(oneCard.node._meta.tags, props.filtering))
+    console.log(allArticlesArr)
+    for (let i = allArticlesArr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [allArticlesArr[i], allArticlesArr[j]] = [allArticlesArr[j], allArticlesArr[i]];
+        console.log(j)
+    }
     let allDidYouKnowsArr = get(props.data, 'prismic.allDid_you_knows.edges', [])
     .filter(oneDYK => CheckIfMatchesTags(oneDYK.node._meta.tags, props.filtering));
     let allFactsArr = get(props.data, 'prismic.allFactss.edges', [])
@@ -43,7 +49,6 @@ const AllCards = (props) => {
          
      }
  
-
     const getFeed = () => {
         let allArticles = allCardsArr.map((edge, i) => {
             let SomeCard;
