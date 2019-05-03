@@ -21,7 +21,6 @@ const Cards = (props) => {
         <div>
             {allArticles.filter((edge) => {
                 return CheckIfMatchesTags(edge.node._meta.tags, props.filtering)
-                //gera if statement með true og false eftir þvi hvað við viljum birta 
             }).map((edge, i) => {
                 return(
 

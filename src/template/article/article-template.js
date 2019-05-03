@@ -147,16 +147,18 @@ const Intro = styled.p`
 
 
 const Article = (props) => {
-  let slices;
-    if(props.pageContext && !props.pageContext.node.body) {
+  console.log (props)
+    let slices;
+    if(!props.pageContext && !props.pageContext.node.body) {
+
       slices = [];
     } else {
       slices = renderSlices(get(props, "pageContext.node.body", []));
     }
 
-    console.log(props)
     console.log(slices)
     console.log("pedro", props.pageContext.node)
+    console.log("halló Hulla", props)
 
     return (
         <div> 
@@ -199,18 +201,23 @@ const Article = (props) => {
 
                 </FirstSectionDiv>
                 {props.pageContext.node.link &&
+                <Link to={props.pageContext.node.link._meta.uid}>
                   <LongCard>
                     <LongCardImg src={props.pageContext.node.link.article_img.url}></LongCardImg>
                     <LongCardTitle>{props.pageContext.node.link.title[0].text}</LongCardTitle>
                   </LongCard>
+                </Link>
                 }
-                
 
                 {slices}
 
                 <Helpful></Helpful>
 
                 <Read>LESTU LÍKA</Read>
+
+                {/* <Link to={props.pageContext.node.small_card[0].link_to_article._meta.uid}>
+                  <SmallCard smallCards={props.pageContext.node.small_card}/>
+                </Link> */}
               
             </Container>
             
@@ -221,7 +228,7 @@ const Article = (props) => {
         <SmallCard smallCards={props.pageContext.node.small_card}/>
         <Footer/>
       </div>
+      
     )};
     
-
 export default Article;

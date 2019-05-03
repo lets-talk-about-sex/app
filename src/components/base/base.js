@@ -81,10 +81,15 @@ class Global extends React.Component {
           color:#C7C7C7;
           }
       }
+       input {
+         font-family: 'Poppins', sans-serif;
+         font-size: 20px;
+         font-weight: 600;
+       }
 
-    `;
-    return React.Children.only(this.props.children);
-  }
-}
+     `;
+     return React.Children.only(this.props.children);
+   }
+ }
 
 export default withTheme(Global);
