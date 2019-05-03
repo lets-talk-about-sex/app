@@ -140,20 +140,15 @@ const Intro = styled.p`
 
 
 const Article = (props) => {
-  let slices;
+  console.log (props)
+    let slices;
     if(!props.pageContext && !props.pageContext.node.body) {
       slices = [];
     } else {
       slices = renderSlices(props.pageContext.node.body);
     }
-
-    console.log(props)
-
-    // let longCard;
-    // if(!props.pageContext.node.link) {
-    //   longCard = [];
-    // } else {
-    //   longCard = renderLongCard(props.pageContext.node.link);
+    console.log("halló Hulla", props)
+  
 
     return (
         <div> 
@@ -188,11 +183,13 @@ const Article = (props) => {
 
 
                 </FirstSectionDiv>
-
-                <LongCard>
-                  <LongCardImg src={props.pageContext.node.link.article_img.url}></LongCardImg>
-                  <LongCardTitle>{props.pageContext.node.link.title[0].text}</LongCardTitle>
-                </LongCard>
+                <Link to={props.pageContext.node.link._meta.uid}>
+                  <LongCard>
+                    <LongCardImg src={props.pageContext.node.link.article_img.url}></LongCardImg>
+                    <LongCardTitle>{props.pageContext.node.link.title[0].text}</LongCardTitle>
+                  </LongCard>
+                </Link>
+            
 
                 {slices}
 
@@ -200,13 +197,17 @@ const Article = (props) => {
                 <OutsideLinks></OutsideLinks>
 
                 <Read>LESTU LÍKA</Read>
-                <SmallCard smallCards={props.pageContext.node.small_card}/>
+                <Link to={props.pageContext.node.small_card[0].link_to_article._meta.uid}>
+                  <SmallCard smallCards={props.pageContext.node.small_card}/>
+                </Link>
               
             </Container>
           </Global>
         </ThemeProvider> 
         <Footer/>
       </div>
+      
+      
     )};
     
 

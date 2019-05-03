@@ -2,54 +2,56 @@ import React, { Component} from 'react'
 import styled from '@emotion/styled/macro';
 // import {css} from 'emotion'
 import search from 'assets/icon/search.svg';
-import closeSearch from 'assets/icon/close_search.svg';
-
+import closeButton from '../../assets/icon/article/close.svg';
 
 const SearchContainer = styled.div`
-  display: inline-block;
-  position: relative;
-  height: 50px;
-  float: right;
-  margin-top: 30px;
-  padding-right: 20px;
-  margin-right: 30px;
+  display:block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 80px;
+  margin: 0;
+  background-color: ${props => props.theme.baseColors.bodyBackground};
+  z-index:333;
 `
-
 const SearchInput = styled.input`
     &[type="text"] {
         height: 40px;
-        font-size: 20px;
         display: inline-block;
-        font-weight: 600;
+        color: #000;
         border: none;
         outline: none;
-        color: #000;
         padding: 0;
         margin: 0;
+        margin-top: 24px;
         width: 0px;
         position: absolute;
         top: 0;
         right: 0;
         background: none;
-        z-index: 3;
-        transition: width .4s cubic-bezier(0.000, 0.795, 0.000, 1.000), opacity .3s ease;
+        z-index: 1;
+        transition: width 1.4s cubic-bezier(0.000, 0.795, 0.000, 1.000),
+                    right 1.4s cubic-bezier(0.000, 0.795, 0.000, 1.000),
+                    opacity .2s ease;
         cursor: pointer;
         opacity: 0;
     }
 
     &[type="text"].active {
         width: 335px;
-        right: 40px;
+        max-width: calc(100vw - 100px);
+        right: 100px;
         cursor: text;
-        z-index: 1;
         opacity: 1;
+        padding-left: 42px;        
     }
 
     &[type="submit"] {
-        height: 40px;
-        width: 40px;
+        height: 100%;
+        width: 100px;
+        margin: 0;
         display: inline-block;
-        color: red;
         background: url(${search}) no-repeat;
         background-position: 50% 50%;
         border: none;
@@ -62,7 +64,7 @@ const SearchInput = styled.input`
         transition: opacity .4s ease;
         text-indent: -10000px;
         outline: none;
-       
+        background-color: ${props => props.theme.baseColors.bodyBackground};
     }
 
     &[type="submit"]:hover {
@@ -71,7 +73,7 @@ const SearchInput = styled.input`
 
     /* select submit input that it placed after the text input when it is focused */
     &[type="text"].active ~ [type="submit"] {
-        background: url(${closeSearch}) no-repeat;
+        background: url(${closeButton}) no-repeat;
         background-position: 50% 50%; 
     }
 `
@@ -83,7 +85,7 @@ const SearchResults = styled.li`
 `
 const CategoryWrapper = styled.div`
     display:flex;
-    width: 100%;
+    width: calc(100vw - 60px);
     list-style-type: none;
     justify-content:flex-start;
     font-family: 'Poppins', sans-serif;
@@ -93,6 +95,7 @@ const CategoryWrapper = styled.div`
     overflow: auto;
     white-space: nowrap;
     margin-bottom: 25px;
+    margin-top: 60px;
     & ::-webkit-scrollbar {
         display: none;   
     }
@@ -105,7 +108,6 @@ const CategoryWrapper = styled.div`
             color:#000;
         }
 `
-
 class Search extends Component {
     constructor(props){
         super(props);
@@ -121,7 +123,6 @@ class Search extends Component {
     }
 
 
-
     handleClick(category) {
         this.setState({
             'activeCategory': category,
@@ -134,7 +135,6 @@ class Search extends Component {
         this.props.update(this.searchInput.current.value)
     }
 
-   
 
     toggleSearch () {
         this.setState (state => {
@@ -160,7 +160,7 @@ class Search extends Component {
     render() {
         return (
             <div>
-                <SearchContainer>
+                <SearchContainer> 
                     <SearchInput 
                     onKeyUp={this.update}
                     ref={this.searchInput}
@@ -173,8 +173,7 @@ class Search extends Component {
                     onClick={this.toggleSearch}
                     id="search_submit"
                     type="submit"/>
-                </SearchContainer>
-               
+                </SearchContainer>    
                 <div>
                     <CategoryWrapper>
                         {this.props.searchStringIsEmpty? 

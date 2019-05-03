@@ -7,7 +7,6 @@ import { Container } from 'components/theme/container';
 import Search from 'components/search/search';
 import AllCards from 'components/cards/allCards';
 
-
 //Chatbot
 window._chatlio = window._chatlio || [];
 let _chatlio = window._chatlio || [];
@@ -68,13 +67,15 @@ export const query = graphql`
 }
 `
 class App extends Component {
-  state = {
+  constructor(props){
+    super(props);
+    this.state = {
     activefilter: "",
     activesearch: "",
     results: [],
     resultsCounter: 0,
     searchIsEmpty: true
-
+    }
   }
   //þegar er smellt er á flokka þá keyrist þetta fall
   RenderByFilter = (filter, search) => {
@@ -131,18 +132,18 @@ class App extends Component {
     }
 
     return (
-      <ThemeProvider theme={theme}>
+     <ThemeProvider theme={theme}>
         <Global>
-          <Container>
-            <Search 
-            renderbyfilter={this.RenderByFilter}
-            update={this.update}
-            showResults={this.state.resultsCounter}
-            searchStringIsEmpty={this.state.searchIsEmpty}/>
+         <Container>
+               <Search 
+                renderbyfilter={this.RenderByFilter}
+                update={this.update}
+                showResults={this.state.resultsCounter}
+                searchStringIsEmpty={this.state.searchIsEmpty}/>
             <AllCards filtering={this.state.activefilter} data={data} />
           </Container>
         </Global>
-      </ThemeProvider>
+      </ThemeProvider> 
     );
   }
 }

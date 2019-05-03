@@ -82,6 +82,12 @@ class Global extends React.Component {
            }
        }
 
+       input {
+         font-family: 'Poppins', sans-serif;
+         font-size: 20px;
+         font-weight: 600;
+       }
+
      `;
      return React.Children.only(this.props.children);
    }

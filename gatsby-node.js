@@ -39,6 +39,9 @@ exports.createPages = ({ graphql, actions }) => {
                           ... on PRISMIC_Article{
                             title
                             article_img
+                            _meta {
+                              uid
+                            }
                           }
                         }
                       }
@@ -46,6 +49,9 @@ exports.createPages = ({ graphql, actions }) => {
                         ... on PRISMIC_Article{
                           title
                           article_img
+                          _meta {
+                            uid
+                          }
                         }
                       }
                                     body {
