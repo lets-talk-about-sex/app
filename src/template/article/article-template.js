@@ -149,6 +149,7 @@ const Article = (props) => {
 
     console.log(props)
     console.log(slices)
+    console.log("pedro", props.pageContext.node)
 
     return (
         <div> 
@@ -159,6 +160,9 @@ const Article = (props) => {
                 <HeroBanner>
                   <HeroImg alt="" src={props.pageContext.node.article_img.url}></HeroImg>
                   <Link to="/"><Close src={closeButton} alt=""></Close></Link>
+                  {props.pageContext.node.hot &&
+                    <img src={props.pageContext.node.hot.url}></img>
+                  }
                 </HeroBanner>
                 
               
@@ -176,10 +180,12 @@ const Article = (props) => {
                     
                   </TitleDiv>
 
+                  {props.pageContext.node.synonyms[0].text &&
                   <SynonymDiv>
                     <Synonym>Samheiti</Synonym>
                     <p>{props.pageContext.node.synonyms[0].text}</p>
                   </SynonymDiv>
+                  }
 
                   <Intro>{props.pageContext.node.intro_text[0].text}</Intro>
 
@@ -194,7 +200,6 @@ const Article = (props) => {
                 {slices}
 
                 <Helpful></Helpful>
-                <OutsideLinks></OutsideLinks>
 
                 <Read>LESTU LÍKA</Read>
                 <SmallCard smallCards={props.pageContext.node.small_card}/>

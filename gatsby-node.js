@@ -21,7 +21,8 @@ exports.createPages = ({ graphql, actions }) => {
             `
             query {
               prismic {
-                allArticles{
+                allArticles(first: 100){
+                  totalCount
                   edges{
                     node
                     { 
@@ -33,6 +34,7 @@ exports.createPages = ({ graphql, actions }) => {
                       article_img
                       synonyms
                       intro_text
+              				hot
                       small_card{
                         link_to_article{
                           ... on PRISMIC_Article{
@@ -51,9 +53,12 @@ exports.createPages = ({ graphql, actions }) => {
                         ... on PRISMIC_Article{
                           title
                           article_img
+                          _meta {
+                            uid
+                          }
                         }
                       }
-                                    body {
+                      body {
                         ... on PRISMIC_ArticleBodyContent___heading {
                           type
                           primary {
@@ -61,7 +66,23 @@ exports.createPages = ({ graphql, actions }) => {
                             text
                           }
                         }
-
+                      
+                        ... on PRISMIC_ArticleBodyLinks{
+                          primary{
+                            title1
+                        		link3 {
+                              ... on PRISMIC__ExternalLink{
+                                url
+                              }
+                            }
+                          }
+                        }             
+												... on PRISMIC_ArticleBodyVideo{
+                          type
+                          primary{
+                          	link2
+                          }
+                        }
                         ... on PRISMIC_ArticleBodyContent{
                           type
                         }
@@ -103,7 +124,7 @@ exports.createPages = ({ graphql, actions }) => {
           `
         ).then(result => {
           console.log('#############################');
-          console.log("creatpages", result)
+          console.log("creatpages", result.data.prismic.allArticles.totalCount)
           console.log('#############################');
           if (result.errors) {
             reject(result.errors)
