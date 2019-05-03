@@ -7,22 +7,22 @@ import { Container } from 'components/theme/container';
 import Search from 'components/search/search';
 import AllCards from 'components/cards/allCards';
 
-//Chatbot
-// let _chatlio =_chatlio || [];
-// let ChatlioReact = [];
-// function chat () {
-//   var t = document.getElementById("chatlio-widget-embed");
-//   if (t && window.ChatlioReact && _chatlio.init) return void _chatlio.init(t, ChatlioReact);
-//   for (var e = function (t) { return function () { _chatlio.push([t].concat(arguments)) } }, i = ["configure", "identify", "track", "show", "hide", "isShown", "isOnline", "page", "open", "showOrHide"], a = 0; a < i.length; a++)_chatlio[i[a]] || (_chatlio[i[a]] = e(i[a]));
-//   var n = document.createElement("script"), c = document.getElementsByTagName("script")[0];
-//   n.id = "chatlio-widget-embed";
-//    n.src = "https://w.chatlio.com/w.chatlio-widget.js";
-//    n.async = true;
-//    n.setAttribute("data-embed-version", "2.3");
-//    n.setAttribute('data-widget-id', '2c5a506b-18b2-407e-5dc3-dfebac4d8b9b');
-//   c.parentNode.insertBefore(n, c);
-// }
-// chat();
+// Chatbot
+let _chatlio =_chatlio || [];
+let ChatlioReact = [];
+function chat () {
+  var t = document.getElementById("chatlio-widget-embed");
+  if (t && window.ChatlioReact && _chatlio.init) return void _chatlio.init(t, ChatlioReact);
+  for (var e = function (t) { return function () { _chatlio.push([t].concat(arguments)) } }, i = ["configure", "identify", "track", "show", "hide", "isShown", "isOnline", "page", "open", "showOrHide"], a = 0; a < i.length; a++)_chatlio[i[a]] || (_chatlio[i[a]] = e(i[a]));
+  var n = document.createElement("script"), c = document.getElementsByTagName("script")[0];
+  n.id = "chatlio-widget-embed";
+   n.src = "https://w.chatlio.com/w.chatlio-widget.js";
+   n.async = true;
+   n.setAttribute("data-embed-version", "2.3");
+   n.setAttribute('data-widget-id', '2c5a506b-18b2-407e-5dc3-dfebac4d8b9b');
+  c.parentNode.insertBefore(n, c);
+}
+chat();
 
 export const query = graphql`
   query {

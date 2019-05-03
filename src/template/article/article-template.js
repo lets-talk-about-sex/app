@@ -44,7 +44,7 @@ const Close = styled.img`
 `
 
 const Hot = styled.img`
-  position absolute;
+  position: absolute;
   bottom : -22px;
   left: 30px;
 `
