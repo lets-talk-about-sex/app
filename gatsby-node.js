@@ -70,6 +70,7 @@ exports.createPages = ({ graphql, actions }) => {
                           type
                           primary{
                             repeat{
+                              __typename
                               ... on PRISMIC_Did_you_know{
                                 didyouknow 
                               }

@@ -148,6 +148,7 @@ const Article = (props) => {
     }
 
     console.log(props)
+    console.log(slices)
 
     return (
         <div> 
@@ -184,11 +185,11 @@ const Article = (props) => {
 
 
                 </FirstSectionDiv>
-
-                <LongCard>
-                  <LongCardImg src={props.pageContext.node.link.article_img.url}></LongCardImg>
-                  <LongCardTitle>{props.pageContext.node.link.title[0].text}</LongCardTitle>
-                </LongCard>
+                  <LongCard>
+                    <LongCardImg src={props.pageContext.node.link.article_img.url}></LongCardImg>
+                    <LongCardTitle>{props.pageContext.node.link.title[0].text}</LongCardTitle>
+                  </LongCard>
+                
 
                 {slices}
 

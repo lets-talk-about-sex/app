@@ -28,6 +28,7 @@ export const renderSlices = (body) => {
                 return <SliceVideo video={sliceItem.primary.media.url}/>;
 
             case 'repeat':
+            console.log(sliceItem)
                 switch(sliceItem.primary.repeat.__typename){
                     case 'PRISMIC_Facts':
                         return <SliceRepeatFact repeat={sliceItem.primary.repeat.fact[0].text}/>

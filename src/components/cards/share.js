@@ -114,10 +114,10 @@ class ShareComponent extends React.Component {
                           </ShareDiv>
                           <ShareDiv className={"messengerButton"}>
                           <a href={"fb-messenger://share/?link="+this.props.location.href+"&app_id=470392137039381"}><MessengerLogo src={MessengerButton} alt=""></MessengerLogo></a> 
-
                           </ShareDiv>
                           <ShareDiv className={"gmailButton"}>
-                            <GmailLogo src={GmailButton} alt=""></GmailLogo>
+                          <a href={"https://mail.google.com/mail/?view=cm&fs=1&tf=1&body="+this.props.location.href+"&ui=2&tf=1&pli=1"} ><GmailLogo src={GmailButton} alt=""></GmailLogo> </a>
+                            
                           </ShareDiv>
                           <ShareDiv onClick={this.handleClick} className={"closeShareButton"}>
                             <Exit src={ExitButton} alt=""></Exit>

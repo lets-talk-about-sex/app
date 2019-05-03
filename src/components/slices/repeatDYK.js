@@ -52,7 +52,7 @@ const SliceRepeatDYK = ({repeat}) => {
                 </div>
             </DidYouKnowContainer> 
         </div>
-    )};
+    )}; 
 
 
 export default SliceRepeatDYK;

@@ -11,8 +11,7 @@ import ThumbDownWhite from '../../assets/icon/article/thumbDownWhite.svg';
 
 const HelpfulDiv = styled.div`
   display: flex;
-  flex-wrap: wrap;
-  // height: 80px;
+  justify-content: space-between;
   padding: 30px;
   width: 100%;
   border-radius: 10px;
@@ -32,7 +31,6 @@ const ThumbDiv = styled.div`
   border-radius: 50%;
   border: solid 1px ${props => props.theme.baseColors.coral};
   position: relative;
-  margin-right: 15px;
   &.activeButton {
     background-color: ${props => props.theme.baseColors.coral};
   }
@@ -41,7 +39,7 @@ const ThumbDiv = styled.div`
 // thumbs mynd 
 const Thumb = styled.img`
   height: auto;
-  width: 18px;
+  width: 15px;
   cursor: pointer;
   position: absolute; 
   left: 50%;
@@ -49,7 +47,7 @@ const Thumb = styled.img`
   transform: translate(-50%, -50%);
 `
 const HelpfulText = styled.h3`
-  margin-right: 30px;
+  margin-right: 5px;
 `
 
 const Bolda = styled.span`
