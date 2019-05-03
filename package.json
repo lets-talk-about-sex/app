@@ -20,7 +20,7 @@
     "url": "https://github.com/ueno-llc/ueno-gatsby-starter"
   },
   "scripts": {
-    "dev": "gatsby develop",
+    "dev": "gatsby develop -H 0.0.0.0",
     "build": "gatsby build",
     "start": "gatsby serve --port ${PORT:-3000}",
     "clean": "rimraf .cache public",

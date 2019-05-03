@@ -91,6 +91,7 @@ class ShareComponent extends React.Component {
 
     constructor(props) {
       super(props);
+      console.log(this.props.location.href)
       this.state = {isToggleOn: false};
   
       // This binding is necessary to make `this` work in the callback
@@ -102,6 +103,7 @@ class ShareComponent extends React.Component {
         isToggleOn: !state.isToggleOn
       }));
     }
+
   
     render() {
         return (
@@ -111,7 +113,8 @@ class ShareComponent extends React.Component {
                             <Share src={shareButton} alt="" ></Share>
                           </ShareDiv>
                           <ShareDiv className={"messengerButton"}>
-                            <MessengerLogo src={MessengerButton} alt=""></MessengerLogo>
+                          <a href={"fb-messenger://share/?link="+this.props.location.href+"&app_id=470392137039381"}><MessengerLogo src={MessengerButton} alt=""></MessengerLogo></a> 
+
                           </ShareDiv>
                           <ShareDiv className={"gmailButton"}>
                             <GmailLogo src={GmailButton} alt=""></GmailLogo>

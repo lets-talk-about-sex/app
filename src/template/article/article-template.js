@@ -174,7 +174,7 @@ const Article = (props) => {
                   <TitleDiv>
                     <Title>{props.pageContext.node.title[0].text}</Title>
                     
-                    <ShareComponent></ShareComponent>
+                    <ShareComponent location={props.location}></ShareComponent>
                     
                   </TitleDiv>
 
