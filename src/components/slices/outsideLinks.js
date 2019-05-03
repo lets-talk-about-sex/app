@@ -41,50 +41,24 @@ const LineTheFine = styled.span`
     border-radius: 50px; 
 `
 
-// const BoldSpan = styled.span`
-//     font-weight: 700;
-//     margin-left: 20px;
-    
-// `
+const LinkName = styled.p`
+    margin-left: 20px;    
+`
 
 const SliceLink = ({link, heading}) => {
   
     return (
         <div>   
-            <LinksTitle>Fylgstu með tíðahringnum í appi</LinksTitle>
+            {/* <LinksTitle></LinksTitle> */}
             <a href={link}>
                 <EinnLinkurDiv>
                     <LineTheFine></LineTheFine>
-                    <p>{heading}</p>
+                    <LinkName>{heading}</LinkName>
                     <ArrowDiv>
                         <ArrowImg src={ArrowRight} alt=""></ArrowImg>
                     </ArrowDiv>
                 </EinnLinkurDiv>
             </a>
-            {/* <a href="https://flo.health/">
-                <EinnLinkurDiv>
-                    <LineTheFine></LineTheFine>
-                    <p><BoldSpan>Flo</BoldSpan> - Period and Ovulation tracker</p>
-                    <ArrowDiv>
-                        <ArrowImg src={ArrowRight} alt=""></ArrowImg>
-                    </ArrowDiv>
-                </EinnLinkurDiv>
-            </a>
-            <a href="https://flo.health/">
-                <EinnLinkurDiv>
-                    <LineTheFine></LineTheFine>
-                    <p><BoldSpan>Flo</BoldSpan> - Period and Ovulation tracker</p>
-                    <ArrowDiv>
-                        <ArrowImg src={ArrowRight} alt=""></ArrowImg>
-                    </ArrowDiv>
-                </EinnLinkurDiv>
-            </a> */}
-            
-            
-            
-            {/* <a><BoldSpan>Clue</BoldSpan> - Period and Ovulation tracker</a>
-            <a><span>Menstrual</span> Period tracker</a>
-            <a><span>Monthly Cycles</span> app</a> */}
         </div>
     )};
     

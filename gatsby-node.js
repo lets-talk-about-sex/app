@@ -66,8 +66,14 @@ exports.createPages = ({ graphql, actions }) => {
                             text
                           }
                         }
-                      
+                        ... on PRISMIC_ArticleBodySubtitle{
+                          type
+                          primary{
+                            subtitle
+                          }
+                        }
                         ... on PRISMIC_ArticleBodyLinks{
+                          type
                           primary{
                             title1
                         		link3 {

@@ -24,6 +24,7 @@ const HeroBanner = styled.div`
     margin-left: -30px;
     width: calc(100% + 60px);
     height: 60vh;
+    position relative;
 `
 
 const HeroImg = styled.img`
@@ -40,6 +41,12 @@ const Close = styled.img`
    position: absolute;
   top: 50px;
   right: 30px;
+`
+
+const Hot = styled.img`
+  position absolute;
+  bottom : -22px;
+  left: 30px;
 `
 
 // container - á að taka í burtu 
@@ -161,7 +168,7 @@ const Article = (props) => {
                   <HeroImg alt="" src={props.pageContext.node.article_img.url}></HeroImg>
                   <Link to="/"><Close src={closeButton} alt=""></Close></Link>
                   {props.pageContext.node.hot &&
-                    <img src={props.pageContext.node.hot.url}></img>
+                    <Hot src={props.pageContext.node.hot.url}></Hot>
                   }
                 </HeroBanner>
                 
@@ -191,10 +198,12 @@ const Article = (props) => {
 
 
                 </FirstSectionDiv>
+                {props.pageContext.node.link &&
                   <LongCard>
                     <LongCardImg src={props.pageContext.node.link.article_img.url}></LongCardImg>
                     <LongCardTitle>{props.pageContext.node.link.title[0].text}</LongCardTitle>
                   </LongCard>
+                }
                 
 
                 {slices}
