@@ -41,18 +41,27 @@ const LineTheFine = styled.span`
     border-radius: 50px; 
 `
 
-const BoldSpan = styled.span`
-    font-weight: 700;
-    margin-left: 20px;
+// const BoldSpan = styled.span`
+//     font-weight: 700;
+//     margin-left: 20px;
     
-`
+// `
 
-const OutsideLinks = ({text}) => {
+const SliceLink = ({link, heading}) => {
   
     return (
         <div>   
             <LinksTitle>Fylgstu með tíðahringnum í appi</LinksTitle>
-            <a href="https://flo.health/">
+            <a href={link}>
+                <EinnLinkurDiv>
+                    <LineTheFine></LineTheFine>
+                    <p>{heading}</p>
+                    <ArrowDiv>
+                        <ArrowImg src={ArrowRight} alt=""></ArrowImg>
+                    </ArrowDiv>
+                </EinnLinkurDiv>
+            </a>
+            {/* <a href="https://flo.health/">
                 <EinnLinkurDiv>
                     <LineTheFine></LineTheFine>
                     <p><BoldSpan>Flo</BoldSpan> - Period and Ovulation tracker</p>
@@ -69,16 +78,7 @@ const OutsideLinks = ({text}) => {
                         <ArrowImg src={ArrowRight} alt=""></ArrowImg>
                     </ArrowDiv>
                 </EinnLinkurDiv>
-            </a>
-            <a href="https://flo.health/">
-                <EinnLinkurDiv>
-                    <LineTheFine></LineTheFine>
-                    <p><BoldSpan>Flo</BoldSpan> - Period and Ovulation tracker</p>
-                    <ArrowDiv>
-                        <ArrowImg src={ArrowRight} alt=""></ArrowImg>
-                    </ArrowDiv>
-                </EinnLinkurDiv>
-            </a>
+            </a> */}
             
             
             
@@ -89,4 +89,4 @@ const OutsideLinks = ({text}) => {
     )};
     
 
-export default OutsideLinks;
+export default SliceLink;
