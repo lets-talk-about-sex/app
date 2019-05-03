@@ -11,8 +11,9 @@ import ThumbDownWhite from '../../assets/icon/article/thumbDownWhite.svg';
 
 const HelpfulDiv = styled.div`
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
-  padding: 30px;
+  padding: 20px;
   width: 100%;
   border-radius: 10px;
   background-color: #fff;
@@ -24,13 +25,24 @@ const HelpfulDiv = styled.div`
 const NoMessage = styled.div`
   width: 100%;
   margin-top: 15px;
+  display: block;
 `
+const ThumbsContainer = styled.div`
+  display: flex;
+`
+
+const ThumbSpan = styled.span`
+  margin-right: 10px;
+`
+
 const ThumbDiv = styled.div`
   height: 36px;
   width: 36px;
   border-radius: 50%;
   border: solid 1px ${props => props.theme.baseColors.coral};
   position: relative;
+  margin-right: 5px;
+  display: block;
   &.activeButton {
     background-color: ${props => props.theme.baseColors.coral};
   }
@@ -83,18 +95,20 @@ class Helpful extends Component {
                ) : (
                 <HelpfulText>Takk fyrir að svara!</HelpfulText>
                )}
-              <ThumbDiv className={this.state.Voting=="yes"? "activeButton":""}>
-                <Thumb  src={this.state.Voting=="yes"? ThumbUpWhite: ThumbsUpRed} alt="" onClick={() => this.handleClick("yes")}></Thumb>
-              </ThumbDiv>
+               <ThumbsContainer>
+                <ThumbDiv className={this.state.Voting=="yes"? "activeButton":""}>
+                    <Thumb  src={this.state.Voting=="yes"? ThumbUpWhite: ThumbsUpRed} alt="" onClick={() => this.handleClick("yes")}></Thumb>
+                </ThumbDiv>
 
-              <ThumbDiv className={this.state.Voting=="no"? "activeButton":""}>
-                <Thumb src={this.state.Voting=="no"? ThumbDownWhite: ThumbsDownRed} alt="" onClick={() => this.handleClick("no")}></Thumb>
-              </ThumbDiv>
+                <ThumbDiv className={this.state.Voting=="no"? "activeButton":""}>
+                  <Thumb src={this.state.Voting=="no"? ThumbDownWhite: ThumbsDownRed} alt="" onClick={() => this.handleClick("no")}></Thumb>
+                </ThumbDiv>
+              </ThumbsContainer>
               
               {this.state.Voting == "no" && 
-              <NoMessage>
-                <p>Fékkstu ekki svarið sem þú varst að leita að? <br/> Endilega sendu línu á <Bolda>live chatið </Bolda> okkar og þú færð svar eins fljótt og auðið er, nafnlaust!</p>
-              </NoMessage> 
+                <NoMessage>
+                  <p>Fékkstu ekki svarið sem þú varst að leita að? <br/> Endilega sendu línu á <Bolda>live chatið </Bolda> okkar og þú færð svar eins fljótt og auðið er, nafnlaust!</p>
+                </NoMessage> 
               } 
               
             

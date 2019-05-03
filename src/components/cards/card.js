@@ -24,6 +24,7 @@ const SexImg = styled.img`
     width: 100%;
     height: 100%;
     border-radius:  15px 15px 0 0;
+    object-fit: cover;
 `
 
 const CardTitle = styled.h2`  

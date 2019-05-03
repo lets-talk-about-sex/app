@@ -45,6 +45,7 @@ const SmallCardCarousel = styled.div`
     margin-bottom: 50px;
     overflow-x: auto;
     scroll-behavior: smooth;
+    margin-left: 30px;
         & ::-webkit-scrollbar {
         display: none;
         }

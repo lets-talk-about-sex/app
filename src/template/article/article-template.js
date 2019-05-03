@@ -29,7 +29,7 @@ const HeroBanner = styled.div`
 const HeroImg = styled.img`
     width: 100%;
     height: 100%; 
-    // object-fit: ;
+    object-fit: cover;
 `
 
 //loka modal takki
@@ -202,12 +202,14 @@ const Article = (props) => {
                 <Helpful></Helpful>
 
                 <Read>LESTU LÍKA</Read>
-                <SmallCard smallCards={props.pageContext.node.small_card}/>
               
             </Container>
+            
             ):<div>loading</div>}
+            
           </Global>
         </ThemeProvider> 
+        <SmallCard smallCards={props.pageContext.node.small_card}/>
         <Footer/>
       </div>
     )};

@@ -1,0 +1,105 @@
+import React from 'react';
+// import Article from 'template/article/article-template';
+import Footer from 'components/footer/Footer';
+import styled from '@emotion/styled/macro';
+import { ThemeProvider } from 'emotion-theming'
+import { theme } from 'components/theme/theme';
+import Global from 'components/base/base';
+import { Link } from "gatsby";
+
+import closeButton from '../assets/icon/article/close.svg';
+
+//Photos for contact
+import Phone from '../assets/icon/phone.svg';
+import Email from '../assets/icon/envelope.svg';
+import LandingPage from '../assets/icon/browser.svg';
+
+const Container = styled.div`
+   margin: 0 30px;
+`
+const SubHeaderFooterPage = styled.h3`
+    margin-bottom: 10px;
+`
+const TitleFooterPage = styled.h1`
+    color: #fc4255;
+    padding-top: 50px;
+    margin-bottom: 90px;
+`
+
+const TeamTitle = styled.h6`
+    font-weight: 600;
+    margin: 70px 0 20px 0;
+`
+
+const Close = styled.img`
+   height: auto;
+   width: 18px;
+   cursor: pointer;
+   position: absolute;
+  top: 50px;
+  right: 30px;
+`
+const OneContactInfoDiv = styled.div`
+   display: flex;
+   margin-bottom: 5px;
+`
+
+const ContactImg = styled.img`
+   margin-right: 15px;
+`
+
+const ContactInfoContainer = styled.div`
+   margin-bottom: 50px;
+`
+
+const Contact = () => {
+        return (
+            <div>
+                <ThemeProvider theme={theme}>
+                    <Global>
+                        <Container>
+
+                            <TitleFooterPage>Hafa Samband</TitleFooterPage>
+                            <Link to={"/"}><Close src={closeButton} alt=""></Close></Link>
+                            <SubHeaderFooterPage>Samfélagsleg ábyrgð</SubHeaderFooterPage>
+                            <p>Kynfræðsla í skólum þarfnast betrum bætunar og viljum við koma til móts við þarfir unglinga og gera kynfræðsluna meira aðlaðandi fyrir þá.</p>
+
+                            <div>
+                                <TeamTitle>Contact Upplýsingar</TeamTitle>
+
+                                <ContactInfoContainer>
+                                
+                                    <OneContactInfoDiv>
+                                        <ContactImg src={Phone} alt="Símanúmer"></ContactImg>
+                                        <p>+354 8440124</p>
+                                    </OneContactInfoDiv>
+
+                                    <OneContactInfoDiv>
+                                        <ContactImg src={Email} alt="Tölvupóstfang"></ContactImg>
+                                        <p>adidas@kinlif.is</p>
+                                    </OneContactInfoDiv>
+
+                                    <OneContactInfoDiv>
+                                        <ContactImg src={LandingPage} alt="Vefsíða"></ContactImg>
+                                        <p>kynlíf.is</p>
+                                    </OneContactInfoDiv>
+
+                                </ContactInfoContainer>
+                                
+                            </div>
+                        </Container>
+                    </Global>
+                </ThemeProvider> 
+
+                
+            <Footer/>
+            </div>
+            
+        )
+
+
+};
+
+
+
+export default Contact;

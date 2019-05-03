@@ -7,6 +7,8 @@ import { get } from 'lodash';
 import { RichText } from 'prismic-reactjs';
 import { graphql } from 'gatsby';
 import styled from '@emotion/styled/macro';
+import About from 'pages/about';
+import Contact from 'pages/contact'
 
 //font awesome import
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -14,6 +16,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebookF, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons'
 import { faStroopwafel } from '@fortawesome/free-solid-svg-icons'
 import * as faSolid from 'emotion-icons/fa-solid'
+
+
 
 library.add(faStroopwafel)
 
@@ -36,6 +40,7 @@ const FooterLinkContainer = styled.div`
 
 const FooterPageLink = styled.a`
     color: white; 
+    font-weight: 600;
     display:inline-block;
     position: relative;
     font-size: 16px;
@@ -45,7 +50,12 @@ const FooterPageLink = styled.a`
     flex-direction: column;
     align-items: center;
     margin-bottom: 10px;
-    
+    &:visited {
+        color: white;
+    }
+    &:active {
+        color: #FFB800;
+    }
 `
 
 // const IconStyle = {color: white , size: 16px}
@@ -63,9 +73,9 @@ const Footer = (props) => {
                             <FontAwesomeIcon style={{ color: 'white'}} size="lg" icon={faTwitter} />
                         </SocialMediaContainer>
                         <FooterLinkContainer>
-                            <FooterPageLink href="#">Um okkur</FooterPageLink>
-                            <FooterPageLink href="#">Alengar spurningar</FooterPageLink>
-                            <FooterPageLink href="#">Hafa samband</FooterPageLink>
+                            <FooterPageLink href="/about">Um okkur</FooterPageLink>
+                            {/* <FooterPageLink href="#">Algengar spurningar</FooterPageLink> */}
+                            <FooterPageLink href="/contact">Hafa samband</FooterPageLink>
                             <FooterPageLink href="#">Styrktaraðilar</FooterPageLink>
                         </FooterLinkContainer>
                     </FooterContainer>
