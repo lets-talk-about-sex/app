@@ -6,6 +6,7 @@ import SliceRepeatFact from './repeatFact';
 import SliceRepeatDYK from './repeatDYK';
 import SliceVideo from './video';
 import SliceLink from './outsideLinks';
+import SliceSubtitle from './subtitle';
 import { RichText, Link } from 'prismic-reactjs';
 
 export const renderSlices = (body) => {
@@ -26,11 +27,13 @@ export const renderSlices = (body) => {
                 return <SliceMedia image={sliceItem.primary.media.url}/>;
 
             case 'video':
-                return <SliceVideo url={sliceItem.primary.link2.embed_url} iframe={sliceItem.primary.link2.html}/>;
+                return <SliceVideo url={sliceItem.primary.link2.embed_url}/>;
 
             case 'links':
-                console.log(sliceItem)
                 return <SliceLink link={sliceItem.primary.link3.url} heading={sliceItem.primary.title1[0].text}/>;
+
+            case 'subtitle':
+                return <SliceSubtitle sub={sliceItem.primary.subtitle[0].text}/>;
 
             case 'repeat':
             console.log(sliceItem)

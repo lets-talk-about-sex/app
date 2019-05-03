@@ -2,13 +2,18 @@ import React from 'react';
 // import { get } from 'lodash';
 // import { RichText } from 'prismic-reactjs';
 import { graphql } from 'gatsby';
-// import styled from '@emotion/styled/macro';
+import styled from '@emotion/styled/macro';
+
+
+const Media = styled.img`
+    margin: 30px auto;
+`
 
 const SliceMedia = ({image}) => {
   
     return (
         <div>   
-            <img src={image}></img>
+            <Media src={image}></Media>
         </div>
     )};
     

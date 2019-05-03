@@ -4,18 +4,27 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import styled from '@emotion/styled/macro';
 
-const iframe_container = styled.div`
-   width: 100% !important;
-`
+// const iframe_container = styled.div`
+//     width: 80% !important;
+// `
+
+
 
 const SliceVideo = ({url, iframe}) => {
+    var str = url;
+    var youtube = str.slice(-11);
+
   
     return (
         <div> 
-            {/* <iframe src={url} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            <iframe width="100%" height="250" src={" https://www.youtube.com/embed/"+youtube+"?feature=oembed"} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
+            {/* https://www.youtube.com/embed/_3M0Xt97aFI?feature=oembed
+            https://www.youtube.com/watch?v=_3M0Xt97aFI */}
+            {/* <iframe src={url} width="100%" height="260px "frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
             </iframe>  */}
             {/* <div src={video}></div> */}
-            <div className="iframe_container" dangerouslySetInnerHTML={{__html: iframe}}/>
+            {/* <div class="iframe_container" dangerouslySetInnerHTML={{__html: iframe}}/> */}
         </div>
     )};
     
