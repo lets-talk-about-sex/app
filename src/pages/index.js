@@ -26,7 +26,6 @@ if ('serviceWorker' in navigator) {
     });
   }
 
-
 const SkipButton = styled.a`
     margin-left: 30px;
     display: block;
@@ -43,7 +42,6 @@ const SkipButton = styled.a`
     &:focus {
         outline: none;
     }
-    
 `
 const ButtonDiv = styled.div`
     display: flex;
@@ -80,7 +78,6 @@ const OBCards = styled.div`
         display: none;
     }
  `
-
 const OBCardContainer = styled.div`
     width: 286px;
     height: 273px;
@@ -90,9 +87,7 @@ const OBCardContainer = styled.div`
     background-color: #fff;
     margin-left: 30px;
     position: relative;
-    
 `
-
 const MynsturImg = styled.img`
     width: 100vw;
     height: calc(100vh + 80px);
@@ -108,7 +103,6 @@ const IconDiv = styled.div`
     position: absolute;
     top: -10px;
     left: 20px;
-    
 `
 const IconImg = styled.img`
     position: absolute;
@@ -126,7 +120,6 @@ const TitleOnCard = styled.h1`
     line-height: 30px;
     margin-bottom: 20px;
 `
-
 const TextDiv = styled.div`
     padding: 100px 30px 40px 30px;
     width: 300px;
@@ -134,13 +127,10 @@ const TextDiv = styled.div`
         padding-top:70px;
     }
 `
-
 const CarouselIndicator = styled.div`
     width: 100px;
     height: auto;
-    
 `
-
 const LineTheFine1 = styled.span`
     background-color: #C7C7C7;
     height: 4px;
@@ -177,50 +167,6 @@ const LineTheFine3 = styled.span`
         background-color:#FC4255; 
   }
   `
-  
-//   //þegar er smellt er á flokka þá keyrist þetta fall
-//   RenderByFilter = (filter, search) => {
-//     console.log(filter)
-//     this.setState({
-//       activefilter: filter,
-//       activesearch: search
-//     })
-//   }
-
-//   update = (e) => {
-//     const search = e.target.value
-//     console.log(this.props.data.prismic.allArticles)
-//     const results = this.props.data.prismic.allArticles.edges.filter(card => {
-//       return card.node.title[0].text.toUpperCase().includes(e.target.value.toUpperCase())
-//     })
-//     this.setState({
-//       results
-//     })
-//     console.log(results)
-//     console.log(e.target.value)
-
-//   }
-
-//   render() {
-//     console.log(this.props);
-
-//     let data;
-//     if (this.state.results.length) {
-//       data = {
-//         prismic: {
-//           allArticles: {
-//             edges: this.state.results
-//           },
-//           allDid_you_knows: {
-//             edges: this.props.data.prismic.allDid_you_knows.edges
-//           },
-//           allFactss: {
-//             edges: this.props.data.prismic.allFactss.edges
-//           }
-//         }
-//       }
-//     }
-
 
   class Onboarding extends React.Component {
     constructor() {

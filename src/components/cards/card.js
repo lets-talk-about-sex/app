@@ -15,22 +15,18 @@ const ImgWrapper = styled.div`
     height:350px;
     width: 354px;
 `
-
 const SexImg = styled.img`
     width: 100%;
     height: 100%;
     border-radius:  15px 15px 0 0;
     object-fit: cover;
 `
-
-
 //muna að þegar spjald er með slug þá þarf height að vera 100px;
 const TitleWrapper = styled.div`
     height: 90px; 
     padding: 30px 0 30px 29px; 
     position: relative; 
 `
-
 // const Slug = styled.p`
 //     font-family: 'Poppins', sans-serif;
 //     font-size: 14px;
@@ -41,7 +37,6 @@ const TitleWrapper = styled.div`
 
 const CardTitle = styled.h2`  
 `
-
 const Hot = styled.img`
   position absolute;
   top : -22px;
@@ -63,8 +58,6 @@ const Card = (props) => {
                 </TitleWrapper>
             </CardContainer>
         </div>
-
-   
     )};
     
 export default Card;

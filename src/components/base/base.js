@@ -7,7 +7,7 @@ class Global extends React.Component {
     injectGlobal`
     * {
       box-sizing: border-box;
-      margin: 0 20px;
+      margin: 0;
       padding: 0;
   }
      /* Fontur */
@@ -87,7 +87,6 @@ class Global extends React.Component {
          font-size: 20px;
          font-weight: 600;
        }
-
      `;
      return React.Children.only(this.props.children);
    }

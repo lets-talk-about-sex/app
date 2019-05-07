@@ -10,13 +10,14 @@ import {Link} from 'gatsby';
 
 // Function React Component AllCards sem tekur inn props
 const AllCards = (props) => {
+    console.log(props.filtering)
     let allArticlesArr = get(props.data, 'prismic.allArticles.edges', [])
     .filter(oneCard => CheckIfMatchesTags(oneCard.node._meta.tags, props.filtering))
-    console.log(allArticlesArr)
+    // console.log(allArticlesArr)
     for (let i = allArticlesArr.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [allArticlesArr[i], allArticlesArr[j]] = [allArticlesArr[j], allArticlesArr[i]];
-        console.log(j)
+        // console.log(j)
     }
     let allDidYouKnowsArr = get(props.data, 'prismic.allDid_you_knows.edges', [])
     .filter(oneDYK => CheckIfMatchesTags(oneDYK.node._meta.tags, props.filtering));
@@ -52,7 +53,7 @@ const AllCards = (props) => {
     const getFeed = () => {
         let allArticles = allCardsArr.map((edge, i) => {
             let SomeCard;
-            console.log(edge)
+            // console.log(edge)
             if (edge.node.article_img) {
                 SomeCard =  Card;
             }
@@ -62,7 +63,8 @@ const AllCards = (props) => {
             else if (edge.node.fact) {
                 SomeCard = FactCard;
             }
-           
+           //bæta við props í node object-ið, bæta við key sem er filter, til að láta slugs birtast bara í Allt flokknum
+           edge.node.filter=props.filtering
             return(
                 <React.Fragment key={i}>
                     <Link to={edge.node._meta.uid} key={i} >

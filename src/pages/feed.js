@@ -7,7 +7,6 @@ import { Container } from 'components/theme/container';
 import Search from 'components/search/search';
 import AllCards from 'components/cards/allCards';
 
-
 //Chatbot
 let _chatlio =_chatlio || [];
 let ChatlioReact = [];
@@ -101,7 +100,7 @@ class App extends Component {
       if (card.node.synonyms.text) {
         console.log("hello", card.node.synonyms.text[0])}
         return card.node.title[0].text.toUpperCase().includes(searchTerm.toUpperCase()) ||
-        (card.node.synonyms.length && card.node.synonyms[0].text.toUpperCase().includes(searchTerm.toUpperCase()))
+        (card.node.synonyms && card.node.synonyms[0].text.toUpperCase().includes(searchTerm.toUpperCase()))
     })
     this.setState({
       results,
@@ -144,7 +143,6 @@ class App extends Component {
           searchStringIsEmpty={this.state.searchIsEmpty}/>
         <Global>
          <Container>
-          
               <AllCards filtering={this.state.activefilter} data={data} />
           </Container>
         </Global>
