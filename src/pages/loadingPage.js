@@ -62,7 +62,7 @@ const AppLogo = styled.h3`
    line-height: 45px;
    z-index: 9999;
    position: absolute;
-   top: 450px;
+   top: 50%;
    left: 50%;
    transform: translate(-50%, -50%);
    font-size: 40px;

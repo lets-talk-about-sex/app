@@ -13,31 +13,60 @@ import Mynstur_dark from '../assets/icon/mynstur_dark.svg';
 import ChatIcon from '../assets/icon/chaticon.svg';
 import Ordabanki from '../assets/icon/ordabankaicon.svg';
 import SturlStad from '../assets/icon/sturlstad.svg';
+import ArrowRight from '../assets/icon/article/arrowRightLinks.svg';
+
+// Til að service workerinn virki
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('./sw.js')
+    .then(function(registration) {
+      console.log('Registration successful, scope is:', registration.scope);
+    })
+    .catch(function(error) {
+      console.log('Service worker registration failed, error:', error);
+    });
+  }
 
 
 const SkipButton = styled.a`
-    text-align: center;
-    margin: 15px auto;
+    margin-left: 30px;
     display: block;
     font-size: 18px;
-    color: #fff !important;
+    color: #FC4255 !important;
     font-weight: 600;
-    // text-transform: uppercase;
-    &.visited {
-        color: #fff !important;
+    z-index: 99;
+    &:visited {
+        color: #FC4255 !important;
     }
-    &.active {
-        color: #fff !important;
+    &:active {
+        color: #D13847;
+    }
+    &:focus {
+        outline: none;
     }
     
 `
 const ButtonDiv = styled.div`
+    display: flex;
+`
+const ArrowDiv = styled.div`
+    height: 27px;
+    width: 27px;
     background-color: #FC4255;
-    width: 100vw;
-    height: 80px;
-    z-index: 999;
+    border-radius: 50%;
+    position: relative;
     position: absolute;
-    bottom: 0;
+    right: 40%;
+    &:active {
+        background-color: #D13847;
+    }
+`
+const ArrowImg = styled.img`
+    
+    cursor: pointer;
+    position: absolute; 
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 `
 
 const OBCards = styled.div`
@@ -49,6 +78,7 @@ const OBCards = styled.div`
     padding-top: 40%;
     & ::-webkit-scrollbar {
         display: none;
+    }
  `
 
 const OBCardContainer = styled.div`
@@ -78,11 +108,13 @@ const IconDiv = styled.div`
     position: absolute;
     top: -10px;
     left: 20px;
+    
 `
 const IconImg = styled.img`
     position: absolute;
-    left: 13px;
-    top: 15px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 `
 const SturlIconImg = styled.img`
     position: absolute;
@@ -245,9 +277,14 @@ const LineTheFine3 = styled.span`
                                 <LineTheFine2 className={this.state.scrolling == 1? 'red' : ""}></LineTheFine2>
                                 <LineTheFine3 className={this.state.scrolling == 2? 'red' : ""}></LineTheFine3>
                             </CarouselIndicator>
-                            <ButtonDiv>
-                                <SkipButton href="/feed">Let's talk about sex</SkipButton>
-                            </ButtonDiv>
+                            <Link to={"/feed"}>
+                                <ButtonDiv>
+                                    <SkipButton>Let's talk about sex</SkipButton>
+                                    <ArrowDiv>
+                                        <ArrowImg src={ArrowRight} alt=""></ArrowImg>
+                                    </ArrowDiv>
+                                </ButtonDiv>
+                            </Link>
                         </div>
                     </Global>
                 </ThemeProvider> 
