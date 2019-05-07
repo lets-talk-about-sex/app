@@ -38,7 +38,7 @@ const TitleWrapper = styled.div`
 const CardTitle = styled.h2`  
 `
 const Hot = styled.img`
-  position absolute;
+  position: absolute;
   top : -22px;
   left: 30px;
 `
