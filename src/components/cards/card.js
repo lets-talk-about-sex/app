@@ -3,7 +3,7 @@ import { RichText } from 'prismic-reactjs';
 import styled from '@emotion/styled/macro';
 
 const CardContainer = styled.div`
-    width: 354px;
+    width: 100%;
     height: 450px;
     padding-bottom: 24px;
     margin-bottom: 30px;
@@ -13,7 +13,7 @@ const CardContainer = styled.div`
 `
 const ImgWrapper = styled.div`
     height:350px;
-    width: 354px;
+    width: 100%;
 `
 const SexImg = styled.img`
     width: 100%;
