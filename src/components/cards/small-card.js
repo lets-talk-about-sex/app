@@ -3,6 +3,7 @@ import { get } from 'lodash';
 import { RichText } from 'prismic-reactjs';
 import { graphql } from 'gatsby';
 import styled from '@emotion/styled/macro';
+import {Link} from 'gatsby';
 // import sex from 'assets/images/sex.png';
 // import iceboob from 'assets/images/iceboob.png';
 import hot from 'assets/icon/hot.svg';
@@ -59,12 +60,14 @@ const SmallCard = (props) => {
     const renderSmallCards = () => {
         let smallCardsArr = props.smallCards.map((item, i) => {
             return  <SmallCardContainer>
-                        <SmallImgWrapper>
-                            <SmallSexImg src={item.link_to_article.article_img.url} />
-                        </SmallImgWrapper>
-                        <SmallTitleWrapper>
-                            <SmallCardTitle>{item.link_to_article.title[0].text}</SmallCardTitle>
-                        </SmallTitleWrapper>
+                        <Link to={item.link_to_article._meta.uid}>
+                            <SmallImgWrapper>
+                                <SmallSexImg src={item.link_to_article.article_img.url} />
+                            </SmallImgWrapper>
+                            <SmallTitleWrapper>
+                                <SmallCardTitle>{item.link_to_article.title[0].text}</SmallCardTitle>
+                            </SmallTitleWrapper>
+                        </Link>
                     </SmallCardContainer>
         })
 

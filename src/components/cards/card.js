@@ -18,7 +18,6 @@ const ImgWrapper = styled.div`
     height:350px;
     width: 354px;
 `
-
 const SexImg = styled.img`
     width: 100%;
     height: 100%;
@@ -57,8 +56,7 @@ const Card = (props) => {
                     <SexImg src={props.node.article_img?props.node.article_img.url:""}></SexImg>
                 </ImgWrapper>
                 <TitleWrapper>
-                    {/* <HotIcon src={hot} alt=""/> */}
-                    {/* <Slug>{props.node._meta.tags[0]}</Slug> */}
+                    <Slug>{props.node.filter?"":props.node._meta.tags[0]}</Slug>
                     <CardTitle>{RichText.asText(props.node.title)}</CardTitle>
                 </TitleWrapper>
             </CardContainer>

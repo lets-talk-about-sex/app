@@ -94,10 +94,12 @@ class App extends Component {
     // console.log(this.props.data.prismic.allArticles)
     const results = this.props.data.prismic.allArticles.edges.filter(card => {
       // console.log(card.node.synonyms)
-      if (card.node.synonyms.text) {
-        console.log("hello", card.node.synonyms.text[0])}
-        return card.node.title[0].text.toUpperCase().includes(searchTerm.toUpperCase()) ||
-        (card.node.synonyms.length && card.node.synonyms[0].text.toUpperCase().includes(searchTerm.toUpperCase()))
+      if (card.node.synonyms && card.node.synonyms.text ) {
+        
+      }
+      console.log('CARD', card);
+      return card.node.title[0].text.toUpperCase().includes(searchTerm.toUpperCase()) ||
+        (card.node.synonyms && card.node.synonyms[0].text.toUpperCase().includes(searchTerm.toUpperCase()))
     })
     this.setState({
       results,
@@ -135,7 +137,7 @@ class App extends Component {
      <ThemeProvider theme={theme}>
         <Global>
          <Container>
-               <Search 
+               <Search
                 renderbyfilter={this.RenderByFilter}
                 update={this.update}
                 showResults={this.state.resultsCounter}

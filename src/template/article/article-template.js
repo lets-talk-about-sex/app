@@ -18,6 +18,7 @@ import { renderSlices } from '../../components/slices/index.js';
 import { ThemeProvider } from 'emotion-theming'
 import { theme } from 'components/theme/theme';
 import Global from 'components/base/base';
+import {keyframes} from 'emotion';
 
 // Bannermynd
 const HeroBanner = styled.div`
@@ -25,11 +26,28 @@ const HeroBanner = styled.div`
     width: calc(100% + 60px);
     height: 60vh;
 `
+//keyframe fyrir hverning article á að opnast
+const ContentAnimation = keyframes`
+    0% {
+      transform: translateY(100vh) scale(0.8);
+      opacity:0;
+    }
+    100% {
+      transform: translateY(0) scale(1);
+      opacity:1;
+
+    }
+`
+
+const Animation = styled.div`
+    position: relative;
+    animation: ${ContentAnimation} 2.1s cubic-bezier(.48,.49,.5,1.10);  
+`
 
 const HeroImg = styled.img`
     width: 100%;
-    height: 100%; 
-    // object-fit: ;
+    height: 100%;   
+    /* object-fit: cover; */
 `
 
 //loka modal takki
@@ -38,8 +56,8 @@ const Close = styled.img`
    width: 18px;
    cursor: pointer;
    position: absolute;
-  top: 50px;
-  right: 30px;
+   top: 50px;
+   right: 30px;
 `
 
 // container - á að taka í burtu 
@@ -155,52 +173,52 @@ const Article = (props) => {
           <ThemeProvider theme={theme}>
             <Global>
               <Container>
-                <HeroBanner>
-                  <HeroImg alt="" src={props.pageContext.node.article_img.url}></HeroImg>
-                  <Link to="/"><Close src={closeButton} alt=""></Close></Link>
-                </HeroBanner>
+                <Animation>
+                  <HeroBanner>
+                    <HeroImg alt="" src={props.pageContext.node.article_img.url}></HeroImg>
+                    <Link to="/"><Close src={closeButton} alt=""></Close></Link>
+                  </HeroBanner>
                 
-                <FirstSectionDiv>
+                    <FirstSectionDiv>
 
-                  <CategoryDiv>
-                    {/* spurning um að gera function hér sem gerir það að verkum að ef article er með fleiri en eitt tag þá birtast þau öll? */}
-                    <Category>{props.pageContext.node._meta.tags[0]}</Category>
-                  </CategoryDiv>
+                      <CategoryDiv>
+                        {/* spurning um að gera function hér sem gerir það að verkum að ef article er með fleiri en eitt tag þá birtast þau öll? */}
+                        <Category>{props.pageContext.node._meta.tags[0]}</Category>
+                      </CategoryDiv>
 
-                  <TitleDiv>
-                    <Title>{props.pageContext.node.title[0].text}</Title>
+                      <TitleDiv>
+                        <Title>{props.pageContext.node.title[0].text}</Title>
+                        
+                        <ShareComponent></ShareComponent>
+                        
+                      </TitleDiv>
+
+                      <SynonymDiv>
+                        <Synonym>Samheiti</Synonym>
+                        <p>{props.pageContext.node.synonyms[0].text}</p>
+                      </SynonymDiv>
+
+                      <Intro>{props.pageContext.node.intro_text[0].text}</Intro>
+
                     
-                    <ShareComponent></ShareComponent>
-                    
-                  </TitleDiv>
+                    </FirstSectionDiv>
+                    <Link to={props.pageContext.node.link._meta.uid}>
+                      <LongCard>
+                        <LongCardImg src={props.pageContext.node.link.article_img.url}></LongCardImg>
+                        <LongCardTitle>{props.pageContext.node.link.title[0].text}</LongCardTitle>
+                      </LongCard>
+                    </Link>
 
-                  <SynonymDiv>
-                    <Synonym>Samheiti</Synonym>
-                    <p>{props.pageContext.node.synonyms[0].text}</p>
-                  </SynonymDiv>
+                    {slices}
 
-                  <Intro>{props.pageContext.node.intro_text[0].text}</Intro>
+                    <Helpful></Helpful>
+                    <OutsideLinks></OutsideLinks>
 
-
-                </FirstSectionDiv>
-                <Link to={props.pageContext.node.link._meta.uid}>
-                  <LongCard>
-                    <LongCardImg src={props.pageContext.node.link.article_img.url}></LongCardImg>
-                    <LongCardTitle>{props.pageContext.node.link.title[0].text}</LongCardTitle>
-                  </LongCard>
-                </Link>
-            
-
-                {slices}
-
-                <Helpful></Helpful>
-                <OutsideLinks></OutsideLinks>
-
-                <Read>LESTU LÍKA</Read>
-                <Link to={props.pageContext.node.small_card[0].link_to_article._meta.uid}>
-                  <SmallCard smallCards={props.pageContext.node.small_card}/>
-                </Link>
-              
+                    <Read>LESTU LÍKA</Read>
+                    <Link to={props.pageContext.node.small_card[0].link_to_article._meta.uid}>
+                      <SmallCard smallCards={props.pageContext.node.small_card}/>
+                    </Link>
+              </Animation>
             </Container>
           </Global>
         </ThemeProvider> 

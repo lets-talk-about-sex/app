@@ -1,83 +1,86 @@
 import React, { Component} from 'react'
 import styled from '@emotion/styled/macro';
-// import {css} from 'emotion'
 import search from 'assets/icon/search.svg';
 import closeButton from '../../assets/icon/article/close.svg';
 
 const SearchContainer = styled.div`
-  display:block;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 80px;
-  margin: 0;
-  background-color: ${props => props.theme.baseColors.bodyBackground};
-  z-index:333;
+    display:flex;
+    justify-content:flex-end;
+    position: fixed;
+    left: 30px;
+    right: 30px;
+    top: 0;
+    padding: 15px 0;
+    width: calc(100vw - 60px);
+    height: 80px;
+    margin: 0;
+    overflow: hidden;
+    &.searchOnScroll {
+        [type="text"], [type="submit"] {
+            background-color: #fff;
+        }
+    }
+    &.active {
+        [type="text"] {
+            opacity: 1;   
+            transform: translateX(25px);
+            color: #000;
+        }
+        [type="submit"] {
+            background-image: url(${closeButton});
+            background-repeat: no-repeat;
+            background-position: 50% 50%; 
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+    }
 `
 const SearchInput = styled.input`
+    position: relative;
+    z-index: 1;
     &[type="text"] {
-        height: 40px;
+        height: 100%;
+        width: calc(100% - 25px);
+        flex-shrink: 0;
         display: inline-block;
-        color: #000;
         border: none;
         outline: none;
-        padding: 0;
+        padding: 3px 0 0 14px;
+        color: #fff;
         margin: 0;
-        margin-top: 24px;
-        width: 0px;
-        position: absolute;
-        top: 0;
-        right: 0;
         background: none;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
         z-index: 1;
-        transition: width 1.4s cubic-bezier(0.000, 0.795, 0.000, 1.000),
-                    right 1.4s cubic-bezier(0.000, 0.795, 0.000, 1.000),
-                    opacity .2s ease;
         cursor: pointer;
         opacity: 0;
+        transform: translateX(100%);
+        transform: translateX(25px);
+        transform-origin: right center;
+        transition: transform .9s ease,
+                    opacity .5s ease,
+                    color .5s ease;
     }
-
-    &[type="text"].active {
-        width: 335px;
-        max-width: calc(100vw - 100px);
-        right: 100px;
-        cursor: text;
-        opacity: 1;
-        padding-left: 42px;        
-    }
-
     &[type="submit"] {
-        height: 100%;
-        width: 100px;
+        flex-shrink: 0;
+        height: 50px;
+        width: 50px;
         margin: 0;
         display: inline-block;
         background: url(${search}) no-repeat;
         background-position: 50% 50%;
         border: none;
-        position: absolute;
-        top: 0;
-        right: 0;
-        z-index: 2;
         cursor: grab;
-        opacity: 0.4;
-        transition: opacity .4s ease;
+        transition: opacity .4s ease, border-radius 0.2s ease;
         text-indent: -10000px;
         outline: none;
+        border-radius: 50%;
         background-color: ${props => props.theme.baseColors.bodyBackground};
     }
-
     &[type="submit"]:hover {
-        opacity: 0.8;
-    }
-
-    /* select submit input that it placed after the text input when it is focused */
-    &[type="text"].active ~ [type="submit"] {
-        background: url(${closeButton}) no-repeat;
-        background-position: 50% 50%; 
+        opacity: 1;
     }
 `
-
 const SearchResults = styled.li`
   & span {
       color:#FC4255;
@@ -95,9 +98,9 @@ const CategoryWrapper = styled.div`
     overflow: auto;
     white-space: nowrap;
     margin-bottom: 25px;
-    margin-top: 60px;
+    padding-top: 60px;
     & ::-webkit-scrollbar {
-        display: none;   
+        display: none; 
     }
       li {
         display: inline-block;  
@@ -114,14 +117,51 @@ class Search extends Component {
         this.state = {
             'activeCategory': '',
             'searchOpen': false,
+            'searchContainerClasses': {
+                active: false,
+                searchOnScroll: false,
+            },
+            'isSearching': false
         }
 
         this.searchInput = React.createRef();
         //verðum að nota bind hér til þess að this sem notum í update function muni vísa í class Search
         this.toggleSearch = this.toggleSearch.bind(this)
         this.update = this.update.bind(this)
+        this.handleScroll = this.handleScroll.bind(this)
     }
 
+    componentDidMount() {
+        window.addEventListener('scroll', this.handleScroll);
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('scroll',this.handleScroll);
+    }
+
+    handleScroll (event) {
+        var scrollTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
+        
+        if ( (scrollTop < 30) && !this.state.isSearching ){
+            this.setState( state => {
+                return {
+                    searchContainerClasses: {
+                        ...state.searchContainerClasses,
+                        searchOnScroll: false,
+                    }
+                }
+            })
+        } else {
+            this.setState( state => {
+                return {
+                    searchContainerClasses: {
+                        ...state.searchContainerClasses,
+                        searchOnScroll: true,
+                    }
+                }
+            })
+        }
+    }  
 
     handleClick(category) {
         this.setState({
@@ -133,39 +173,73 @@ class Search extends Component {
    
     update () {
         this.props.update(this.searchInput.current.value)
+
+        window.scrollTo(0, 0);
+        setTimeout(()=>{
+            window.addEventListener('scroll', this.handleScroll)
+        },400);
     }
 
+    classNames(classes) {
+        var classesArr = [];
+        for (const className in classes) {
+            if (classes[className]){
+                classesArr.push(className)
+            }
+        } 
+        return classesArr.join(" ")
+    }
 
     toggleSearch () {
-        this.setState (state => {
-            const searchOpen = ! state.searchOpen;
-            //ef search inniheldur engan texta í input þá sýna öll spjöldin (update sýnir öll)
-            //búa til function setTimeout sem setur focus á input field(músarbendill sé auo í input field) eftir að hann er búin að animate-ast inn, því setum 400 millisec.
-            if ( searchOpen ) {
-                setTimeout(()=> {
-                    this.searchInput.current.focus();
-                },400) 
-            }
-            else {
-                this.searchInput.current.value = "";
-                this.update();
+        const searchOpen = ! this.state.searchOpen
+        var searchContainerClasses;
+        var isSearching = false;
+
+        //ef search inniheldur engan texta í input þá sýna öll spjöldin (update sýnir öll)
+        //búa til function setTimeout sem setur focus á input field(músarbendill sé auo í input field) eftir að hann er búin að animate-ast inn, því setum 400 millisec.
+        if ( searchOpen ) {
+            searchContainerClasses = {
+                ...this.state.searchContainerClasses,
+                active: true,
             }
 
-            return {
-                searchOpen: searchOpen
+            isSearching = true;
+
+            setTimeout(()=> {
+                this.searchInput.current.focus();
+            }, 1000) 
+            
+        }
+        else {
+            var scrollTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
+            
+            searchContainerClasses = {
+                searchOnScroll: this.state.isSearching&&scrollTop==0?false:true,
+                active: false,
             }
+            
+            setTimeout(()=>{
+                this.searchInput.current.value = "";
+                this.update();
+            }, 100)
+        }
+
+        this.setState({
+            'searchOpen': searchOpen,
+            'searchContainerClasses': searchContainerClasses,
+            'isSearching': isSearching
         })
     }
 
     render() {
         return (
             <div>
-                <SearchContainer> 
+                <SearchContainer
+                className={this.classNames(this.state.searchContainerClasses)}> 
                     <SearchInput 
                     onKeyUp={this.update}
                     ref={this.searchInput}
                     id="search"
-                    className={this.state.searchOpen ? 'active' : ''}
                     name="search"
                     type="text"
                     placeholder="Sláðu inn leitarorð"/>

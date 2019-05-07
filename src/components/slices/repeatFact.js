@@ -34,7 +34,7 @@ const Text = styled.p`
 `
 
 const Icon = styled.img`
-  margin-bottom: 5px;
+    margin-bottom: 5px;
 `
 
 const SliceRepeatFact = ({repeat}) => {
