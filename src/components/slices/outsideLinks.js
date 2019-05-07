@@ -1,12 +1,8 @@
 import React from 'react';
-// import { graphql } from 'gatsby';
 import styled from '@emotion/styled/macro';
+import { RichText } from 'prismic-reactjs';
 
 import ArrowRight from '../../assets/icon/article/arrowRightLinks.svg';
-
-const LinksTitle = styled.h3`
-    margin: 30px 0px 20px 0px;
-`
 
 const ArrowDiv = styled.div`
     height: 27px;
@@ -32,6 +28,7 @@ const EinnLinkurDiv = styled.div`
     display:flex;
     margin-bottom: 15px;
     align-items: center;
+    margin-top: 15px;
 `
 
 const LineTheFine = styled.span`
@@ -49,7 +46,6 @@ const SliceLink = ({link, heading}) => {
   
     return (
         <div>   
-            {/* <LinksTitle></LinksTitle> */}
             <a href={link}>
                 <EinnLinkurDiv>
                     <LineTheFine></LineTheFine>

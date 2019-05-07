@@ -28,7 +28,7 @@ import AllCards from 'components/cards/allCards';
 export const query = graphql`
   query {
     prismic {
-      allArticles(first: 100){
+      allArticles(first: 101){
         edges{
           node{ 
             _meta{
@@ -76,6 +76,14 @@ class App extends Component {
       results: []
     }
   }
+
+  // componentDidMount(){
+  //   this.props.prismic.load({
+  //     variables: { limit: 100 },
+  //     query, // (optional)
+  //     fragments: [], // (optional)
+  //   });
+  // }
   
   //þegar er smellt er á flokka þá keyrist þetta fall
   RenderByFilter = (filter, search) => {
@@ -122,7 +130,7 @@ class App extends Component {
     else {
       data = this.props.data
     }
-    console.log("data", data)
+    console.log("data", this.props)
     return (
       <ThemeProvider theme={theme}>
         <Global>

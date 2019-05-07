@@ -1,11 +1,8 @@
 import React from 'react';
 import { get } from 'lodash';
-import { RichText } from 'prismic-reactjs';
-import { graphql } from 'gatsby';
 import styled from '@emotion/styled/macro';
-// import sex from 'assets/images/sex.png';
-// import iceboob from 'assets/images/iceboob.png';
 import hot from 'assets/icon/hot.svg';
+import {Link} from 'gatsby';
 
 
 
@@ -26,6 +23,7 @@ const SmallImgWrapper = styled.div`
 const SmallSexImg = styled.img`
     border-radius:  10px 10px 0 0;
     height: 100%;
+    object-fit: fill;
 `
 
 const SmallCardTitle = styled.h4` 
@@ -55,11 +53,14 @@ const SmallCard = (props) => {
     // console.log('renderaði small card')
     // console.log('title', props.title)
     // console.log('image', props.image)
+    console.log(props)
     
-    // loop-a í gegnum öll smallcards og birta þau sem til eru.
-    const renderSmallCards = () => {
-        let smallCardsArr = props.smallCards.map((item, i) => {
-            return  <SmallCardContainer>
+    return (
+        <SmallCardCarousel> 
+            {props.smallCards.map((item, i) => {
+            return  item.link_to_article && 
+                <Link to={item.link_to_article._meta.uid}>
+                    <SmallCardContainer>
                         <SmallImgWrapper>
                             <SmallSexImg src={item.link_to_article.article_img.url} />
                         </SmallImgWrapper>
@@ -67,14 +68,8 @@ const SmallCard = (props) => {
                             <SmallCardTitle>{item.link_to_article.title[0].text}</SmallCardTitle>
                         </SmallTitleWrapper>
                     </SmallCardContainer>
-        })
-
-        return smallCardsArr;
-    }
-
-    return (
-        <SmallCardCarousel> 
-            {renderSmallCards()}
+                </Link>
+        })}
         </SmallCardCarousel>
     )};
     
