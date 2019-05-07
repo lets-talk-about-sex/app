@@ -27,13 +27,13 @@ const TitleWrapper = styled.div`
     padding: 30px 0 30px 29px; 
     position: relative; 
 `
-// const Slug = styled.p`
-//     font-family: 'Poppins', sans-serif;
-//     font-size: 14px;
-//     font-weight: 600;
-//     text-transform: uppercase;
-//     color: #FC4255;
-// `
+const Slug = styled.p`
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #FC4255;
+`
 
 const CardTitle = styled.h2`  
 `
@@ -54,6 +54,7 @@ const Card = (props) => {
                     {props.node.hot &&
                     <Hot src={props.node.hot.url}></Hot>
                     }
+                    <Slug>{props.node.filter?"":props.node._meta.tags[0]}</Slug>
                     <CardTitle>{RichText.asText(props.node.title)}</CardTitle>
                 </TitleWrapper>
             </CardContainer>
