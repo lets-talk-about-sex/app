@@ -19,27 +19,22 @@ const ImgWrapper = styled.div`
     height:350px;
     width: 354px;
 `
-
 const SexImg = styled.img`
     width: 100%;
     height: 100%;
     border-radius:  15px 15px 0 0;
     object-fit: cover;
 `
-
-
 //muna að þegar spjald er með slug þá þarf height að vera 100px;
 const TitleWrapper = styled.div`
     height: 90px; 
     padding: 30px 0 30px 29px; 
     position: relative; 
 `
-
 const HotIcon = styled.img`
     position: absolute;
     top:-15px;
 `
-
 const Slug = styled.p`
     font-family: 'Poppins', sans-serif;
     font-size: 14px;
@@ -47,7 +42,6 @@ const Slug = styled.p`
     text-transform: uppercase;
     color: #FC4255;
 `
-
 const CardTitle = styled.h2`  
 `
 
@@ -59,8 +53,7 @@ const Card = (props) => {
                     <SexImg src={props.node.article_img?props.node.article_img.url:""}></SexImg>
                 </ImgWrapper>
                 <TitleWrapper>
-                    {/* <HotIcon src={hot} alt=""/> */}
-                    {/* <Slug>{props.node._meta.tags[0]}</Slug> */}
+                    <Slug>{props.node.filter?"":props.node._meta.tags[0]}</Slug>
                     <CardTitle>{RichText.asText(props.node.title)}</CardTitle>
                 </TitleWrapper>
             </CardContainer>

@@ -1,59 +1,65 @@
 import React from 'react';
 import { get } from 'lodash';
-// import { RichText } from 'prismic-reactjs';
-// import { graphql } from 'gatsby';
 import styled from '@emotion/styled/macro';
 import { Link } from "gatsby"
-
 import closeButton from '../../assets/icon/article/close.svg';
-
 import Footer from 'components/footer/Footer';
 import SmallCard from '../../components/cards/small-card.js';
-
 import Helpful from 'components/cards/helpful';
 import ShareComponent from 'components/cards/share';
 import OutsideLinks from 'components/slices/outsideLinks';
-
 import { renderSlices } from '../../components/slices/index.js';
 import { ThemeProvider } from 'emotion-theming'
 import { theme } from 'components/theme/theme';
 import Global from 'components/base/base';
+import {keyframes} from 'emotion';
 
 // Bannermynd
 const HeroBanner = styled.div`
     margin-left: -30px;
     width: calc(100% + 60px);
     height: 60vh;
-    position relative;
+    position: relative;
 `
+//keyframe fyrir hverning article á að opnast
+const ContentAnimation = keyframes`
+    0% {
+      transform: translateY(100vh) scale(0.8);
+      opacity:0;
+    }
+    100% {
+      transform: translateY(0) scale(1);
+      opacity:1;
 
+    }
+`
+const Animation = styled.div`
+    position: relative;
+    animation: ${ContentAnimation} 2.1s cubic-bezier(.48,.49,.5,1.10);  
+`
 const HeroImg = styled.img`
     width: 100%;
     height: 100%; 
     object-fit: cover;
 `
-
 //loka modal takki
 const Close = styled.img`
    height: auto;
    width: 18px;
    cursor: pointer;
    position: absolute;
-  top: 50px;
-  right: 30px;
+   top: 50px;
+   right: 30px;
 `
-
 const Hot = styled.img`
   position: absolute;
   bottom : -22px;
   left: 30px;
 `
-
 // container - á að taka í burtu 
 const Container = styled.div`
    margin: 0 30px;
 `
-
 // category container
 const CategoryDiv = styled.div`
    color: #FC4255;
@@ -62,20 +68,17 @@ const CategoryDiv = styled.div`
    padding: 5px 10px;
    border-radius: 5px;
 `
-
 // category
 const Category = styled.h6`
    color: #FC4255;
    font-weight: 700;
    display: inline;
 `
-
 // allt fyrsta section
 const FirstSectionDiv = styled.div`
    margin-top: 50px;
    position: relative;
 `
-
 // titill
 const Title = styled.h1`
    margin: 20px 0;
@@ -96,13 +99,11 @@ const Synonym = styled.p`
   font-size: 15px;
   margin-right: 15px;
 `
-
 const SynonymDiv = styled.div`
   display: flex;
   align-items: baseline;
   margin-bottom: 30px;
 `
-
 // langt card
 const LongCard = styled.div`
   display: flex;
@@ -113,7 +114,6 @@ const LongCard = styled.div`
   box-shadow: 0px 4px 30px rgba(0,0,0,0.1);
   align-items: center;
 `
-
 const LongCardImg = styled.img`
   height: 80px;
   width: 80px;
@@ -123,14 +123,12 @@ const LongCardImg = styled.img`
   border-bottom-left-radius: 10px;
   margin-right: 25px;
 `
-
 const LongCardTitle = styled.h4`
   font-family: Poppins;
   font-style: normal;
   font-weight: 600;
   font-size: 16px;
 `
-
 const Read = styled.p`
   font-family: Poppins;
   font-style: normal;
@@ -140,11 +138,9 @@ const Read = styled.p`
   color: #FC4255;
   margin-top: 30px;
 `
-
 const Intro = styled.p`
  margin-bottom: 30px;
 `
-
 
 const Article = (props) => {
   console.log (props)
@@ -166,59 +162,51 @@ const Article = (props) => {
             <Global>
             {props.pageContext? (
               <Container>
-                <HeroBanner>
-                  <HeroImg alt="" src={props.pageContext.node.article_img.url}></HeroImg>
-                  <Link to="/"><Close src={closeButton} alt=""></Close></Link>
-                  {props.pageContext.node.hot &&
-                    <Hot src={props.pageContext.node.hot.url}></Hot>
-                  }
-                </HeroBanner>
+                <Animation>
+                  <HeroBanner>
+                    <HeroImg alt="" src={props.pageContext.node.article_img.url}></HeroImg>
+                    <Link to="/"><Close src={closeButton} alt=""></Close></Link>
+                  </HeroBanner>
                 
-              
-                <FirstSectionDiv>
-                
-                  <CategoryDiv>
-                    {/* spurning um að gera function hér sem gerir það að verkum að ef article er með fleiri en eitt tag þá birtast þau öll? */}
-                    <Category>{props.pageContext.node._meta.tags[0]}</Category>
-                  </CategoryDiv>
+                    <FirstSectionDiv>
 
-                  <TitleDiv>
-                    <Title>{props.pageContext.node.title[0].text}</Title>
+                      <CategoryDiv>
+                        {/* spurning um að gera function hér sem gerir það að verkum að ef article er með fleiri en eitt tag þá birtast þau öll? */}
+                        <Category>{props.pageContext.node._meta.tags[0]}</Category>
+                      </CategoryDiv>
+
+                      <TitleDiv>
+                        <Title>{props.pageContext.node.title[0].text}</Title>
+                        
+                        <ShareComponent></ShareComponent>
+                        
+                      </TitleDiv>
+
+                      <SynonymDiv>
+                        <Synonym>Samheiti</Synonym>
+                        <p>{props.pageContext.node.synonyms[0].text}</p>
+                      </SynonymDiv>
+
+                      <Intro>{props.pageContext.node.intro_text[0].text}</Intro>
                     
-                    <ShareComponent location={props.location}></ShareComponent>
-                    
-                  </TitleDiv>
+                    </FirstSectionDiv>
+                    <Link to={props.pageContext.node.link._meta.uid}>
+                      <LongCard>
+                        <LongCardImg src={props.pageContext.node.link.article_img.url}></LongCardImg>
+                        <LongCardTitle>{props.pageContext.node.link.title[0].text}</LongCardTitle>
+                      </LongCard>
+                    </Link>
 
-                  {props.pageContext.node.synonyms[0].text &&
-                  <SynonymDiv>
-                    <Synonym>Samheiti</Synonym>
-                    <p>{props.pageContext.node.synonyms[0].text}</p>
-                  </SynonymDiv>
-                  }
+                    {slices}
 
-                  <Intro>{props.pageContext.node.intro_text[0].text}</Intro>
+                    <Helpful></Helpful>
+                    <OutsideLinks></OutsideLinks>
 
-
-                </FirstSectionDiv>
-                {props.pageContext.node.link &&
-                <Link to={props.pageContext.node.link._meta.uid}>
-                  <LongCard>
-                    <LongCardImg src={props.pageContext.node.link.article_img.url}></LongCardImg>
-                    <LongCardTitle>{props.pageContext.node.link.title[0].text}</LongCardTitle>
-                  </LongCard>
-                </Link>
-                }
-
-                {slices}
-
-                <Helpful></Helpful>
-
-                <Read>LESTU LÍKA</Read>
-
-                {/* <Link to={props.pageContext.node.small_card[0].link_to_article._meta.uid}>
-                  <SmallCard smallCards={props.pageContext.node.small_card}/>
-                </Link> */}
-              
+                    <Read>LESTU LÍKA</Read>
+                    <Link to={props.pageContext.node.small_card[0].link_to_article._meta.uid}>
+                      <SmallCard smallCards={props.pageContext.node.small_card}/>
+                    </Link>
+              </Animation>
             </Container>
             
             ):<div>loading</div>}

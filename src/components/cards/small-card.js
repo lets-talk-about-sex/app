@@ -3,11 +3,8 @@ import { get } from 'lodash';
 import { RichText } from 'prismic-reactjs';
 import { graphql } from 'gatsby';
 import styled from '@emotion/styled/macro';
-// import sex from 'assets/images/sex.png';
-// import iceboob from 'assets/images/iceboob.png';
+import {Link} from 'gatsby';
 import hot from 'assets/icon/hot.svg';
-
-
 
 const SmallCardContainer = styled.div`
     width: 140px;
@@ -22,12 +19,10 @@ const SmallImgWrapper = styled.div`
     height:140px;
     width: 140px;
 `
-
 const SmallSexImg = styled.img`
     border-radius:  10px 10px 0 0;
     height: 100%;
 `
-
 const SmallCardTitle = styled.h4` 
     font-family: Poppins;
 `
@@ -37,7 +32,6 @@ const SmallTitleWrapper = styled.div`
     padding: 16px 10px;
     position: relative; 
 `
-
 const SmallCardCarousel = styled.div`
     display: flex;
     height: 250px;
@@ -50,7 +44,6 @@ const SmallCardCarousel = styled.div`
         display: none;
         }
 `
-
 const SmallCard = (props) => {
     // console.log('renderaði small card')
     // console.log('title', props.title)
@@ -60,12 +53,14 @@ const SmallCard = (props) => {
     const renderSmallCards = () => {
         let smallCardsArr = props.smallCards.map((item, i) => {
             return  <SmallCardContainer>
-                        <SmallImgWrapper>
-                            <SmallSexImg src={item.link_to_article.article_img.url} />
-                        </SmallImgWrapper>
-                        <SmallTitleWrapper>
-                            <SmallCardTitle>{item.link_to_article.title[0].text}</SmallCardTitle>
-                        </SmallTitleWrapper>
+                        <Link to={item.link_to_article._meta.uid}>
+                            <SmallImgWrapper>
+                                <SmallSexImg src={item.link_to_article.article_img.url} />
+                            </SmallImgWrapper>
+                            <SmallTitleWrapper>
+                                <SmallCardTitle>{item.link_to_article.title[0].text}</SmallCardTitle>
+                            </SmallTitleWrapper>
+                        </Link>
                     </SmallCardContainer>
         })
 
