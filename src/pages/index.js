@@ -49,8 +49,7 @@ const OBCards = styled.div`
     padding-top: 40%;
     & ::-webkit-scrollbar {
         display: none;
-        }
-`
+ `
 
 const OBCardContainer = styled.div`
     width: 286px;
@@ -144,10 +143,51 @@ const LineTheFine3 = styled.span`
     left: 90px;
     &.red {
         background-color:#FC4255; 
-    }
-`
+  }
+  `
+  
+//   //þegar er smellt er á flokka þá keyrist þetta fall
+//   RenderByFilter = (filter, search) => {
+//     console.log(filter)
+//     this.setState({
+//       activefilter: filter,
+//       activesearch: search
+//     })
+//   }
 
+//   update = (e) => {
+//     const search = e.target.value
+//     console.log(this.props.data.prismic.allArticles)
+//     const results = this.props.data.prismic.allArticles.edges.filter(card => {
+//       return card.node.title[0].text.toUpperCase().includes(e.target.value.toUpperCase())
+//     })
+//     this.setState({
+//       results
+//     })
+//     console.log(results)
+//     console.log(e.target.value)
 
+//   }
+
+//   render() {
+//     console.log(this.props);
+
+//     let data;
+//     if (this.state.results.length) {
+//       data = {
+//         prismic: {
+//           allArticles: {
+//             edges: this.state.results
+//           },
+//           allDid_you_knows: {
+//             edges: this.props.data.prismic.allDid_you_knows.edges
+//           },
+//           allFactss: {
+//             edges: this.props.data.prismic.allFactss.edges
+//           }
+//         }
+//       }
+//     }
 
 
   class Onboarding extends React.Component {
@@ -216,7 +256,5 @@ const LineTheFine3 = styled.span`
      ) 
     }
 };
-
-
 
 export default Onboarding;

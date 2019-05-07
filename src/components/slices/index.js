@@ -19,7 +19,7 @@ export const renderSlices = (body) => {
 
             case 'content___heading':
                 return <SliceTextSub subheader={RichText.asText(sliceItem.primary.subheading)} paragraph={RichText.asText(sliceItem.primary.text)}/>;
-
+            // á eftir að sækja í gatsby node, laga það
             case 'content':
                 return <SliceText text={RichText.render(sliceItem.primary.text)}/>;
 
@@ -30,7 +30,7 @@ export const renderSlices = (body) => {
                 return <SliceVideo url={sliceItem.primary.link2.embed_url}/>;
 
             case 'links':
-                return <SliceLink link={sliceItem.primary.link3.url} heading={sliceItem.primary.title1[0].text}/>;
+                return <SliceLink link={sliceItem.primary.link3.url} heading={RichText.render(sliceItem.primary.title1)}/>;
 
             case 'subtitle':
                 return <SliceSubtitle sub={sliceItem.primary.subtitle[0].text}/>;

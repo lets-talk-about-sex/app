@@ -1,19 +1,15 @@
 import React from 'react';
 import { get } from 'lodash';
-// import { RichText } from 'prismic-reactjs';
-// import { graphql } from 'gatsby';
+import { RichText } from 'prismic-reactjs';
 import styled from '@emotion/styled/macro';
 import { Link } from "gatsby"
 
 import closeButton from '../../assets/icon/article/close.svg';
-
 import Footer from 'components/footer/Footer';
 import SmallCard from '../../components/cards/small-card.js';
-
 import Helpful from 'components/cards/helpful';
 import ShareComponent from 'components/cards/share';
 import OutsideLinks from 'components/slices/outsideLinks';
-
 import { renderSlices } from '../../components/slices/index.js';
 import { ThemeProvider } from 'emotion-theming'
 import { theme } from 'components/theme/theme';
@@ -196,7 +192,7 @@ const Article = (props) => {
                   </SynonymDiv>
                   }
 
-                  <Intro>{props.pageContext.node.intro_text[0].text}</Intro>
+                  <Intro>{RichText.render(props.pageContext.node.intro_text)}</Intro>
 
 
                 </FirstSectionDiv>
