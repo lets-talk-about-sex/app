@@ -39,11 +39,11 @@ const SmallTitleWrapper = styled.div`
 const SmallCardCarousel = styled.div`
     display: flex;
     height: 250px;
-    width: auto;
+    width: 100%vw !important;
     margin-bottom: 50px;
     overflow-x: auto;
     scroll-behavior: smooth;
-    margin-left: 30px;
+    padding-left: 30px;
         & ::-webkit-scrollbar {
         display: none;
         }

@@ -85,7 +85,7 @@ const SearchResults = styled.li`
 `
 const CategoryWrapper = styled.div`
     display:flex;
-    width: calc(100vw - 60px);
+    padding-left: 25px;
     list-style-type: none;
     justify-content:flex-start;
     font-family: 'Poppins', sans-serif;

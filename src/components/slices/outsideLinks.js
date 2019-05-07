@@ -58,5 +58,4 @@ const SliceLink = ({link, heading}) => {
         </div>
     )};
     
-
 export default SliceLink;

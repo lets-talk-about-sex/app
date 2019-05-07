@@ -35,6 +35,7 @@ export const query = graphql`
               uid
               tags
             }
+            hot
             title
             article_img
             synonyms
@@ -66,6 +67,7 @@ export const query = graphql`
     }
 }
 `
+
 class App extends Component {
   constructor(props){
     super(props);
@@ -79,8 +81,6 @@ class App extends Component {
     }
   }
 
-
-  
   //þegar er smellt er á flokka þá keyrist þetta fall
   RenderByFilter = (filter, search) => {
     console.log(filter)
@@ -137,14 +137,15 @@ class App extends Component {
     console.log("data", data)
     return (
      <ThemeProvider theme={theme}>
+        <Search 
+          renderbyfilter={this.RenderByFilter}
+          update={this.update}
+          showResults={this.state.resultsCounter}
+          searchStringIsEmpty={this.state.searchIsEmpty}/>
         <Global>
          <Container>
-               <Search 
-                renderbyfilter={this.RenderByFilter}
-                update={this.update}
-                showResults={this.state.resultsCounter}
-                searchStringIsEmpty={this.state.searchIsEmpty}/>
-            <AllCards filtering={this.state.activefilter} data={data} />
+          
+              <AllCards filtering={this.state.activefilter} data={data} />
           </Container>
         </Global>
       </ThemeProvider> 

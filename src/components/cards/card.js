@@ -1,10 +1,6 @@
 import React from 'react';
-import { get } from 'lodash';
 import { RichText } from 'prismic-reactjs';
-import { graphql } from 'gatsby';
 import styled from '@emotion/styled/macro';
-import hot from 'assets/icon/hot.svg';
-import { Link } from "gatsby";
 
 const CardContainer = styled.div`
     width: 354px;
@@ -35,20 +31,21 @@ const TitleWrapper = styled.div`
     position: relative; 
 `
 
-const HotIcon = styled.img`
-    position: absolute;
-    top:-15px;
-`
-
-const Slug = styled.p`
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    font-weight: 600;
-    text-transform: uppercase;
-    color: #FC4255;
-`
+// const Slug = styled.p`
+//     font-family: 'Poppins', sans-serif;
+//     font-size: 14px;
+//     font-weight: 600;
+//     text-transform: uppercase;
+//     color: #FC4255;
+// `
 
 const CardTitle = styled.h2`  
+`
+
+const Hot = styled.img`
+  position absolute;
+  top : -22px;
+  left: 30px;
 `
 
 const Card = (props) => {
@@ -59,8 +56,9 @@ const Card = (props) => {
                     <SexImg src={props.node.article_img?props.node.article_img.url:""}></SexImg>
                 </ImgWrapper>
                 <TitleWrapper>
-                    {/* <HotIcon src={hot} alt=""/> */}
-                    {/* <Slug>{props.node._meta.tags[0]}</Slug> */}
+                    {props.node.hot &&
+                    <Hot src={props.node.hot.url}></Hot>
+                    }
                     <CardTitle>{RichText.asText(props.node.title)}</CardTitle>
                 </TitleWrapper>
             </CardContainer>

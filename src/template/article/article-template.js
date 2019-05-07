@@ -211,9 +211,9 @@ const Article = (props) => {
 
                 <Read>LESTU LÍKA</Read>
 
-                <Link to={props.pageContext.node.small_card[0].link_to_article._meta.uid}>
+                {/* <Link to={props.pageContext.node.small_card[0].link_to_article._meta.uid}>
                   <SmallCard smallCards={props.pageContext.node.small_card}/>
-                </Link>
+                </Link> */}
               
             </Container>
             
@@ -221,7 +221,9 @@ const Article = (props) => {
             
           </Global>
         </ThemeProvider> 
-        {/* <SmallCard smallCards={props.pageContext.node.small_card}/> */}
+          <Link to={props.pageContext.node.small_card[0].link_to_article._meta.uid}>
+              <SmallCard smallCards={props.pageContext.node.small_card}/>
+            </Link>
         <Footer/>
       </div>
       

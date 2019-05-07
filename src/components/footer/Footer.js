@@ -23,7 +23,7 @@ library.add(faStroopwafel)
 
 const FooterContainer = styled.div`
     width: 100vw;
-    height: 230px;
+    height: 170px;
     background-color: #FC4255;
     padding-top: 30px;
 `

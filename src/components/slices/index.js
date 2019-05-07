@@ -18,10 +18,10 @@ export const renderSlices = (body) => {
         {
 
             case 'content___heading':
-                return <SliceTextSub subheader={RichText.asText(sliceItem.primary.subheading)} paragraph={RichText.asText(sliceItem.primary.text)}/>;
+                return <SliceTextSub subheader={RichText.asText(sliceItem.primary.subheading)} paragraph={RichText.render(sliceItem.primary.text)}/>;
             // á eftir að sækja í gatsby node, laga það
             case 'content':
-                return <SliceText text={RichText.render(sliceItem.primary.text)}/>;
+                return <SliceText text={RichText.render(sliceItem.primary.content)}/>;
 
             case 'media':
                 return <SliceMedia image={sliceItem.primary.media.url}/>;

@@ -91,8 +91,10 @@ exports.createPages = ({ graphql, actions }) => {
                         }
                         ... on PRISMIC_ArticleBodyContent{
                           type
+                          primary{
+                            content
+                          }
                         }
-
                        ... on PRISMIC_ArticleBodyRepeat{
                           type
                           primary{
