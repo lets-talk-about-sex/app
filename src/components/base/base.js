@@ -62,6 +62,7 @@ class Global extends React.Component {
         font-size: 14px;
         text-transform: uppercase;
         color: #FC4255;
+        font-weight: 600;
       }
 
       p {

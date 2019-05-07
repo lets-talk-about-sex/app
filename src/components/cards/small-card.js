@@ -26,6 +26,7 @@ const SmallImgWrapper = styled.div`
 const SmallSexImg = styled.img`
     border-radius:  10px 10px 0 0;
     height: 100%;
+    object-fit: cover;
 `
 
 const SmallCardTitle = styled.h4` 

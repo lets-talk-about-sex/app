@@ -117,7 +117,7 @@ const LongCard = styled.div`
 const LongCardImg = styled.img`
   height: 80px;
   width: 80px;
-  object-fit: fill;
+  object-fit: cover;
   background-color: grey;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
@@ -168,7 +168,7 @@ const Article = (props) => {
               <Container>
                 <HeroBanner>
                   <HeroImg alt="" src={props.pageContext.node.article_img.url}></HeroImg>
-                  <Link to="/"><Close src={closeButton} alt=""></Close></Link>
+                  <Link to="/feed"><Close src={closeButton} alt=""></Close></Link>
                   {props.pageContext.node.hot &&
                     <Hot src={props.pageContext.node.hot.url}></Hot>
                   }
@@ -215,9 +215,9 @@ const Article = (props) => {
 
                 <Read>LESTU LÍKA</Read>
 
-                {/* <Link to={props.pageContext.node.small_card[0].link_to_article._meta.uid}>
+                <Link to={props.pageContext.node.small_card[0].link_to_article._meta.uid}>
                   <SmallCard smallCards={props.pageContext.node.small_card}/>
-                </Link> */}
+                </Link>
               
             </Container>
             
@@ -225,7 +225,7 @@ const Article = (props) => {
             
           </Global>
         </ThemeProvider> 
-        <SmallCard smallCards={props.pageContext.node.small_card}/>
+        {/* <SmallCard smallCards={props.pageContext.node.small_card}/> */}
         <Footer/>
       </div>
       

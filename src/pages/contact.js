@@ -76,12 +76,12 @@ const Contact = () => {
 
                                     <OneContactInfoDiv>
                                         <ContactImg src={Email} alt="Tölvupóstfang"></ContactImg>
-                                        <p>adidas@kinlif.is</p>
+                                        <p>adidas@kynlif.is</p>
                                     </OneContactInfoDiv>
 
                                     <OneContactInfoDiv>
                                         <ContactImg src={LandingPage} alt="Vefsíða"></ContactImg>
-                                        <p>kynlíf.is</p>
+                                        <p>kynlif.is</p>
                                     </OneContactInfoDiv>
 
                                 </ContactInfoContainer>

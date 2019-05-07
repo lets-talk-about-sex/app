@@ -76,7 +76,7 @@ const Footer = (props) => {
                             <FooterPageLink href="/about">Um okkur</FooterPageLink>
                             {/* <FooterPageLink href="#">Algengar spurningar</FooterPageLink> */}
                             <FooterPageLink href="/contact">Hafa samband</FooterPageLink>
-                            <FooterPageLink href="#">Styrktaraðilar</FooterPageLink>
+                            {/* <FooterPageLink href="#">Styrktaraðilar</FooterPageLink> */}
                         </FooterLinkContainer>
                     </FooterContainer>
                 </Global>
