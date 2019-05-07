@@ -62,18 +62,18 @@ const Share = styled.img`
 const MessengerLogo = styled.img`
   width: 100px;
   cursor: pointer;
-  // left: 50%;
-  // top: 50%;
-  // transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 `
 
 // gmail logo
 const GmailLogo = styled.img`
   width: 100px;
   cursor: pointer;
-  // left: 50%;
-  // top: 50%;
-  // transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 `
 
 // exit share logo 
