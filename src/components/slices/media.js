@@ -8,7 +8,7 @@ import styled from '@emotion/styled/macro';
 const Media = styled.img`
     width: 100%;
     object-fit: cover;
-    margin-top: 30px;
+    margin: 30px 0px;
 `
 
 const SliceMedia = ({image}) => {

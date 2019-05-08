@@ -13,12 +13,21 @@ const SubHeading = styled.div`
     margin-top: 30px;
 `
 
+const Par = styled.p`
+    ul{
+        li{
+            margin-left: 20px;
+            font-size: 16px;
+        }
+    }
+`
+
 const SliceTextSub = ({subheader, paragraph}) => {
   
     return (
         <div>   
             <SubHeading>{subheader}</SubHeading>
-            <p>{paragraph}</p>
+            <Par>{paragraph}</Par>
         </div>
     )};
     

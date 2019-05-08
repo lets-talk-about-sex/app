@@ -21,7 +21,7 @@ exports.createPages = ({ graphql, actions }) => {
             `
             query {
               prismic {
-                allArticles(first: 100){
+                allArticles(first:100){
                   totalCount
                   edges{
                     node
@@ -137,16 +137,18 @@ exports.createPages = ({ graphql, actions }) => {
           if (result.errors) {
             reject(result.errors)
           }
-       
+          
           // Create pages for each markdown file.
           result.data.prismic.allArticles.edges.forEach(({ node }) => {
+            console.log(node._meta.uid)
             createPage({
               path: node._meta.uid,
               component: articleTemplate,
               // In your blog post template's graphql query, you can use path
               // as a GraphQL variable to query for data from the markdown file.
               context: {
-                node
+                node,
+                limit: 100
               },
             })
           })

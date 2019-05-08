@@ -8,6 +8,7 @@ import Search from 'components/search/search';
 import AllCards from 'components/cards/allCards';
 import Footer from 'components/footer/Footer';
 
+
 export const query = graphql`
   query {
     prismic {
@@ -60,8 +61,7 @@ class App extends Component {
     results: [],
     resultsCounter: 0,
     searchIsEmpty: true,
-    isLoading: true
-    }
+    isLoading: true,    }
   }
 
   //þegar er smellt er á flokka þá keyrist þetta fall
@@ -69,7 +69,7 @@ class App extends Component {
     console.log(filter)
     this.setState({
       activefilter: filter,
-      activesearch: search
+      activesearch: search,
     })
   }
 
@@ -139,6 +139,7 @@ chat();
       data = this.props.data
     }
     console.log("data", data)
+    console.log("props", this.props)
     return (
      <ThemeProvider theme={theme}>
         <Search 
@@ -148,7 +149,7 @@ chat();
           searchStringIsEmpty={this.state.searchIsEmpty}/>
         <Global>
          <Container>
-              <AllCards filtering={this.state.activefilter} data={data} />
+           <AllCards filtering={this.state.activefilter} data={data} />
           </Container>
         </Global>
         <Footer/>

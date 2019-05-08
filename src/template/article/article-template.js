@@ -48,6 +48,7 @@ const HeroBanner = styled.div`
     width: calc(100% + 60px);
     height: 60vh;
     position: relative;
+
 `
 const HeroImg = styled.img`
     width: 100%;
@@ -60,7 +61,7 @@ const Close = styled.img`
    width: 18px;
    cursor: pointer;
    position: absolute;
-   top: 50px;
+   top: 25px;
    right: 30px;
 `
 const Hot = styled.img`
