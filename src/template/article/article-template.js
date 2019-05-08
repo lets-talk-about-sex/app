@@ -15,14 +15,7 @@ import { theme } from 'components/theme/theme';
 import Global from 'components/base/base';
 import {keyframes} from 'emotion';
 
-// Bannermynd
-const HeroBanner = styled.div`
-    margin-left: -30px;
-    width: calc(100% + 60px);
-    height: 60vh;
-    position: relative;
-`
-//keyframe fyrir hverning article á að opnast
+// keyframe fyrir hverning article á að opnast
 const ContentAnimation = keyframes`
     0% {
       transform: translateY(100vh) scale(0.8);
@@ -34,9 +27,27 @@ const ContentAnimation = keyframes`
 
     }
 `
+// keyframe fyrir hverning article á að opnast
+const ExitAnimation = keyframes`
+    // 0% {
+    //   opacity:1;
+    // }
+    // 100% {
+    //   opacity:0;
+    // }
+`
 const Animation = styled.div`
     position: relative;
-    animation: ${ContentAnimation} 2.1s cubic-bezier(.48,.49,.5,1.10);  
+    animation: ${ContentAnimation} 1.1s cubic-bezier(.48,.49,.5,1.10); 
+    // animation: ${ExitAnimation} 1.1s;  
+`
+
+// Bannermynd
+const HeroBanner = styled.div`
+    margin-left: -30px;
+    width: calc(100% + 60px);
+    height: 60vh;
+    position: relative;
 `
 const HeroImg = styled.img`
     width: 100%;
@@ -146,16 +157,13 @@ const Intro = styled.p`
 const Article = (props) => {
   console.log (props)
     let slices;
-    if(!props.pageContext && !props.pageContext.node.body) {
-
-      slices = [];
-    } else {
+    if(props.pageContext && props.pageContext.node.body) {
       slices = renderSlices(get(props, "pageContext.node.body", []));
+    } else {
+      slices = [];
     }
 
     console.log(slices)
-    console.log("pedro", props.pageContext.node)
-    console.log("halló Hulla", props)
 
     return (
         <div> 
@@ -163,7 +171,7 @@ const Article = (props) => {
             <Global>
             {props.pageContext? (
               <Container>
-                <Animation>
+                <Animation> 
                 <HeroBanner>
                   <HeroImg alt="" src={props.pageContext.node.article_img.url}></HeroImg>
                   <Link to="/feed"><Close src={closeButton} alt=""></Close></Link>
@@ -180,7 +188,7 @@ const Article = (props) => {
 
                       <TitleDiv>
                         <Title>{props.pageContext.node.title[0].text}</Title>
-                        {/* <ShareComponent></ShareComponent>  */}
+                        <ShareComponent location={props.location}></ShareComponent>
 
                       </TitleDiv>
 
@@ -216,8 +224,8 @@ const Article = (props) => {
             
           </Global>
         </ThemeProvider> 
-            <Link to={props.pageContext.node.small_card[0].link_to_article._meta.uid}>
-              <SmallCard smallCards={props.pageContext.node.small_card}/>
+            <Link to={get(props, "pageContext.node.small_card[0].link_to_article._meta.uid", "")}>
+              <SmallCard smallCards={get(props, "pageContext.node.small_card", [])}/>
             </Link>
         <Footer/>
       </div>

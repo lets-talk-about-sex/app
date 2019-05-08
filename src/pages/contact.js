@@ -16,6 +16,8 @@ import LandingPage from '../assets/icon/browser.svg';
 
 const Container = styled.div`
    margin: 0 30px;
+   height: auto;
+   width: 100vw;
 `
 const SubHeaderFooterPage = styled.h3`
     margin-bottom: 10px;
@@ -49,7 +51,11 @@ const ContactImg = styled.img`
 `
 
 const ContactInfoContainer = styled.div`
-   margin-bottom: 50px;
+   margin-bottom: 80px;
+`
+
+const MainTextFB = styled.div`
+   width: 80%;
 `
 
 const Contact = () => {
@@ -59,11 +65,12 @@ const Contact = () => {
                     <Global>
                         <Container>
 
-                            <TitleFooterPage>Hafa Samband</TitleFooterPage>
-                            <Link to={"/"}><Close src={closeButton} alt=""></Close></Link>
-                            <SubHeaderFooterPage>Samfélagsleg ábyrgð</SubHeaderFooterPage>
-                            <p>Kynfræðsla í skólum þarfnast betrum bætunar og viljum við koma til móts við þarfir unglinga og gera kynfræðsluna meira aðlaðandi fyrir þá.</p>
-
+                            <TitleFooterPage>Hafa samband</TitleFooterPage>
+                            <Link to={"/feed"}><Close src={closeButton} alt=""></Close></Link>
+                            <MainTextFB>
+                                <SubHeaderFooterPage>Samfélagsleg ábyrgð</SubHeaderFooterPage>
+                                <p>Kynfræðsla í skólum þarfnast betrum bætunar og viljum við koma til móts við þarfir unglinga og gera kynfræðsluna meira aðlaðandi fyrir þá.</p>
+                            </MainTextFB>
                             <div>
                                 <TeamTitle>Contact Upplýsingar</TeamTitle>
 

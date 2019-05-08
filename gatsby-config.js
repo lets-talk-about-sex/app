@@ -16,15 +16,53 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'ueno-gatsby-starter',
-        short_name: 'starter',
+        name: "Let's talk about sex",
+        short_name: "Let's talk",
         start_url: '/',
-        background_color: '#663399',
-        theme_color: '#663399',
-        display: 'minimal-ui',
-        icon: 'src/assets/images/favicon.png',
+        background_color: '#FC4255',
+        theme_color: '#FC4255',
+        display: 'standalone',
+        icon: 'src/assets/images/SexFavIcons/AppLogo-192.png',
+        icons: [
+          {
+            src: `/AppLogo-192.png`,
+            sizes: `192x192`,
+            type: `image/png`,
+          },
+          {
+            src: `/AppLogo-512.png`,
+            sizes: `512x512`,
+            type: `image/png`,
+          },
+          {
+            src: `/AppLogo-256.png`,
+            sizes: `256x256`,
+            type: `image/png`,
+          },
+          {
+            src: `/AppLogo-180.png`,
+            sizes: `180x180`,
+            type: `image/png`,
+          },
+          {
+            src: `/AppLogo-144.png`,
+            sizes: `144x144`,
+            type: `image/png`,
+          },
+          {
+            src: `/AppLogo-96.png`,
+            sizes: `144x144`,
+            type: `image/png`,
+          },
+          {
+            src: `/AppLogo-72.png`,
+            sizes: `144x144`,
+            type: `image/png`,
+          },
+        ], 
       },
     },
+    'gatsby-plugin-offline',
     {
       resolve: 'gatsby-plugin-react-svg',
       options: {

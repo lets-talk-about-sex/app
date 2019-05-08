@@ -29,7 +29,7 @@ const FooterContainer = styled.div`
 `
 const SocialMediaContainer = styled.div`
     display:flex;
-    justify-content: center;
+    justify-content: space-between;
     width: 103px;
     margin: 0 auto;
 `

@@ -62,18 +62,12 @@ const Share = styled.img`
 const MessengerLogo = styled.img`
   width: 100px;
   cursor: pointer;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
 `
 
 // gmail logo
 const GmailLogo = styled.img`
   width: 100px;
   cursor: pointer;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
 `
 
 // exit share logo 
@@ -91,7 +85,7 @@ class ShareComponent extends React.Component {
 
     constructor(props) {
       super(props);
-      console.log(this.props.location.href)
+      console.log(this.props.location)
       this.state = {isToggleOn: false};
   
       // This binding is necessary to make `this` work in the callback
@@ -109,19 +103,18 @@ class ShareComponent extends React.Component {
         return (
             <div>   
                 <ShareAnimation className={this.state.isToggleOn ? "active":""}>
-                           <ShareDiv onClick={this.handleClick} className={"firstState"}>
-                            <Share src={shareButton} alt="" ></Share>
-                          </ShareDiv>
-                          <ShareDiv className={"messengerButton"}>
-                          <a href={"fb-messenger://share/?link="+this.props.location.href+"&app_id=470392137039381"}><MessengerLogo src={MessengerButton} alt=""></MessengerLogo></a> 
-                          </ShareDiv>
-                          <ShareDiv className={"gmailButton"}>
-                          <a href={"https://mail.google.com/mail/?view=cm&fs=1&tf=1&body="+this.props.location.href+"&ui=2&tf=1&pli=1"} ><GmailLogo src={GmailButton} alt=""></GmailLogo> </a>
-                            
-                          </ShareDiv>
-                          <ShareDiv onClick={this.handleClick} className={"closeShareButton"}>
-                            <Exit src={ExitButton} alt=""></Exit>
-                          </ShareDiv> 
+                    <ShareDiv onClick={this.handleClick} className={"firstState"}>
+                    <Share src={shareButton} alt="" ></Share>
+                  </ShareDiv>
+                  <ShareDiv className={"messengerButton"}>
+                  <a href={"fb-messenger://share/?link="+this.props.location.href+"&app_id=470392137039381"}><MessengerLogo src={MessengerButton} alt=""></MessengerLogo></a> 
+                  </ShareDiv>
+                  <ShareDiv className={"gmailButton"}>
+                  <a href={"https://mail.google.com/mail/?view=cm&fs=1&tf=1&body="+this.props.location.href+"&ui=2&tf=1&pli=1"} ><GmailLogo src={GmailButton} alt=""></GmailLogo> </a>
+                  </ShareDiv>
+                  <ShareDiv onClick={this.handleClick} className={"closeShareButton"}>
+                    <Exit src={ExitButton} alt=""></Exit>
+                  </ShareDiv> 
                 </ShareAnimation> 
             </div>
         )
