@@ -93,8 +93,8 @@ const About = () => {
                     <Global>
                         <Container>
 
-                            <TitleFooterPage>Um verkefnið</TitleFooterPage>
-                            <Link to={"/"}><Close src={closeButton} alt=""></Close></Link>
+                            <TitleFooterPage>Um Okkur</TitleFooterPage>
+                            <Link to={"/feed"}><Close src={closeButton} alt=""></Close></Link>
                             <SubHeaderFooterPage>Samfélagsleg ábyrgð</SubHeaderFooterPage>
                             <p>Kynfræðsla í skólum þarfnast betrum bætunar og viljum við koma til móts við þarfir unglinga og gera kynfræðsluna meira aðlaðandi fyrir þá.</p>
 
@@ -134,7 +134,7 @@ const About = () => {
                     <TeamImageDiv>
                         <TeamImage src={Hugrun} alt="Ragnhildur Rós Guðmundsdóttir"></TeamImage>
                     </TeamImageDiv>
-                    <NameTitle>Ragnhildur Rós</NameTitle>
+                    <NameTitle>Ragnhildur</NameTitle>
                     <JobTitle>Forritari <br/> & móðir</JobTitle>
                 </TeamMember>
             </TeamContainer>

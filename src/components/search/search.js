@@ -125,7 +125,8 @@ const CategoryWrapper = styled.div`
       li {
         display: inline-block;  
         padding: 14px;
-        text-decoration: none; 
+        text-decoration: none;
+        color: #C7C7C7;
     } 
          li.active {
             color:#000;

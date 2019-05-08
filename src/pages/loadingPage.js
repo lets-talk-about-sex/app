@@ -12,8 +12,15 @@ import Mynstur from '../assets/icon/mynstur.svg';
 
 
 const LoadingContainer = styled.div`
-   display: block;
-   
+   position: fixed; 
+   top: 0;
+   left: 0;
+   height: 100vh;
+   width: 100vw;
+   z-index: 999;
+   &.transitionIsDone {
+    display:none;
+}
 `
 
 const LoadingBackground = styled.div`
@@ -31,9 +38,6 @@ const LoadingBackground = styled.div`
    &.alert-hidden {
        opacity: 0;
        transition: all 250ms linear;
-   }
-   &.transitionIsDone {
-       display:none;
    }
 `
 const MynsturImg = styled.img`
@@ -147,8 +151,8 @@ class LoadingPage extends React.Component {
         render() {
             return (
             <div>
-                <LoadingContainer>
-                    <LoadingBackground className={`alert alert-success ${this.state.isLoading ? 'alert-shown' : 'alert-hidden'} ${this.state.transitionDone ? 'transitionIsDone' : ""}`}>
+                <LoadingContainer className={this.state.transitionDone ? 'transitionIsDone' : ""}>
+                    <LoadingBackground className={`alert alert-success ${this.state.isLoading ? 'alert-shown' : 'alert-hidden'}`}>
                         <MynsturImg src={Mynstur} alt=""></MynsturImg>
                         <AppLogo>Let's talk about sex</AppLogo>
                         <LoadingWrapper>

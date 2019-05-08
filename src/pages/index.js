@@ -15,16 +15,11 @@ import Ordabanki from '../assets/icon/ordabankaicon.svg';
 import SturlStad from '../assets/icon/sturlstad.svg';
 import ArrowRight from '../assets/icon/article/arrowRightLinks.svg';
 
-// Til að service workerinn virki
-if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('./sw.js')
-    .then(function(registration) {
-      console.log('Registration successful, scope is:', registration.scope);
-    })
-    .catch(function(error) {
-      console.log('Service worker registration failed, error:', error);
-    });
-  }
+const OnBoardingContainer = styled.div`
+  width: 100vw;
+  height: 100vh;
+  background-image: url(${Mynstur_dark});
+`
 
 const SkipButton = styled.a`
     margin-left: 30px;
@@ -59,14 +54,12 @@ const ArrowDiv = styled.div`
     }
 `
 const ArrowImg = styled.img`
-    
     cursor: pointer;
     position: absolute; 
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
 `
-
 const OBCardsWrapper = styled.div`
     position: relative;
     &:after {
@@ -78,8 +71,7 @@ const OBCardsWrapper = styled.div`
         left: 0;
         right: 0;
         bottom: 0;
-    }
-    
+    }  
 `
 const OBCards = styled.div`
     overflow-x: auto;   
@@ -91,8 +83,7 @@ const OBCards = styled.div`
     padding-top: 40%;
     &::-webkit-scrollbar , &::-webkit-scrollbar-thumb {
         display: none;
-    }
-    
+    } 
  `
 const OBCardContainer = styled.div`
     flex-shrink: 0;
@@ -184,7 +175,6 @@ const LineTheFine3 = styled.span`
         background-color:#FC4255; 
   }
   `
-
   class Onboarding extends React.Component {
     constructor() {
         super();
@@ -203,8 +193,7 @@ const LineTheFine3 = styled.span`
                 <ThemeProvider theme={theme}>
                 <LoadingPage />
                     <Global>
-                        <div>
-                            <MynsturImg src={Mynstur_dark} alt=""></MynsturImg>
+                        <OnBoardingContainer>
                             <OBCardsWrapper onScroll={this.scrolling}>
                                 <OBCards>
                                     <OBCardContainer>
@@ -236,7 +225,6 @@ const LineTheFine3 = styled.span`
                                     </OBCardContainer>
                                 </OBCards>
                             </OBCardsWrapper>
-
                             <CarouselIndicator>
                                 <LineTheFine1 className={this.state.scrolling == 0? 'red' : ""}></LineTheFine1>
                                 <LineTheFine2 className={this.state.scrolling == 1? 'red' : ""}></LineTheFine2>
@@ -250,10 +238,9 @@ const LineTheFine3 = styled.span`
                                     </ArrowDiv>
                                 </ButtonDiv>
                             </Link>
-                        </div>
+                        </OnBoardingContainer>
                     </Global>
                 </ThemeProvider> 
-
             </div>
      ) 
     }
