@@ -21,7 +21,7 @@ yarn dev
 
 ### Built with
 Uneo start kit</br>
-React (JavaScript library)</br>
+[React](https://reactjs.org/)</br>
 GraphiQL (A queary language for API)</br>
 Gatsby (Framework based on React to improve websites and apps)</br>
 Loadash (Javascript utility library)</br>
