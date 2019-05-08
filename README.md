@@ -1,5 +1,5 @@
 # Let's talk about sex - sex education progressive web app
-Mobile friendly sexeducation for young adults. </br></br>
+Mobile friendly sex education for young adults. The interface is only made for viewing on mobile. It is a progressive web app so users can save it on their homescreen and use it without internet conection. </br></br>
 
 ## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.</br></br>
