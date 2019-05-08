@@ -4,12 +4,18 @@ Mobile friendly sexeducation for young adults.
 <b>Getting Started</b></br>
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-<b>Prerequisites</b>
+### Prerequisites
 1. Clone the Reposetory to your Terminal
-2. Make sure you are inside the folder app (Terminal: cd app)
-2. Install yarn in the Terminal to set up the package.json file (Terminal: yarn)
+2. Go inside the folder app
+```bash
+cd app
+```
+3. Install yarn in the Terminal to set up the package.json file
+```bash
+yarn
+```
 
-<b>Installing</b>
+### Installing
 1. yarn dev - to get the project up and running on localhost
 2. View app by localhost:8000
 
