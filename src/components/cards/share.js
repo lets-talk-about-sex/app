@@ -48,10 +48,10 @@ const ShareDiv = styled.div`
 `
 // share button
 const Share = styled.img`
-   height: auto;
-   width: 18px;
-   cursor: pointer;
-   position: absolute; 
+  height: auto;
+  width: 18px;
+  cursor: pointer;
+  position: absolute; 
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -63,7 +63,6 @@ const MessengerLogo = styled.img`
   width: 100px;
   cursor: pointer;
 `
-
 // gmail logo
 const GmailLogo = styled.img`
   width: 100px;
