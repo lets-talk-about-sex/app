@@ -1,10 +1,7 @@
 import React from 'react';
 import { get } from 'lodash';
 import styled from '@emotion/styled/macro';
-import hot from 'assets/icon/hot.svg';
 import {Link} from 'gatsby';
-
-
 
 const SmallCardContainer = styled.div`
     width: 140px;
@@ -19,13 +16,11 @@ const SmallImgWrapper = styled.div`
     height:140px;
     width: 140px;
 `
-
 const SmallSexImg = styled.img`
     border-radius:  10px 10px 0 0;
     height: 100%;
     object-fit: cover;
 `
-
 const SmallCardTitle = styled.h4` 
     font-family: Poppins;
 `
@@ -35,7 +30,6 @@ const SmallTitleWrapper = styled.div`
     padding: 16px 10px;
     position: relative; 
 `
-
 const SmallCardCarousel = styled.div`
     display: flex;
     height: 250px;
@@ -48,7 +42,6 @@ const SmallCardCarousel = styled.div`
         display: none;
         }
 `
-
 const SmallCard = (props) => {
     // console.log('renderaði small card')
     // console.log('title', props.title)
