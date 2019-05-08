@@ -4,7 +4,7 @@ Mobile friendly sexeducation for young adults.
 <b>Getting Started</b></br>
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-### Prerequisites
+## Setup <hr>
 1. Clone the Reposetory to your Terminal
 2. Go inside the folder app
 ```bash
@@ -14,12 +14,12 @@ cd app
 ```bash
 yarn
 ```
+4. To get the project up and running on localhost:8000
+```bash
+yarn dev
+```
 
-### Installing
-1. yarn dev - to get the project up and running on localhost
-2. View app by localhost:8000
-
-<b>Built with</b></br>
+### Built with <hr>
 Uneo start kit</br>
 React (JavaScript library)</br>
 GraphiQL (A queary language for API)</br>
