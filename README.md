@@ -1,11 +1,12 @@
 # Let's talk about sex - sex education progressive web app
 Mobile friendly sexeducation for young adults.
 
-<b>Getting Started</b></br>
+## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 ## Setup
 1. Clone the Reposetory to your Terminal
+
 2. Go inside the folder app
 ```bash
 cd app
@@ -20,13 +21,13 @@ yarn dev
 ```
 
 ### Built with
-Uneo start kit</br>
+[Uneo start kit](https://github.com/ueno-llc/create-ueno-app)</br>
 [React](https://reactjs.org/)</br>
-GraphiQL (A queary language for API)</br>
-Gatsby (Framework based on React to improve websites and apps)</br>
-Loadash (Javascript utility library)</br>
-Prismic (Headless CMS system)</br>
-Emotions (css library)
+[GraphiQL](https://graphql.org/)</br>
+[Gatsby](https://www.gatsbyjs.org/)</br>
+[Loadash](https://lodash.com/)</br>
+[Prismic](https://prismic.io/)</br>
+[Emotions](https://emotion.sh/docs/introduction)
 
 ### Version
 Beta April 2019
