@@ -4,7 +4,7 @@ Mobile friendly sexeducation for young adults.
 <b>Getting Started</b></br>
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-## Setup <hr>
+## Setup
 1. Clone the Reposetory to your Terminal
 2. Go inside the folder app
 ```bash
@@ -19,7 +19,7 @@ yarn
 yarn dev
 ```
 
-### Built with <hr>
+### Built with
 Uneo start kit</br>
 React (JavaScript library)</br>
 GraphiQL (A queary language for API)</br>
@@ -28,16 +28,16 @@ Loadash (Javascript utility library)</br>
 Prismic (Headless CMS system)</br>
 Emotions (css library)
 
-<b>Version</b></br>
+### Version
 Beta April 2019
 
-<b>Authors</b></br>
+### Authors
 Anna Sóley Karlsdóttir</br>
 Birgitta Rún Sveinbjörnsdóttir</br>
 Hugrún Rúnarsdóttir</br>
 Ragnhildur Rós Guðmundsdóttir</br>
 
-<b>Acknowledgments</b></br>
+### Acknowledgments
 Albert Guðlaugsson</br>
 Ellert Smári Kristbergsson</br>
 Pedro Netto</br>
