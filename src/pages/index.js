@@ -61,7 +61,6 @@ const ArrowDiv = styled.div`
     }
 `
 const ArrowImg = styled.img`
-    
     cursor: pointer;
     position: absolute; 
     left: 50%;
@@ -90,7 +89,6 @@ const OBCardContainer = styled.div`
     background-color: #fff;
     margin-left: 30px;
     position: relative;
-    
 `
 
 const MynsturImg = styled.img`

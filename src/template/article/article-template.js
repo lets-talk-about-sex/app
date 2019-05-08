@@ -221,7 +221,7 @@ const Article = (props) => {
             
           </Global>
         </ThemeProvider> 
-          <Link to={props.pageContext.node.small_card[0].link_to_article._meta.uid}>
+            <Link to={props.pageContext.node.small_card[0].link_to_article._meta.uid}>
               <SmallCard smallCards={props.pageContext.node.small_card}/>
             </Link>
         <Footer/>
