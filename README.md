@@ -1,4 +1,4 @@
-<b>Sexeducation application</b></br>
+# Let's talk about sex - sex education progressive web app
 Mobile friendly sexeducation for young adults.
 
 <b>Getting Started</b></br>
