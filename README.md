@@ -20,7 +20,7 @@ yarn
 yarn dev
 ```
 
-### Built with
+## Built with
 [Uneo start kit](https://github.com/ueno-llc/create-ueno-app)</br>
 [React](https://reactjs.org/)</br>
 [GraphiQL](https://graphql.org/)</br>
@@ -29,16 +29,16 @@ yarn dev
 [Prismic](https://prismic.io/)</br>
 [Emotions](https://emotion.sh/docs/introduction)
 
-### Version
+## Version
 Beta April 2019
 
-### Authors
+## Authors
 Anna Sóley Karlsdóttir</br>
 Birgitta Rún Sveinbjörnsdóttir</br>
 Hugrún Rúnarsdóttir</br>
 Ragnhildur Rós Guðmundsdóttir</br>
 
-### Acknowledgments
+## Acknowledgments
 Albert Guðlaugsson</br>
 Ellert Smári Kristbergsson</br>
 Pedro Netto</br>
