@@ -36,7 +36,7 @@ const ContentAnimation = keyframes`
 `
 const Animation = styled.div`
     position: relative;
-    animation: ${ContentAnimation} 2.1s cubic-bezier(.48,.49,.5,1.10);  
+    animation: ${ContentAnimation} 0.5s cubic-bezier(.48,.49,.5,1.10);  
 `
 const HeroImg = styled.img`
     width: 100%;
@@ -49,7 +49,7 @@ const Close = styled.img`
    width: 18px;
    cursor: pointer;
    position: absolute;
-   top: 50px;
+   top: 25px;
    right: 30px;
 `
 const Hot = styled.img`
