@@ -19,7 +19,7 @@ yarn
 ```bash
 yarn dev
 ```
-</br><
+</br>
 
 ## Built with
 [Uneo start kit](https://github.com/ueno-llc/create-ueno-app)</br>
