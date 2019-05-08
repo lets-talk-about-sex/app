@@ -29,7 +29,7 @@ const TeamContainer = styled.div`
     width: auto;
     overflow-x: auto;
     scroll-behavior: smooth;
-        & ::-webkit-scrollbar {
+        &::-webkit-scrollbar {
         display: none;
         }
 `

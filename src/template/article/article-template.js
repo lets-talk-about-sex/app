@@ -175,7 +175,10 @@ const Article = (props) => {
 
                       <CategoryDiv>
                         {/* spurning um að gera function hér sem gerir það að verkum að ef article er með fleiri en eitt tag þá birtast þau öll? */}
+                        <Link to="/feed"
+                        state={{categoryTag:props.pageContext.node._meta.tags[0]}}>
                         <Category>{props.pageContext.node._meta.tags[0]}</Category>
+                        </Link>
                       </CategoryDiv>
 
                       <TitleDiv>

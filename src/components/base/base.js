@@ -17,6 +17,13 @@ class Global extends React.Component {
       background-color: #f9f9f9;
      }
 
+     /* ::-webkit-scrollbar , ::-webkit-scrollbar-thumb  {
+            display: none !important; 
+            -webkit-appearance: none;
+            -webkit-overflow-scrolling: touch;
+            
+    } */
+
      h1, h2, h3, h4, h5 {
          font-family: 'Poppins', sans-serif;
          color: #000;

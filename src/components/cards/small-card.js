@@ -3,6 +3,7 @@ import { get } from 'lodash';
 import styled from '@emotion/styled/macro';
 import {Link} from 'gatsby';
 
+
 const SmallCardContainer = styled.div`
     width: 140px;
     height: 196px;
@@ -38,32 +39,47 @@ const SmallCardCarousel = styled.div`
     overflow-x: auto;
     scroll-behavior: smooth;
     padding-left: 30px;
-        & ::-webkit-scrollbar {
+    position: relative;
+    &:after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 10px;
+        background-color: #f9f9f9;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+    }
+    &::-webkit-scrollbar {
         display: none;
-        }
+    }
 `
+
 const SmallCard = (props) => {
     // console.log('renderaði small card')
     // console.log('title', props.title)
     // console.log('image', props.image)
     console.log(props)
     
+
     return (
         <SmallCardCarousel> 
             {props.smallCards.map((item, i) => {
             return  item.link_to_article && 
                 <Link to={item.link_to_article._meta.uid}>
-                    <SmallCardContainer>
-                        <SmallImgWrapper>
-                            <SmallSexImg src={item.link_to_article.article_img.url} />
-                        </SmallImgWrapper>
-                        <SmallTitleWrapper>
-                            <SmallCardTitle>{item.link_to_article.title[0].text}</SmallCardTitle>
-                        </SmallTitleWrapper>
-                    </SmallCardContainer>
+                    
+                        <SmallCardContainer>
+                            <SmallImgWrapper>
+                                <SmallSexImg src={item.link_to_article.article_img.url} />
+                            </SmallImgWrapper>
+                            <SmallTitleWrapper>
+                                <SmallCardTitle>{item.link_to_article.title[0].text}</SmallCardTitle>
+                            </SmallTitleWrapper>
+                        </SmallCardContainer>
                 </Link>
         })}
         </SmallCardCarousel>
+       
     )};
     
 

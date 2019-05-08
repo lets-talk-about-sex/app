@@ -78,6 +78,7 @@ class App extends Component {
     searchIsEmpty: true,
     isLoading: true
     }
+    console.log(this.props.location)
   }
 
   //þegar er smellt er á flokka þá keyrist þetta fall
@@ -140,7 +141,8 @@ class App extends Component {
           renderbyfilter={this.RenderByFilter}
           update={this.update}
           showResults={this.state.resultsCounter}
-          searchStringIsEmpty={this.state.searchIsEmpty}/>
+          searchStringIsEmpty={this.state.searchIsEmpty}
+          linkState={this.props.location.state}/>
         <Global>
          <Container>
               <AllCards filtering={this.state.activefilter} data={data} />

@@ -3,6 +3,8 @@ import styled from '@emotion/styled/macro';
 import search from 'assets/icon/search.svg';
 import closeButton from '../../assets/icon/article/close.svg';
 
+
+
 const SearchContainer = styled.div`
     display:flex;
     justify-content:flex-end;
@@ -15,6 +17,7 @@ const SearchContainer = styled.div`
     height: 80px;
     margin: 0;
     overflow: hidden;
+    z-index:999;
     &.searchOnScroll {
         [type="text"], [type="submit"] {
             background-color: #fff;
@@ -51,7 +54,6 @@ const SearchInput = styled.input`
         background: none;
         border-top-left-radius: 10px;
         border-bottom-left-radius: 10px;
-        z-index: 1;
         cursor: pointer;
         opacity: 0;
         transform: translateX(100%);
@@ -62,6 +64,7 @@ const SearchInput = styled.input`
                     color .5s ease;
     }
     &[type="submit"] {
+        z-index: 2;
         flex-shrink: 0;
         height: 50px;
         width: 50px;
@@ -87,6 +90,7 @@ const SearchResults = styled.li`
   }
 `
 const CategoryWrapper = styled.div`
+    position:relative;
     display:flex;
     padding-left: 25px;
     list-style-type: none;
@@ -99,13 +103,29 @@ const CategoryWrapper = styled.div`
     white-space: nowrap;
     margin-bottom: 25px;
     padding-top: 60px;
-    & ::-webkit-scrollbar {
-        display: none; 
+    -webkit-overflow-scrolling: touch;
+    &:after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 10px;
+        background-color: ${props => props.theme.baseColors.bodyBackground};
+        position: absolute;
+        left: 0;
+        bottom: 0;
+    }
+    &::-webkit-scrollbar , &::-webkit-scrollbar-thumb {
+            display: none;        
+    }
+    ul {
+        height: calc(92px - 20px);
+        padding-bottom: 20px;
+        overflow-y: hidden;
     }
       li {
         display: inline-block;  
         padding: 14px;
-        text-decoration: none;
+        text-decoration: none; 
     } 
          li.active {
             color:#000;
@@ -133,6 +153,13 @@ class Search extends Component {
 
     componentDidMount() {
         window.addEventListener('scroll', this.handleScroll);
+        if ("categoryTag" in this.props.linkState){
+            this.setState({
+                activeCategory:this.props.linkState.categoryTag
+            },() => {
+                this.handleClick(this.props.linkState.categoryTag);
+            });
+        }
     }
 
     componentWillUnmount() {
@@ -251,14 +278,14 @@ class Search extends Component {
                 <div>
                     <CategoryWrapper>
                         {this.props.searchStringIsEmpty? 
-                        <React.Fragment>
+                        <ul>
                             <li className={this.state.activeCategory===''?'active':''} onClick={() => { this.handleClick('') }}>Allt</li>
                             <li className={this.state.activeCategory==='kynlíf'?'active':''} onClick={() => { this.handleClick('kynlíf') }}>Kynlíf</li>
                             <li className={this.state.activeCategory==='kynþroski'?'active':''} onClick={() => { this.handleClick('kynþroski') }}>Kynþroski</li>
                             <li className={this.state.activeCategory==='samskipti'?'active':''} onClick={() => { this.handleClick('samskipti') }}>Samskipti</li>
                             <li className={this.state.activeCategory==='kynhneigð'?'active':''} onClick={() => { this.handleClick('kynhneigð') }}>Kynverund</li>
                             {/* <li className={this.state.activeCategory==='myndefni'?'active':''} onClick={() => { this.handleClick('myndefni') }}>Myndefni</li> */} 
-                        </React.Fragment>:
+                        </ul>:
                         <SearchResults> 
                         <span className="color">{this.props.showResults}</span> orð fundust</SearchResults>
                     }

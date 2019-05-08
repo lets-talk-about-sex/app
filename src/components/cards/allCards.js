@@ -55,7 +55,7 @@ const AllCards = (props) => {
             let SomeCard;
             // console.log(edge)
             if (edge.node.article_img) {
-                SomeCard =  Card;
+                SomeCard = Card;
             }
             else if (edge.node.didyouknow) {
                 SomeCard = DidYouKnowCard;

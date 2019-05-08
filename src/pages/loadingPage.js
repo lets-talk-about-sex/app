@@ -144,8 +144,6 @@ class LoadingPage extends React.Component {
         }
       }
 
-    
-
         render() {
             return (
             <div>
@@ -164,10 +162,6 @@ class LoadingPage extends React.Component {
             </div>
             )
         } 
-
-
 };
-
-
 
 export default LoadingPage;
