@@ -8,6 +8,11 @@ import { ThemeProvider } from 'emotion-theming'
 import { theme } from 'components/theme/theme';
 import Global from 'components/base/base';
 import {keyframes} from 'emotion';
+import closeButton from '../../assets/icon/article/close.svg';
+import Footer from 'components/footer/Footer';
+import SmallCard from '../../components/cards/small-card.js';
+import Helpful from 'components/cards/helpful';
+import ShareComponent from 'components/cards/share';
 import { Container } from 'components/theme/container';
 
 
