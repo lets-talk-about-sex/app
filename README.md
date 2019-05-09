@@ -5,7 +5,7 @@ Mobile friendly sex education for young adults. The interface is only made for v
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.</br></br>
 
 ## Setup
-1. Clone the Reposetory to your Terminal
+1. Clone the Repository to your Terminal
 ```bash
 git clone git@github.com:lets-talk-about-sex/app.git
 ```
@@ -17,7 +17,7 @@ cd app
 ```bash
 yarn
 ```
-4. To get the project up and running on localhost:8000
+4. To get the project up and running on localhost
 ```bash
 yarn dev
 ```
