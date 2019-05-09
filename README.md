@@ -7,7 +7,7 @@ These instructions will get you a copy of the project up and running on your loc
 ## Setup
 1. Clone the Reposetory to your Terminal
 ```bash
-git@github.com:lets-talk-about-sex/app.git
+git clone git@github.com:lets-talk-about-sex/app.git
 ```
 2. Go inside the folder app
 ```bash
