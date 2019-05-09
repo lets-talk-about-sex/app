@@ -22,7 +22,7 @@ import * as faSolid from 'emotion-icons/fa-solid'
 library.add(faStroopwafel)
 
 const FooterContainer = styled.div`
-    width: 100vw;
+    width: 100%;
     height: 170px;
     background-color: #FC4255;
     padding-top: 30px;

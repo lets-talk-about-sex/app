@@ -7,7 +7,6 @@ class Global extends React.Component {
     injectGlobal`
     * {
       box-sizing: border-box;
-      margin: 0;
       padding: 0;
   }
      /* Fontur */
@@ -15,6 +14,8 @@ class Global extends React.Component {
 
      body {
       background-color: #f9f9f9;
+      max-width: 450px;
+      margin: 0 auto;  
      }
 
      /* ::-webkit-scrollbar , ::-webkit-scrollbar-thumb  {
