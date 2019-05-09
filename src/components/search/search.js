@@ -154,7 +154,7 @@ class Search extends Component {
 
     componentDidMount() {
         window.addEventListener('scroll', this.handleScroll);
-        if ("categoryTag" in this.props.linkState){
+        if (this.props.linkState&&this.props.linkState.categoryTag){
             this.setState({
                 activeCategory:this.props.linkState.categoryTag
             },() => {
@@ -162,6 +162,19 @@ class Search extends Component {
             });
         }
     }
+
+
+
+    // componentDidMount() {
+    //     window.addEventListener('scroll', this.handleScroll);
+    //     if ("categoryTag" in this.props.linkState){
+    //         this.setState({
+    //             activeCategory:this.props.linkState.categoryTag
+    //         },() => {
+    //             this.handleClick(this.props.linkState.categoryTag);
+    //         });
+    //     }
+    // }
 
     componentWillUnmount() {
         window.removeEventListener('scroll',this.handleScroll);

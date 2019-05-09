@@ -2,7 +2,7 @@ import React from 'react';
 import { get } from 'lodash';
 import { RichText } from 'prismic-reactjs';
 import styled from '@emotion/styled/macro';
-import { Link } from "gatsby"
+import { Link, navigate } from "gatsby"
 import closeButton from '../../assets/icon/article/close.svg';
 import Footer from 'components/footer/Footer';
 import SmallCard from '../../components/cards/small-card.js';
@@ -29,17 +29,22 @@ const ContentAnimation = keyframes`
 `
 // keyframe fyrir hverning article á að opnast
 const ExitAnimation = keyframes`
-    // 0% {
-    //   opacity:1;
-    // }
-    // 100% {
-    //   opacity:0;
-    // }
+    0% {
+      opacity:1;
+    }
+    100% {
+      opacity:0;
+    }
 `
 const Animation = styled.div`
     position: relative;
-    animation: ${ContentAnimation} 1.1s cubic-bezier(.48,.49,.5,1.10); 
-    // animation: ${ExitAnimation} 1.1s;  
+    animation: ${ContentAnimation} 0.7s cubic-bezier(.48,.49,.5,1.10); 
+    &.exitAnimation {
+      animation: ${ExitAnimation} 0.5s ease; 
+    }
+    &.transitionIsDone {
+      display:none;
+  }
 `
 
 // Bannermynd
@@ -155,40 +160,56 @@ const Intro = styled.p`
  margin-bottom: 30px;
 `
 
-const Article = (props) => {
-  console.log (props)
-    let slices;
-    if(props.pageContext && props.pageContext.node.body) {
-      slices = renderSlices(get(props, "pageContext.node.body", []));
-    } else {
-      slices = [];
-    }
+class Article extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      className: "",
 
-    console.log(slices)
+    };
+  }
+    render() {
+      let slices;
+      const props = this.props;
+      if(props.pageContext && props.pageContext.node.body) {
+        slices = renderSlices(get(props, "pageContext.node.body", []));
+      } else {
+        slices = [];
+      }
+  
+      const closeArticle = () => {
+        // geri eitthvað hér sem sýnir animation
+        this.timerHandle = setTimeout(() => {
+          navigate('/feed')
+          }, 500);
 
-    return (
-        <div> 
+        this.setState({
+          className: "exitAnimation"
+        })
+      }
+      return (
+          <div> 
           <ThemeProvider theme={theme}>
             <Global>
             {props.pageContext? (
               <Container>
-                <Animation> 
+                <Animation className={this.state.className}> 
                 <HeroBanner>
                   <HeroImg alt="" src={props.pageContext.node.article_img.url}></HeroImg>
-                  <Link to="/feed"><Close src={closeButton} alt=""></Close></Link>
+                  <Close onClick={closeArticle} src={closeButton} alt=""></Close>
                   {props.pageContext.node.hot &&
                     <Hot src={props.pageContext.node.hot.url}></Hot>
                   }
                 </HeroBanner>
                     <FirstSectionDiv>
 
-                      <CategoryDiv>
-                        {/* spurning um að gera function hér sem gerir það að verkum að ef article er með fleiri en eitt tag þá birtast þau öll? */}
-                        <Link to="/feed"
-                        state={{categoryTag:props.pageContext.node._meta.tags[0]}}>
-                        <Category>{props.pageContext.node._meta.tags[0]}</Category>
-                        </Link>
-                      </CategoryDiv>
+                    <CategoryDiv>
+                       {/* spurning um að gera function hér sem gerir það að verkum að ef article er með fleiri en eitt tag þá birtast þau öll? */}
+                       <Link to="/feed"
+                       state={{categoryTag:props.pageContext.node._meta.tags[0]}}>
+                       <Category>{props.pageContext.node._meta.tags[0]}</Category>
+                       </Link>
+                     </CategoryDiv>
 
                       <TitleDiv>
                         <Title>{props.pageContext.node.title[0].text}</Title>
@@ -233,7 +254,8 @@ const Article = (props) => {
             </Link>
         <Footer/>
       </div>
-      
-    )};
+      )
+    }
+};
     
 export default Article;

@@ -53,9 +53,6 @@ const LogoAnimate = keyframes`
     0% {
         opacity: 0;
     }
-    // 50% {
-    //     opacity: 0.5;
-    // }
     100% {
         opacity: 1;
     }
@@ -118,8 +115,6 @@ const LoadingBar = styled.div`
     }
 `
 
-
-
 class LoadingPage extends React.Component {
     constructor(props) {
       super(props);
@@ -138,7 +133,7 @@ class LoadingPage extends React.Component {
                 console.log(this.state)
             }, 250)
         
-        }, 3500);
+        }, 2500);
     }
 
     componentWillUnmount(){
