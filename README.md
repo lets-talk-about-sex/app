@@ -1,5 +1,5 @@
-# Let's talk about sex - sex education progressive web app
-Mobile friendly sex education for young adults. The interface is only made for viewing on mobile. It is a progressive web app so users can save it on their homescreen and use it without internet conection. </br></br>
+# Let's talk about sex - sex education 
+Mobile friendly sex education for young adults. The interface is only made for viewing on mobile. It is a progressive web app so users can save it on their homescreen and use it without internet connection. </br></br>
 
 ## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.</br></br>
@@ -34,7 +34,7 @@ yarn dev
 
 
 ## Version
-Beta April 2019</br></br>
+Version 1.0.0 Mai 2019</br></br>
 
 
 ## Authors
@@ -45,11 +45,11 @@ Ragnhildur Rós Guðmundsdóttir</br></br>
 
 
 ## Acknowledgments
-Albert Guðlaugsson</br>
-Ellert Smári Kristbergsson</br>
-Pedro Netto</br>
-Staff of Uneo</br>
-Staff of Sendiráðið</br>
+Albert Guðlaugsson - Vefskólinn</br>
+Ellert Smári Kristbergsson - Vefskólinn</br>
+Pedro Netto - Vefskólinn</br>
+Staff from Ueno</br>
+Staff from Sendiráðið</br>
 
 
 
