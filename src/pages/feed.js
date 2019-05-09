@@ -78,11 +78,9 @@ class App extends Component {
 
   //Chatbot
   let _chatlio =_chatlio || [];
-  window._chatlio = _chatlio;
   let ChatlioReact = [];
   function chat () {
     var t = document.getElementById("chatlio-widget-embed");
-    console.log(t)
     if (t && window.ChatlioReact && _chatlio.init) return void _chatlio.init(t, ChatlioReact);
     for (var e = function (t) { return function () { _chatlio.push([t].concat(arguments)) } }, i = ["configure", "identify", "track", "show", "hide", "isShown", "isOnline", "page", "open", "showOrHide"], a = 0; a < i.length; a++)_chatlio[i[a]] || (_chatlio[i[a]] = e(i[a]));
     var n = document.createElement("script"), c = document.getElementsByTagName("script")[0];
@@ -93,20 +91,14 @@ class App extends Component {
     n.setAttribute('data-widget-id', '2c5a506b-18b2-407e-5dc3-dfebac4d8b9b');
     c.parentNode.insertBefore(n, c);
   }
-  try{
-    chat();
-  } catch(r){
-    console.log(r)
+chat();
+
   }
-}
-  
 //Search - leita eftir titlum hér (title[0].text) og leita eftir samheitum/synonyms. Fyrst tjékkar hvort það er til samheiti eða ekki í Prismic, ef er ekki til þá hættir að keyra, ef er til þá sækir það.
   update = (searchTerm) => {
       this.setState({
         searchIsEmpty: searchTerm === ""
       })
-
-      console.log('kalla á update!')
   
     // console.log(this.props.data.prismic.allArticles)
     const results = this.props.data.prismic.allArticles.edges.filter(card => {

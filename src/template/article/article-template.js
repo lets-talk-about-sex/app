@@ -14,6 +14,7 @@ import { ThemeProvider } from 'emotion-theming'
 import { theme } from 'components/theme/theme';
 import Global from 'components/base/base';
 import {keyframes} from 'emotion';
+import { Container } from 'components/theme/container';
 
 // keyframe fyrir hverning article á að opnast
 const ContentAnimation = keyframes`
@@ -74,10 +75,7 @@ const Hot = styled.img`
   bottom : -22px;
   left: 30px;
 `
-// container - á að taka í burtu 
-const Container = styled.div`
-   margin: 0 30px;
-`
+
 // category container
 const CategoryDiv = styled.div`
    color: #FC4255;
