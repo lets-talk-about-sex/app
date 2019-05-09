@@ -74,7 +74,6 @@ class App extends Component {
   componentDidMount () {
   //Chatbot
   let _chatlio =_chatlio || [];
-  window._chatlio = _chatlio;
   let ChatlioReact = [];
   function chat () {
     var t = document.getElementById("chatlio-widget-embed");
@@ -99,7 +98,11 @@ class App extends Component {
       this.setState({
         searchIsEmpty: searchTerm === ""
       })
-      const results = this.props.data.prismic.allArticles.edges.filter(card => {
+  
+    // console.log(this.props.data.prismic.allArticles)
+    const results = this.props.data.prismic.allArticles.edges.filter(card => {
+      // console.log(card.node.synonyms)
+
       if (card.node.synonyms.text) {
       }
         return card.node.title[0].text.toUpperCase().includes(searchTerm.toUpperCase()) ||

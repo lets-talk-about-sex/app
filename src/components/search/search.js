@@ -4,17 +4,22 @@ import search from 'assets/icon/search.svg';
 
 //Icon for closebutton
 import closeButton from '../../assets/icon/article/close.svg';
+const breakpoints = [480]
+
+const mq = breakpoints.map(
+    bp => `@media (min-width: ${bp}px)`
+  )
 
 //container and styles for search card
 const SearchContainer = styled.div`
     display:flex;
     justify-content:flex-end;
     position: fixed;
-    left: 30px;
     right: 30px;
     top: 0;
     padding: 15px 0;
-    width: calc(100vw - 60px);
+    // width: calc(100vw - 60px);
+    width: 100%;
     height: 80px;
     margin: 0;
     overflow: hidden;
@@ -37,7 +42,8 @@ const SearchContainer = styled.div`
             border-top-right-radius: 10px;
             border-bottom-right-radius: 10px;
         }
-    }
+    },
+
 `
 const SearchInput = styled.input`
     position: relative;
@@ -84,6 +90,10 @@ const SearchInput = styled.input`
     &[type="submit"]:hover {
         opacity: 1;
     }
+
+    // [mq[0]]: {
+    //     margin-right: 
+    //   }
 `
 const SearchResults = styled.li`
   & span {

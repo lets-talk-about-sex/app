@@ -12,7 +12,7 @@ import { faStroopwafel } from '@fortawesome/free-solid-svg-icons'
 library.add(faStroopwafel)
 
 const FooterContainer = styled.div`
-    width: 100vw;
+    width: 100%;
     height: 170px;
     background-color: #FC4255;
     padding-top: 30px;

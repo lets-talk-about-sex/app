@@ -15,7 +15,6 @@ import ShareComponent from 'components/cards/share';
 import { Container } from 'components/theme/container';
 import closeButton from '../../assets/icon/article/close.svg';
 
-
 // keyframe for when every article opens
 const ContentAnimation = keyframes`
     0% {
