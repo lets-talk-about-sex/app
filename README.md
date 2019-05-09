@@ -1,42 +1,55 @@
-<b>Sexeducation application</b></br>
-Mobile friendly sexeducation for young adults.
+# Let's talk about sex - sex education 
+Mobile friendly sex education for young adults. The interface is only made for viewing on mobile. It is a progressive web app so users can save it on their homescreen and use it without internet connection. </br></br>
 
-<b>Getting Started</b></br>
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+## Getting Started
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.</br></br>
 
-<b>Prerequisites</b>
-1. Clone the Reposetory to your Terminal
-2. Make sure you are inside the folder app (Terminal: cd app)
-2. Install yarn in the Terminal to set up the package.json file (Terminal: yarn)
+## Setup
+1. Clone the Repository to your Terminal
+```bash
+git clone git@github.com:lets-talk-about-sex/app.git
+```
+2. Go inside the folder app
+```bash
+cd app
+```
+3. Install yarn in the Terminal to set up the package.json file
+```bash
+yarn
+```
+4. To get the project up and running on localhost
+```bash
+yarn dev
+```
+</br>
 
-<b>Installing</b>
-1. yarn dev - to get the project up and running on localhost
-2. View app by localhost:8000
+## Built with
+[Uneo start kit](https://github.com/ueno-llc/create-ueno-app)</br>
+[React](https://reactjs.org/)</br>
+[GraphiQL](https://graphql.org/)</br>
+[Gatsby](https://www.gatsbyjs.org/)</br>
+[Loadash](https://lodash.com/)</br>
+[Prismic](https://prismic.io/)</br>
+[Emotions](https://emotion.sh/docs/introduction)</br></br>
 
-<b>Built with</b></br>
-Uneo start kit</br>
-React (JavaScript library)</br>
-GraphiQL (A queary language for API)</br>
-Gatsby (Framework based on React to improve websites and apps)</br>
-Loadash (Javascript utility library)</br>
-Prismic (Headless CMS system)</br>
-Emotions (css library)
 
-<b>Version</b></br>
-Beta April 2019
+## Version
+Version 1.0.0 Mai 2019</br></br>
 
-<b>Authors</b></br>
+
+## Authors
 Anna Sóley Karlsdóttir</br>
 Birgitta Rún Sveinbjörnsdóttir</br>
 Hugrún Rúnarsdóttir</br>
-Ragnhildur Rós Guðmundsdóttir</br>
+Ragnhildur Rós Guðmundsdóttir</br></br>
 
-<b>Acknowledgments</b></br>
-Albert Guðlaugsson</br>
-Ellert Smári Kristbergsson</br>
-Pedro Netto</br>
-Staff of Uneo</br>
-Staff of Sendiráðið</br>
+
+## Acknowledgments
+Albert Guðlaugsson - Vefskólinn</br>
+Ellert Smári Kristbergsson - Vefskólinn</br>
+Pedro Netto - Vefskólinn</br>
+Staff from Ueno</br>
+Staff from Sendiráðið</br>
 
 
 

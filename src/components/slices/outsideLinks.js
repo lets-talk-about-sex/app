@@ -4,6 +4,13 @@ import { RichText } from 'prismic-reactjs';
 
 import ArrowRight from '../../assets/icon/article/arrowRightLinks.svg';
 
+const EinnLinkurDiv = styled.div`
+    display: flex;
+    margin: 15px 0;
+    align-items: center;
+    // width: 100%;
+`
+
 const ArrowDiv = styled.div`
     height: 27px;
     width: 27px;
@@ -11,7 +18,7 @@ const ArrowDiv = styled.div`
     border-radius: 50%;
     position: relative;
     position: absolute;
-    right: 30px;
+    right: 0;
     &:active {
         background-color: #D13847;
     }
@@ -24,12 +31,7 @@ const ArrowImg = styled.img`
     top: 50%;
     transform: translate(-50%, -50%);
 `
-const EinnLinkurDiv = styled.div`
-    display:flex;
-    margin-bottom: 15px;
-    align-items: center;
-    margin-top: 15px;
-`
+
 
 const LineTheFine = styled.span`
     background-color: #FC4255;

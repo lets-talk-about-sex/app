@@ -47,9 +47,6 @@ const LogoAnimate = keyframes`
     0% {
         opacity: 0;
     }
-    // 50% {
-    //     opacity: 0.5;
-    // }
     100% {
         opacity: 1;
     }
@@ -123,7 +120,7 @@ class LoadingPage extends React.Component {
             this.timeHandleTwo = setTimeout(()=>{
                 this.setState({transitionDone: true})
             }, 250)
-        }, 3500);
+        }, 2500);
     }
 
     componentWillUnmount(){

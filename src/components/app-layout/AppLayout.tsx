@@ -1,8 +1,8 @@
 import * as React from 'react';
 import Helmet from 'react-helmet';
-import { helmet } from 'utils/helmet';
-// import { Devtools } from 'components/devtools/Devtools';
+// Hér koma myndir fyrir social media
 
+import { helmet } from 'utils/helmet';
 import s from './AppLayout.scss';
 
 interface IAppLayoutProps {
@@ -11,8 +11,10 @@ interface IAppLayoutProps {
 
 const isDev = process.env.NODE_ENV === 'development';
 
-export default ({ children }: IAppLayoutProps) => (
-  <div className={s.layout}>
+export default ({ children }: IAppLayoutProps) => {
+  console.log("breytti um router")
+  return(
+    <div className={s.layout}>
     <Helmet {...helmet} />
 
    
@@ -23,4 +25,5 @@ export default ({ children }: IAppLayoutProps) => (
 
     {isDev }
   </div>
-);
+  )
+};

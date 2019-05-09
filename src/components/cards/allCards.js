@@ -61,9 +61,9 @@ const AllCards = (props) => {
            edge.node.filter=props.filtering
             return(
                 <React.Fragment key={i}>
-                    <Link to={edge.node._meta.uid} key={i} >
+                    {edge.node.article_img?( <Link to={edge.node._meta.uid} key={i} duration={3}> 
                         <SomeCard key={i} node={edge.node}/>
-                    </Link>
+                    </Link> ): <SomeCard key={i} node={edge.node}/> }
                 </React.Fragment>
             )
         })
