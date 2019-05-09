@@ -20,9 +20,11 @@ const AllCards = (props) => {
     let allFactsArr = get(props.data, 'prismic.allFactss.edges', [])
     .filter(oneFact => CheckIfMatchesTags(oneFact.node._meta.tags, props.filtering));
 
-    //búa til nýtt array sem tekur inn allar 3 tegundir af spjöldunum
-    // þegar i er 3 setur inn AllDid..
-    //Cardcounter er 0 til þess að sleppa ekki 4. spjalda í array-inu því erum að setja didyouknow og fact inn á milli article spjalda
+
+    //Create new array that takes in all 3 types of cards
+    // when i is 3 then put in AllDidYouKnow card
+    //Cardcounter is 0 so it will not skip 4th card in the array
+    //because we are adding didyouknow and fact between article card
     const allCardsArr = [];
     let cardCounter = 0;
 
@@ -44,7 +46,7 @@ const AllCards = (props) => {
             }
         }  
      }
- 
+ //getFeed are all card types, we create Somecard and tell when to put in an article card, didyouknow card and fact card with an if statement. 
     const getFeed = () => {
         let allArticles = allCardsArr.map((edge, i) => {
             let SomeCard;
@@ -57,8 +59,10 @@ const AllCards = (props) => {
             else if (edge.node.fact) {
                 SomeCard = FactCard;
             }
-           //bæta við props í node object-ið, bæta við key sem er filter, til að láta slugs birtast bara í Allt flokknum
+           
+           //add props in node object, then add the key that´s a filter, so slugs are showing only when the category Allt is active
            edge.node.filter=props.filtering
+           
             return(
                 <React.Fragment key={i}>
                     {edge.node.article_img?( <Link to={edge.node._meta.uid} key={i} duration={3}> 

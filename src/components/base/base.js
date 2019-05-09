@@ -10,7 +10,7 @@ class Global extends React.Component {
       margin: 0;
       padding: 0;
   }
-     /* Fontur */
+     /* Font */
      @import url('https://fonts.googleapis.com/css?family=PT+Sans%7CPoppins:400,600,700,800');
 
      body {
@@ -23,12 +23,12 @@ class Global extends React.Component {
          color: #000;
      }
 
-     /* Titill á undirsíðu með stöku orði */
+     /* Title on article page  */
      h1 {
          font-size: 32px;
      }
 
-     /* Titlar á spjöldum */
+     /* Titles on cards */
      h2 {
          font-size: 20px;
      }
@@ -47,7 +47,8 @@ class Global extends React.Component {
         font-size: 16px;
         color: #FC4255;
       }
-
+      
+      /* category in article-template */
       h6 {
         font-size: 14px;
         text-transform: uppercase;

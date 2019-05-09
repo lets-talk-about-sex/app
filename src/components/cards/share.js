@@ -1,11 +1,13 @@
 import React from 'react';
 import styled from '@emotion/styled/macro';
+
+//Icons for share 
 import shareButton from '../../assets/icon/article/share.svg';
 import MessengerButton from '../../assets/icon/article/messenger.svg';
 import GmailButton from '../../assets/icon/article/gmail.svg';
 import ExitButton from '../../assets/icon/article/closeshare.svg';
 
-// deilivirkni -  animations button container
+// share -  animation button container
 const ShareAnimation = styled.div`
   position: absolute;
   right: 70px;
@@ -91,18 +93,18 @@ class ShareComponent extends React.Component {
         return (
             <div>   
                 <ShareAnimation className={this.state.isToggleOn ? "active":""}>
-                  <ShareDiv onClick={this.handleClick} className={"firstState"}>
-                    <Share src={shareButton} alt="" ></Share>
-                  </ShareDiv>
-                  <ShareDiv className={"messengerButton"}>
-                    <a href={"fb-messenger://share/?link="+this.props.location.href+"&app_id=470392137039381"}><MessengerLogo src={MessengerButton} alt=""></MessengerLogo></a> 
-                  </ShareDiv>
-                  <ShareDiv className={"gmailButton"}>
-                    <a href={"https://mail.google.com/mail/?view=cm&fs=1&tf=1&body="+this.props.location.href+"&ui=2&tf=1&pli=1"} ><GmailLogo src={GmailButton} alt=""></GmailLogo> </a>
-                  </ShareDiv>
-                  <ShareDiv onClick={this.handleClick} className={"closeShareButton"}>
-                    <Exit src={ExitButton} alt=""></Exit>
-                  </ShareDiv> 
+                    <ShareDiv onClick={this.handleClick} className={"firstState"}>
+                        <Share src={shareButton} alt="" ></Share>
+                    </ShareDiv>
+                    <ShareDiv className={"messengerButton"}>
+                        <a href={"fb-messenger://share/?link="+this.props.location.href+"&app_id=470392137039381"}><MessengerLogo src={MessengerButton} alt=""></MessengerLogo></a> 
+                    </ShareDiv>
+                    <ShareDiv className={"gmailButton"}>
+                        <a href={"https://mail.google.com/mail/?view=cm&fs=1&tf=1&body="+this.props.location.href+"&ui=2&tf=1&pli=1"} ><GmailLogo src={GmailButton} alt=""></GmailLogo> </a>
+                    </ShareDiv>
+                    <ShareDiv onClick={this.handleClick} className={"closeShareButton"}>
+                        <Exit src={ExitButton} alt=""></Exit>
+                    </ShareDiv> 
                 </ShareAnimation> 
             </div>
         )

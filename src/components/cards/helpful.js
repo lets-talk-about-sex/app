@@ -1,10 +1,13 @@
 import React, {Component} from 'react';
 import styled from '@emotion/styled/macro';
+
+//Icons for helpful card
 import ThumbsUpRed from '../../assets/icon/article/thumbsup.svg';
 import ThumbsDownRed from '../../assets/icon/article/thumbsdown.svg';
 import ThumbUpWhite from '../../assets/icon/article/thumbUpWhite.svg';
 import ThumbDownWhite from '../../assets/icon/article/thumbDownWhite.svg';
 
+//Helpful card
 const HelpfulDiv = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -38,7 +41,7 @@ const ThumbDiv = styled.div`
     background-color: ${props => props.theme.baseColors.coral};
   }
 `
-// thumbs mynd 
+// thumbs icons 
 const Thumb = styled.img`
   height: auto;
   width: 15px;
@@ -77,24 +80,24 @@ class Helpful extends Component {
       return (
           <div>   
              <HelpfulDiv>
-               {this.state.Voting === undefined ? (
-                 <HelpfulText  >Var efnið hjálplegt?</HelpfulText>
-               ) : (
-                <HelpfulText>Takk fyrir að svara!</HelpfulText>
-               )}
-               <ThumbsContainer>
-                <ThumbDiv className={this.state.Voting==="yes"? "activeButton":""}>
-                    <Thumb  src={this.state.Voting==="yes"? ThumbUpWhite: ThumbsUpRed} alt="" onClick={() => this.handleClick("yes")}></Thumb>
-                </ThumbDiv>
-                <ThumbDiv className={this.state.Voting==="no"? "activeButton":""}>
-                  <Thumb src={this.state.Voting==="no"? ThumbDownWhite: ThumbsDownRed} alt="" onClick={() => this.handleClick("no")}></Thumb>
-                </ThumbDiv>
-              </ThumbsContainer>
-              {this.state.Voting === "no" && 
-                <NoMessage>
-                  <p>Fékkstu ekki svarið sem þú varst að leita að? <br/> Endilega sendu línu á <Bolda>live chatið </Bolda> okkar og þú færð svar eins fljótt og auðið er, nafnlaust!</p>
-                </NoMessage> 
-              } 
+                {this.state.Voting === undefined ? (
+                  <HelpfulText>Var efnið hjálplegt?</HelpfulText>
+                ) : (
+                  <HelpfulText>Takk fyrir að svara!</HelpfulText>
+                )}
+                <ThumbsContainer>
+                    <ThumbDiv className={this.state.Voting==="yes"? "activeButton":""}>
+                        <Thumb  src={this.state.Voting==="yes"? ThumbUpWhite: ThumbsUpRed} alt="" onClick={() => this.handleClick("yes")}></Thumb>
+                    </ThumbDiv>
+                    <ThumbDiv className={this.state.Voting==="no"? "activeButton":""}>
+                      <Thumb src={this.state.Voting==="no"? ThumbDownWhite: ThumbsDownRed} alt="" onClick={() => this.handleClick("no")}></Thumb>
+                    </ThumbDiv>
+                </ThumbsContainer>
+                {this.state.Voting === "no" && 
+                  <NoMessage>
+                      <p>Fékkstu ekki svarið sem þú varst að leita að? <br/> Endilega sendu línu á <Bolda>live chatið </Bolda> okkar og þú færð svar eins fljótt og auðið er, nafnlaust!</p>
+                  </NoMessage> 
+                } 
             </HelpfulDiv> 
           </div>
       )

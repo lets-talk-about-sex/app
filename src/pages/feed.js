@@ -63,7 +63,7 @@ class App extends Component {
     }
   }
 
-  //þegar er smellt er á flokka þá keyrist þetta fall
+  //this function runs when category is clicked
   RenderByFilter = (filter, search) => {
     this.setState({
       activefilter: filter,
@@ -91,7 +91,10 @@ class App extends Component {
   chat();
 }
   
-//Search - leita eftir titlum hér (title[0].text) og leita eftir samheitum/synonyms. Fyrst tjékkar hvort það er til samheiti eða ekki í Prismic, ef er ekki til þá hættir að keyra, ef er til þá sækir það.
+//Search - look for titles here (title[0].text) and for synonyms. 
+//First it check if there is a synonym or not in Prismic, if not, it stops,
+// but if it excists it fetches it. 
+//This is because some of the article cards don´t have synonyms
   update = (searchTerm) => {
       this.setState({
         searchIsEmpty: searchTerm === ""

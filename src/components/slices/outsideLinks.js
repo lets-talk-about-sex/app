@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled/macro';
+
+//icon for right arrow
 import ArrowRight from '../../assets/icon/article/arrowRightLinks.svg';
 
 const EinnLinkurDiv = styled.div`

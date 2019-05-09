@@ -99,39 +99,36 @@ const About = () => {
                     </Global>
                 </ThemeProvider> 
                 <TeamContainer>
-
-                <TeamMember>
-                    <TeamImageDiv>
-                        <TeamImage src={Anna} alt="Anna Sóley Karlsdóttir"></TeamImage>
-                    </TeamImageDiv>
-                    <NameTitle>Anna Sóley Karlsdóttir</NameTitle>
-                    <JobTitle>Forritari & móðir</JobTitle>
-                </TeamMember>
-                <TeamMember>
-                    <TeamImageDiv>
-                        <TeamImage src={Birgitta} alt="Birgitta Rún Sveinbjörnsdóttir"></TeamImage>
-                    </TeamImageDiv>
-                    <NameTitle>Birgitta Rún Sveinbjörnsdóttir</NameTitle>
-                    <JobTitle>Vefhönnuður</JobTitle>
-                </TeamMember>
-
-                <TeamMember>
-                    <TeamImageDiv>
-                        <TeamImage src={Hugrun} alt="Hugrún Rúnarsdóttir"></TeamImage>
-                    </TeamImageDiv>
-                    <NameTitle>Hugrún <br/>Rúnarsdóttir</NameTitle>
-                    <JobTitle>Vefhönnuður</JobTitle>
-                </TeamMember>
-
-                <TeamMember>
-                    <TeamImageDiv>
-                        <TeamImage src={Ragnhildur} alt="Ragnhildur Rós Guðmundsdóttir"></TeamImage>
-                    </TeamImageDiv>
-                    <NameTitle>Ragnhildur Rós Guðmundsdóttir</NameTitle>
-                    <JobTitle>Forritari & móðir</JobTitle>
-                </TeamMember>
-            </TeamContainer>
-            <Footer/>
+                    <TeamMember>
+                        <TeamImageDiv>
+                            <TeamImage src={Anna} alt="Anna Sóley Karlsdóttir"></TeamImage>
+                        </TeamImageDiv>
+                        <NameTitle>Anna Sóley Karlsdóttir</NameTitle>
+                        <JobTitle>Forritari & móðir</JobTitle>
+                    </TeamMember>
+                    <TeamMember>
+                        <TeamImageDiv>
+                            <TeamImage src={Birgitta} alt="Birgitta Rún Sveinbjörnsdóttir"></TeamImage>
+                        </TeamImageDiv>
+                        <NameTitle>Birgitta Rún Sveinbjörnsdóttir</NameTitle>
+                        <JobTitle>Vefhönnuður</JobTitle>
+                    </TeamMember>
+                    <TeamMember>
+                        <TeamImageDiv>
+                            <TeamImage src={Hugrun} alt="Hugrún Rúnarsdóttir"></TeamImage>
+                        </TeamImageDiv>
+                        <NameTitle>Hugrún <br/>Rúnarsdóttir</NameTitle>
+                        <JobTitle>Vefhönnuður</JobTitle>
+                    </TeamMember>
+                    <TeamMember>
+                        <TeamImageDiv>
+                            <TeamImage src={Ragnhildur} alt="Ragnhildur Rós Guðmundsdóttir"></TeamImage>
+                        </TeamImageDiv>
+                        <NameTitle>Ragnhildur Rós Guðmundsdóttir</NameTitle>
+                        <JobTitle>Forritari & móðir</JobTitle>
+                    </TeamMember>
+                </TeamContainer>
+                <Footer/>
             </div>
         )
     };

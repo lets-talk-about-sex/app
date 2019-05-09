@@ -8,13 +8,15 @@ import { ThemeProvider } from 'emotion-theming'
 import { theme } from 'components/theme/theme';
 import Global from 'components/base/base';
 import {keyframes} from 'emotion';
-import closeButton from '../../assets/icon/article/close.svg';
 import Footer from 'components/footer/Footer';
 import SmallCard from '../../components/cards/small-card.js';
 import Helpful from 'components/cards/helpful';
 import ShareComponent from 'components/cards/share';
+import { Container } from 'components/theme/container';
+import closeButton from '../../assets/icon/article/close.svg';
 
-// keyframe fyrir hvernig article á að opnast
+
+// keyframe for when every article opens
 const ContentAnimation = keyframes`
     0% {
       transform: translateY(100vh) scale(0.8);
@@ -25,7 +27,7 @@ const ContentAnimation = keyframes`
       opacity:1;
     }
 `
-// keyframe fyrir hverning article á að lokast
+// keyframe for when every article closes
 const ExitAnimation = keyframes`
     0% {
       opacity:1;
@@ -44,7 +46,7 @@ const Animation = styled.div`
       display:none;
   }
 `
-// Bannermynd
+// Banner image
 const HeroBanner = styled.div`
     margin-left: -30px;
     width: calc(100% + 60px);
@@ -56,7 +58,7 @@ const HeroImg = styled.img`
     height: 100%; 
     object-fit: cover;
 `
-//loka modal takki
+//close button
 const Close = styled.img`
    height: auto;
    width: 18px;
@@ -69,10 +71,6 @@ const Hot = styled.img`
   position: absolute;
   bottom : -22px;
   left: 30px;
-`
-// container - á að taka í burtu 
-const Container = styled.div`
-   margin: 0 30px;
 `
 // category container
 const CategoryDiv = styled.div`
@@ -88,24 +86,24 @@ const Category = styled.h6`
    font-weight: 700;
    display: inline;
 `
-// allt fyrsta section
+// first section
 const FirstSectionDiv = styled.div`
    margin-top: 50px;
    position: relative;
 `
-// titill
+// title
 const Title = styled.h1`
    margin: 20px 0;
    font-family: 'Poppins', sans-serif;
    font-weight: 600;
    font-size: 32px;
 `
-// heldur utan um titil og share
+// div around title and share
 const TitleDiv = styled.div`
   display: flex;
   justify-content: space-between;
 `
-// samheiti
+// synonyms
 const Synonym = styled.p`
   font-family: Poppins;
   font-style: normal;
@@ -118,7 +116,7 @@ const SynonymDiv = styled.div`
   align-items: baseline;
   margin-bottom: 30px;
 `
-// langt card
+// long card
 const LongCard = styled.div`
   display: flex;
   height: 80px;
@@ -160,7 +158,6 @@ class Article extends React.Component {
     super();
     this.state = {
       className: "",
-
     };
   }
     render() {
@@ -173,7 +170,6 @@ class Article extends React.Component {
       }
   
       const closeArticle = () => {
-        // geri eitthvað hér sem sýnir animation
         this.timerHandle = setTimeout(() => {
           navigate('/feed')
           }, 500);
@@ -184,57 +180,57 @@ class Article extends React.Component {
       }
       return (
           <div> 
-          <ThemeProvider theme={theme}>
-            <Global>
-            {props.pageContext? (
-              <Container>
-                <Animation className={this.state.className}> 
-                <HeroBanner>
-                  <HeroImg alt="" src={props.pageContext.node.article_img.url}></HeroImg>
-                  <Close onClick={closeArticle} src={closeButton} alt=""></Close>
-                  {props.pageContext.node.hot &&
-                    <Hot src={props.pageContext.node.hot.url}></Hot>
+            <ThemeProvider theme={theme}>
+              <Global>
+              {props.pageContext? (
+                <Container>
+                  <Animation className={this.state.className}> 
+                  <HeroBanner>
+                    <HeroImg alt="" src={props.pageContext.node.article_img.url}></HeroImg>
+                    <Close onClick={closeArticle} src={closeButton} alt=""></Close>
+                    {props.pageContext.node.hot &&
+                      <Hot src={props.pageContext.node.hot.url}></Hot>
+                    }
+                  </HeroBanner>
+                      <FirstSectionDiv>
+                      <CategoryDiv>
+                        <Link to="/feed"
+                        state={{categoryTag:props.pageContext.node._meta.tags[0]}}>
+                        <Category>{props.pageContext.node._meta.tags[0]}</Category>
+                        </Link>
+                      </CategoryDiv>
+                        <TitleDiv>
+                          <Title>{props.pageContext.node.title[0].text}</Title>
+                          <ShareComponent location={props.location}></ShareComponent> 
+                        </TitleDiv>
+                    {props.pageContext.node.synonyms[0].text &&
+                    <SynonymDiv>
+                      <Synonym>Samheiti</Synonym>
+                      <p>{props.pageContext.node.synonyms[0].text}</p>
+                    </SynonymDiv>
+                    }
+                    <Intro>{RichText.render(props.pageContext.node.intro_text)}</Intro>
+                  </FirstSectionDiv>
+                  {props.pageContext.node.link &&
+                  <Link to={props.pageContext.node.link._meta.uid}>
+                    <LongCard>
+                      <LongCardImg src={props.pageContext.node.link.article_img.url}></LongCardImg>
+                      <LongCardTitle>{props.pageContext.node.link.title[0].text}</LongCardTitle>
+                    </LongCard>
+                  </Link>
                   }
-                </HeroBanner>
-                    <FirstSectionDiv>
-                    <CategoryDiv>
-                       <Link to="/feed"
-                       state={{categoryTag:props.pageContext.node._meta.tags[0]}}>
-                       <Category>{props.pageContext.node._meta.tags[0]}</Category>
-                       </Link>
-                     </CategoryDiv>
-                      <TitleDiv>
-                        <Title>{props.pageContext.node.title[0].text}</Title>
-                        <ShareComponent location={props.location}></ShareComponent> 
-                      </TitleDiv>
-                  {props.pageContext.node.synonyms[0].text &&
-                  <SynonymDiv>
-                    <Synonym>Samheiti</Synonym>
-                    <p>{props.pageContext.node.synonyms[0].text}</p>
-                  </SynonymDiv>
-                  }
-                  <Intro>{RichText.render(props.pageContext.node.intro_text)}</Intro>
-                </FirstSectionDiv>
-                {props.pageContext.node.link &&
-                <Link to={props.pageContext.node.link._meta.uid}>
-                  <LongCard>
-                    <LongCardImg src={props.pageContext.node.link.article_img.url}></LongCardImg>
-                    <LongCardTitle>{props.pageContext.node.link.title[0].text}</LongCardTitle>
-                  </LongCard>
-                </Link>
-                }
-                {slices}
-                <Helpful></Helpful>
-                <Read>LESTU LÍKA</Read>
-              </Animation>
-            </Container>
-            ):<div>loading</div>}
-          </Global>
-        </ThemeProvider> 
-            <Link to={get(props, "pageContext.node.small_card[0].link_to_article._meta.uid", "")}>
-              <SmallCard smallCards={get(props, "pageContext.node.small_card", [])}/>
-            </Link>
-        <Footer/>
+                  {slices}
+                  <Helpful></Helpful>
+                  <Read>LESTU LÍKA</Read>
+                </Animation>
+              </Container>
+              ):<div>loading</div>}
+            </Global>
+          </ThemeProvider> 
+          <Link to={get(props, "pageContext.node.small_card[0].link_to_article._meta.uid", "")}>
+            <SmallCard smallCards={get(props, "pageContext.node.small_card", [])}/>
+          </Link>
+          <Footer/>
       </div>
       )
     }
