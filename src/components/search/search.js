@@ -15,8 +15,7 @@ const SearchContainer = styled.div`
     right: 30px;
     top: 0;
     padding: 15px 0;
-    // width: calc(100vw - 60px);
-    width: 100%;
+    width: calc(100vw - 60px);
     height: 80px;
     margin: 0;
     overflow: hidden;
@@ -87,10 +86,6 @@ const SearchInput = styled.input`
     &[type="submit"]:hover {
         opacity: 1;
     }
-
-    // [mq[0]]: {
-    //     margin-right: 
-    //   }
 `
 const SearchResults = styled.li`
   & span {
