@@ -1,18 +1,11 @@
 import * as React from 'react';
 import Helmet from 'react-helmet';
 
-import Logo from 'assets/svg/ueno-logo.svg';
-import Dribbble from 'assets/svg/dribbble.svg';
-import Twitter from 'assets/svg/twitter.svg';
-import Github from 'assets/svg/github.svg';
-import Instagram from 'assets/svg/instagram.svg';
-import Facebook from 'assets/svg/facebook.svg';
-import Linkedin from 'assets/svg/linkedin.svg';
+// Hér koma myndir fyrir social media
 
 import { helmet } from 'utils/helmet';
 import { Header } from 'components/header/Header';
 import { Link as HeaderLink } from 'components/header/Link';
-import { Footer } from 'components/footer/Footer';
 import { Devtools } from 'components/devtools/Devtools';
 
 import s from './AppLayout.scss';
@@ -23,8 +16,10 @@ interface IAppLayoutProps {
 
 const isDev = process.env.NODE_ENV === 'development';
 
-export default ({ children }: IAppLayoutProps) => (
-  <div className={s.layout}>
+export default ({ children }: IAppLayoutProps) => {
+  console.log("breytti um router")
+  return(
+    <div className={s.layout}>
     <Helmet {...helmet} />
 
     <Header>
@@ -37,4 +32,5 @@ export default ({ children }: IAppLayoutProps) => (
 
     {isDev && <Devtools />}
   </div>
-);
+  )
+};
