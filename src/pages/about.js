@@ -1,12 +1,10 @@
 import React from 'react';
-// import Article from 'template/article/article-template';
 import Footer from 'components/footer/Footer';
 import styled from '@emotion/styled/macro';
 import { ThemeProvider } from 'emotion-theming'
 import { theme } from 'components/theme/theme';
 import Global from 'components/base/base';
 import { Link } from "gatsby";
-
 import closeButton from '../assets/icon/article/close.svg';
 
 //Photos of the team
@@ -34,7 +32,7 @@ const TeamContainer = styled.div`
         }
 `
 const TitleFooterPage = styled.h1`
-    color: #fc4255;
+    color: ${props => props.theme.baseColors.coral};
     padding-top: 50px;
     margin-bottom: 90px;
 `
@@ -74,17 +72,14 @@ const TeamImage = styled.img`
     width: auto;
     object-fit: cover;
 `
-
 const Close = styled.img`
    height: auto;
    width: 18px;
    cursor: pointer;
    position: absolute;
-  top: 50px;
-  right: 30px;
+   top: 50px;
+   right: 30px;
 `
-
-
 
 const About = () => {
         return (
@@ -92,60 +87,49 @@ const About = () => {
                 <ThemeProvider theme={theme}>
                     <Global>
                         <Container>
-
                             <TitleFooterPage>Um Okkur</TitleFooterPage>
                             <Link to={"/feed"}><Close src={closeButton} alt=""></Close></Link>
                             <SubHeaderFooterPage>Samfélagsleg ábyrgð</SubHeaderFooterPage>
                             <p>Kynfræðsla í skólum þarfnast betrum bætunar og viljum við koma til móts við þarfir unglinga og gera kynfræðsluna meira aðlaðandi fyrir þá.</p>
-
                             <div>
                                 <TeamTitle>Teymið</TeamTitle>
-                                
                             </div>
                         </Container>
                     </Global>
                 </ThemeProvider> 
-
                 <TeamContainer>
-                <TeamMember>
-                    <TeamImageDiv>
-                        <TeamImage src={Hugrun} alt="Anna Sóley Karlsdóttir"></TeamImage>
-                    </TeamImageDiv>
-                    <NameTitle>Anna Sóley</NameTitle>
-                    <JobTitle>Forritari <br/> & móðir</JobTitle>
-                </TeamMember>
-                <TeamMember>
-                    <TeamImageDiv>
-                        <TeamImage src={Birgitta} alt="Birgitta Rún Sveinbjörnsdóttir"></TeamImage>
-                    </TeamImageDiv>
-                    <NameTitle>Birgitta Rún</NameTitle>
-                    <JobTitle>Vefhönnuður</JobTitle>
-                </TeamMember>
-
-                <TeamMember>
-                    <TeamImageDiv>
-                        <TeamImage src={Hugrun} alt="Hugrún Rúnarsdóttir"></TeamImage>
-                    </TeamImageDiv>
-                    <NameTitle>Hugrún</NameTitle>
-                    <JobTitle>Vefhönnuður</JobTitle>
-                </TeamMember>
-
-                <TeamMember>
-                    <TeamImageDiv>
-                        <TeamImage src={Hugrun} alt="Ragnhildur Rós Guðmundsdóttir"></TeamImage>
-                    </TeamImageDiv>
-                    <NameTitle>Ragnhildur</NameTitle>
-                    <JobTitle>Forritari <br/> & móðir</JobTitle>
-                </TeamMember>
-            </TeamContainer>
-            <Footer/>
-            </div>
-            
+                    <TeamMember>
+                        <TeamImageDiv>
+                            <TeamImage src={Hugrun} alt="Anna Sóley Karlsdóttir"></TeamImage>
+                        </TeamImageDiv>
+                        <NameTitle>Anna Sóley</NameTitle>
+                        <JobTitle>Forritari <br/> & móðir</JobTitle>
+                    </TeamMember>
+                    <TeamMember>
+                        <TeamImageDiv>
+                            <TeamImage src={Birgitta} alt="Birgitta Rún Sveinbjörnsdóttir"></TeamImage>
+                        </TeamImageDiv>
+                        <NameTitle>Birgitta Rún</NameTitle>
+                        <JobTitle>Vefhönnuður</JobTitle>
+                    </TeamMember>
+                    <TeamMember>
+                        <TeamImageDiv>
+                            <TeamImage src={Hugrun} alt="Hugrún Rúnarsdóttir"></TeamImage>
+                        </TeamImageDiv>
+                        <NameTitle>Hugrún</NameTitle>
+                        <JobTitle>Vefhönnuður</JobTitle>
+                    </TeamMember>
+                    <TeamMember>
+                        <TeamImageDiv>
+                            <TeamImage src={Hugrun} alt="Ragnhildur Rós Guðmundsdóttir"></TeamImage>
+                        </TeamImageDiv>
+                        <NameTitle>Ragnhildur</NameTitle>
+                        <JobTitle>Forritari <br/> & móðir</JobTitle>
+                    </TeamMember>
+                </TeamContainer>
+                <Footer/>
+             </div>     
         )
-
-
-};
-
-
+    };
 
 export default About;

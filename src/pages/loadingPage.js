@@ -1,15 +1,11 @@
 import React from 'react';
-
 import styled from '@emotion/styled/macro';
 import { ThemeProvider } from 'emotion-theming'
 import { theme } from 'components/theme/theme';
 import Global from 'components/base/base';
 import { Link } from "gatsby";
 import { keyframes } from 'emotion'
-
-//Photos 
 import Mynstur from '../assets/icon/mynstur.svg';
-
 
 const LoadingContainer = styled.div`
    position: fixed; 
@@ -20,11 +16,10 @@ const LoadingContainer = styled.div`
    z-index: 999;
    &.transitionIsDone {
     display:none;
-}
+   }
 `
-
 const LoadingBackground = styled.div`
-   background-color: #FC4255;
+   background-color: ${props => props.theme.baseColors.coral};
    width: 100vw;
    height: calc(100vh + 80px);
    z-index:9999; 
@@ -48,7 +43,6 @@ const MynsturImg = styled.img`
    top:-80px;
    left:0;
 `
-
 const LogoAnimate = keyframes`
     0% {
         opacity: 0;
@@ -60,9 +54,8 @@ const LogoAnimate = keyframes`
         opacity: 1;
     }
 `
-
 const AppLogo = styled.h3`
-   color: white; 
+   color: ${props => props.theme.baseColors.white}; 
    line-height: 45px;
    z-index: 9999;
    position: absolute;
@@ -73,7 +66,6 @@ const AppLogo = styled.h3`
    text-align: center;
    animation: ${LogoAnimate} 1s ease-in-out ;
 `
-
 const Loader = keyframes`
     0% {
     transform: scale(1);
@@ -85,7 +77,6 @@ const Loader = keyframes`
         transform: scale(1);
     }
 `
-
 const LoadingWrapper = styled.div`
     position: absolute;
     top: 65%;
@@ -101,25 +92,22 @@ const LoadingBar = styled.div`
     margin-right: 5px;
     animation: ${Loader} 1s ease-in-out infinite;
     &:nth-child(1) {
-        background-color: #fff;
+        background-color: ${props => props.theme.baseColors.white};
         animation-delay: 0;
     }
     &:nth-child(2) {
-        background-color: #fff;
+        background-color: ${props => props.theme.baseColors.white};
         animation-delay: 0.09s;
     }
     &:nth-child(3) {
-        background-color: #fff;
+        background-color: ${props => props.theme.baseColors.white};
         animation-delay: 0.18s;
     }
     &:nth-child(4) {
-        background-color: #fff;
+        background-color: ${props => props.theme.baseColors.white};
         animation-delay: 0.27s;
     }
 `
-
-
-
 class LoadingPage extends React.Component {
     constructor(props) {
       super(props);
@@ -130,14 +118,11 @@ class LoadingPage extends React.Component {
     }
 
     componentDidMount(){
-        console.log(this.state)
         this.timerHandle = setTimeout(() => {
             this.setState({ isLoading: false })
             this.timeHandleTwo = setTimeout(()=>{
                 this.setState({transitionDone: true})
-                console.log(this.state)
             }, 250)
-        
         }, 3500);
     }
 
@@ -148,8 +133,8 @@ class LoadingPage extends React.Component {
         }
       }
 
-        render() {
-            return (
+    render() {
+        return (
             <div>
                 <LoadingContainer className={this.state.transitionDone ? 'transitionIsDone' : ""}>
                     <LoadingBackground className={`alert alert-success ${this.state.isLoading ? 'alert-shown' : 'alert-hidden'}`}>
@@ -164,8 +149,8 @@ class LoadingPage extends React.Component {
                     </LoadingBackground>
                 </LoadingContainer>
             </div>
-            )
-        } 
+        )
+    } 
 };
 
 export default LoadingPage;

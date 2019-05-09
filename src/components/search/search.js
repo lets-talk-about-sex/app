@@ -3,8 +3,6 @@ import styled from '@emotion/styled/macro';
 import search from 'assets/icon/search.svg';
 import closeButton from '../../assets/icon/article/close.svg';
 
-
-
 const SearchContainer = styled.div`
     display:flex;
     justify-content:flex-end;
@@ -154,7 +152,7 @@ class Search extends Component {
 
     componentDidMount() {
         window.addEventListener('scroll', this.handleScroll);
-        if ("categoryTag" in this.props.linkState){
+        if (this.props.linkState&&this.props.linkState.categoryTag){
             this.setState({
                 activeCategory:this.props.linkState.categoryTag
             },() => {

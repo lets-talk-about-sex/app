@@ -15,7 +15,7 @@ import { theme } from 'components/theme/theme';
 import Global from 'components/base/base';
 import {keyframes} from 'emotion';
 
-// keyframe fyrir hverning article á að opnast
+// keyframe fyrir hvernig article á að opnast
 const ContentAnimation = keyframes`
     0% {
       transform: translateY(100vh) scale(0.8);
@@ -24,10 +24,9 @@ const ContentAnimation = keyframes`
     100% {
       transform: translateY(0) scale(1);
       opacity:1;
-
     }
 `
-// keyframe fyrir hverning article á að opnast
+// keyframe fyrir hverning article á að lokast
 const ExitAnimation = keyframes`
     // 0% {
     //   opacity:1;
@@ -99,7 +98,7 @@ const Title = styled.h1`
    font-weight: 600;
    font-size: 32px;
 `
-// heldur utan um tiitl og share
+// heldur utan um titil og share
 const TitleDiv = styled.div`
   display: flex;
   justify-content: space-between;

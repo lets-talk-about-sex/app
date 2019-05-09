@@ -3,7 +3,6 @@ import { get } from 'lodash';
 import styled from '@emotion/styled/macro';
 import {Link} from 'gatsby';
 
-
 const SmallCardContainer = styled.div`
     width: 140px;
     height: 196px;
@@ -25,7 +24,6 @@ const SmallSexImg = styled.img`
 const SmallCardTitle = styled.h4` 
     font-family: Poppins;
 `
-//muna að þegar spjald er með slug þá þarf height að vera 100px;
 const SmallTitleWrapper = styled.div`
     height: 56px; 
     padding: 16px 10px;
@@ -34,7 +32,7 @@ const SmallTitleWrapper = styled.div`
 const SmallCardCarousel = styled.div`
     display: flex;
     height: 250px;
-    width: 100%vw !important;
+    width: 100% !important;
     margin-bottom: 50px;
     overflow-x: auto;
     scroll-behavior: smooth;
@@ -56,31 +54,22 @@ const SmallCardCarousel = styled.div`
 `
 
 const SmallCard = (props) => {
-    // console.log('renderaði small card')
-    // console.log('title', props.title)
-    // console.log('image', props.image)
-    console.log(props)
-    
-
     return (
         <SmallCardCarousel> 
             {props.smallCards.map((item, i) => {
             return  item.link_to_article && 
                 <Link to={item.link_to_article._meta.uid}>
-                    
-                        <SmallCardContainer>
-                            <SmallImgWrapper>
-                                <SmallSexImg src={item.link_to_article.article_img.url} />
-                            </SmallImgWrapper>
-                            <SmallTitleWrapper>
-                                <SmallCardTitle>{item.link_to_article.title[0].text}</SmallCardTitle>
-                            </SmallTitleWrapper>
-                        </SmallCardContainer>
+                    <SmallCardContainer>
+                        <SmallImgWrapper>
+                            <SmallSexImg src={item.link_to_article.article_img.url} />
+                        </SmallImgWrapper>
+                        <SmallTitleWrapper>
+                            <SmallCardTitle>{item.link_to_article.title[0].text}</SmallCardTitle>
+                        </SmallTitleWrapper>
+                    </SmallCardContainer>
                 </Link>
-        })}
+            })}
         </SmallCardCarousel>
-       
     )};
     
-
 export default SmallCard;

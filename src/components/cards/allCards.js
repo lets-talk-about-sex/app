@@ -6,19 +6,15 @@ import DidYouKnowCard from './didyouknow_card';
 import FactCard from './fact_card';
 import {Link} from 'gatsby';
 
-
-
 // Function React Component AllCards sem tekur inn props
 const AllCards = (props) => {
-    console.log(props.filtering)
     let allArticlesArr = get(props.data, 'prismic.allArticles.edges', [])
     .filter(oneCard => CheckIfMatchesTags(oneCard.node._meta.tags, props.filtering))
-    // console.log(allArticlesArr)
     for (let i = allArticlesArr.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [allArticlesArr[i], allArticlesArr[j]] = [allArticlesArr[j], allArticlesArr[i]];
-        // console.log(j)
     }
+
     let allDidYouKnowsArr = get(props.data, 'prismic.allDid_you_knows.edges', [])
     .filter(oneDYK => CheckIfMatchesTags(oneDYK.node._meta.tags, props.filtering));
     let allFactsArr = get(props.data, 'prismic.allFactss.edges', [])
@@ -26,7 +22,7 @@ const AllCards = (props) => {
 
     //búa til nýtt array sem tekur inn allar 3 tegundir af spjöldunum
     // þegar i er 3 setur inn AllDid..
-    //Cardcounter er 0 til þess að sleppa ekki 4. spjalda í arrinu því erum að setja didyouknow og fact inn á milli article spjalda
+    //Cardcounter er 0 til þess að sleppa ekki 4. spjalda í array-inu því erum að setja didyouknow og fact inn á milli article spjalda
     const allCardsArr = [];
     let cardCounter = 0;
 
@@ -46,14 +42,12 @@ const AllCards = (props) => {
             else {
                 break;
             }
-        }
-         
+        }  
      }
  
     const getFeed = () => {
         let allArticles = allCardsArr.map((edge, i) => {
             let SomeCard;
-            // console.log(edge)
             if (edge.node.article_img) {
                 SomeCard = Card;
             }
@@ -73,7 +67,7 @@ const AllCards = (props) => {
                 </React.Fragment>
             )
         })
-
+        
         return allArticles;
     }
 
