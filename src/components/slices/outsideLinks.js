@@ -1,7 +1,5 @@
 import React from 'react';
 import styled from '@emotion/styled/macro';
-import { RichText } from 'prismic-reactjs';
-
 import ArrowRight from '../../assets/icon/article/arrowRightLinks.svg';
 
 const EinnLinkurDiv = styled.div`
@@ -10,7 +8,6 @@ const EinnLinkurDiv = styled.div`
     align-items: center;
     // width: 100%;
 `
-
 const ArrowDiv = styled.div`
     height: 27px;
     width: 27px;
@@ -31,24 +28,20 @@ const ArrowImg = styled.img`
     top: 50%;
     transform: translate(-50%, -50%);
 `
-
-
 const LineTheFine = styled.span`
     background-color: #FC4255;
     height: 27px;
     width: 4px;
     border-radius: 50px; 
 `
-
 const LinkName = styled.p`
     margin-left: 20px;    
 `
-
 const SliceLink = ({link, heading}) => {
   
     return (
         <div>   
-            <a href={link}>
+            <a href={link} target="blank" rel="noopener noreferrer" >
                 <EinnLinkurDiv>
                     <LineTheFine></LineTheFine>
                     <LinkName>{heading}</LinkName>

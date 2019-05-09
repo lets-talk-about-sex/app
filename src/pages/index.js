@@ -5,7 +5,6 @@ import { theme } from 'components/theme/theme';
 import Global from 'components/base/base';
 import { Link } from "gatsby";
 import LoadingPage from './loadingPage';
-
 //Photos 
 import Mynstur_dark from '../assets/icon/mynstur_dark.svg';
 import ChatIcon from '../assets/icon/chaticon.svg';
@@ -92,13 +91,6 @@ const OBCardContainer = styled.div`
     background-color: ${props => props.theme.baseColors.white};
     margin-left: 30px;
     position: relative;
-`
-const MynsturImg = styled.img`
-    width: 100vw;
-    height: calc(100vh + 80px);
-    position: absolute;
-    top:-80px;
-    left:0;
 `
 const IconDiv = styled.div`
     border-radius: 50%;
@@ -205,9 +197,9 @@ class Onboarding extends React.Component {
                                 </OBCards>
                             </OBCardsWrapper>
                             <CarouselIndicator>
-                                <LineTheFine className={this.state.scrolling == 0? 'red' : ""}></LineTheFine>
-                                <LineTheFine2 className={this.state.scrolling == 1? 'red' : ""}></LineTheFine2>
-                                <LineTheFine3 className={this.state.scrolling == 2? 'red' : ""}></LineTheFine3>
+                                <LineTheFine className={this.state.scrolling === 0? 'red' : ""}></LineTheFine>
+                                <LineTheFine2 className={this.state.scrolling === 1? 'red' : ""}></LineTheFine2>
+                                <LineTheFine3 className={this.state.scrolling === 2? 'red' : ""}></LineTheFine3>
                             </CarouselIndicator>
                             <Link to={"/feed"}>
                                 <ButtonDiv>

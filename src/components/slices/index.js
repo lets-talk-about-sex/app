@@ -7,12 +7,11 @@ import SliceRepeatDYK from './repeatDYK';
 import SliceVideo from './video';
 import SliceLink from './outsideLinks';
 import SliceSubtitle from './subtitle';
-import { RichText, Link } from 'prismic-reactjs';
+import { RichText} from 'prismic-reactjs';
 
 export const renderSlices = (body) => {
     body=body?body:[]
     const slices = body.map(sliceItem => {
-        console.log("halló", sliceItem)
         if(sliceItem){
         switch(sliceItem && sliceItem.type)
         {
@@ -36,19 +35,15 @@ export const renderSlices = (body) => {
                 return <SliceSubtitle sub={sliceItem.primary.subtitle[0].text}/>;
 
             case 'repeat':
-            console.log(sliceItem)
                 switch(sliceItem.primary.repeat.__typename){
                     case 'PRISMIC_Facts':
                         return <SliceRepeatFact repeat={sliceItem.primary.repeat.fact[0].text}/>
                     case 'PRISMIC_Did_you_know':
                         return <SliceRepeatDYK repeat={sliceItem.primary.repeat.didyouknow[0].text}/>;
                 }
-
         }
     }
     }).filter(item => !!item)
 
-
-    console.log("slices:", slices);
     return slices;
 }

@@ -84,7 +84,7 @@ const SearchInput = styled.input`
 `
 const SearchResults = styled.li`
   & span {
-      color:#FC4255;
+      color: ${props => props.theme.baseColors.coral};
   }
 `
 const CategoryWrapper = styled.div`
@@ -160,19 +160,6 @@ class Search extends Component {
             });
         }
     }
-
-
-
-    // componentDidMount() {
-    //     window.addEventListener('scroll', this.handleScroll);
-    //     if ("categoryTag" in this.props.linkState){
-    //         this.setState({
-    //             activeCategory:this.props.linkState.categoryTag
-    //         },() => {
-    //             this.handleClick(this.props.linkState.categoryTag);
-    //         });
-    //     }
-    // }
 
     componentWillUnmount() {
         window.removeEventListener('scroll',this.handleScroll);
@@ -253,7 +240,7 @@ class Search extends Component {
             var scrollTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
             
             searchContainerClasses = {
-                searchOnScroll: this.state.isSearching&&scrollTop==0?false:true,
+                searchOnScroll: this.state.isSearching&&scrollTop===0?false:true,
                 active: false,
             }
             

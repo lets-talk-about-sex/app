@@ -1,5 +1,4 @@
 import React from 'react';
-import { get } from 'lodash';
 import styled from '@emotion/styled/macro';
 import {Link} from 'gatsby';
 
@@ -17,7 +16,7 @@ const SmallImgWrapper = styled.div`
     width: 140px;
 `
 const SmallSexImg = styled.img`
-    border-radius:  10px 10px 0 0;
+    border-radius: 10px 10px 0 0;
     height: 100%;
     object-fit: cover;
 `

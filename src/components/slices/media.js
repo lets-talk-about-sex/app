@@ -1,9 +1,5 @@
 import React from 'react';
-// import { get } from 'lodash';
-// import { RichText } from 'prismic-reactjs';
-import { graphql } from 'gatsby';
 import styled from '@emotion/styled/macro';
-
 
 const Media = styled.img`
     width: 100%;
@@ -19,5 +15,4 @@ const SliceMedia = ({image}) => {
         </div>
     )};
     
-
 export default SliceMedia;

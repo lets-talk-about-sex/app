@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import styled from '@emotion/styled/macro';
 import shareButton from '../../assets/icon/article/share.svg';
 import MessengerButton from '../../assets/icon/article/messenger.svg';
@@ -76,7 +76,6 @@ const Exit = styled.img`
 class ShareComponent extends React.Component {
     constructor(props) {
       super(props);
-      console.log(this.props.location)
       this.state = {isToggleOn: false};
       // This binding is necessary to make `this` work in the callback
       this.handleClick = this.handleClick.bind(this);

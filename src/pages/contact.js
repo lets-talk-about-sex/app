@@ -6,7 +6,6 @@ import { theme } from 'components/theme/theme';
 import Global from 'components/base/base';
 import { Link } from "gatsby";
 import closeButton from '../assets/icon/article/close.svg';
-
 //Photos for contact
 import Phone from '../assets/icon/phone.svg';
 import Email from '../assets/icon/envelope.svg';
@@ -72,11 +71,11 @@ const Contact = () => {
                                 </OneContactInfoDiv>
                                 <OneContactInfoDiv>
                                     <ContactImg src={Email} alt="Tölvupóstfang"></ContactImg>
-                                    <p>adidas@kynlif.is</p>
+                                    <p>kynfraedsla@kynfraedsla.is</p>
                                 </OneContactInfoDiv>
                                 <OneContactInfoDiv>
                                     <ContactImg src={LandingPage} alt="Vefsíða"></ContactImg>
-                                    <p>kynlif.is</p>
+                                    <p>kynfraedsla.com</p>
                                 </OneContactInfoDiv>
                             </ContactInfoContainer>
                         </div>

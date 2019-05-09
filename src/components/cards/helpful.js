@@ -26,9 +26,6 @@ const NoMessage = styled.div`
 const ThumbsContainer = styled.div`
   display: flex;
 `
-const ThumbSpan = styled.span`
-  margin-right: 10px;
-`
 const ThumbDiv = styled.div`
   height: 36px;
   width: 36px;
@@ -68,7 +65,7 @@ class Helpful extends Component {
   }
 
   handleClick(VoteYesOrNo) {
-    if (this.state.Voting != undefined){
+    if (this.state.Voting !== undefined){
       return
     } 
     this.setState({
@@ -80,20 +77,20 @@ class Helpful extends Component {
       return (
           <div>   
              <HelpfulDiv>
-               {this.state.Voting == undefined ? (
+               {this.state.Voting === undefined ? (
                  <HelpfulText  >Var efnið hjálplegt?</HelpfulText>
                ) : (
                 <HelpfulText>Takk fyrir að svara!</HelpfulText>
                )}
                <ThumbsContainer>
-                <ThumbDiv className={this.state.Voting=="yes"? "activeButton":""}>
-                    <Thumb  src={this.state.Voting=="yes"? ThumbUpWhite: ThumbsUpRed} alt="" onClick={() => this.handleClick("yes")}></Thumb>
+                <ThumbDiv className={this.state.Voting==="yes"? "activeButton":""}>
+                    <Thumb  src={this.state.Voting==="yes"? ThumbUpWhite: ThumbsUpRed} alt="" onClick={() => this.handleClick("yes")}></Thumb>
                 </ThumbDiv>
-                <ThumbDiv className={this.state.Voting=="no"? "activeButton":""}>
-                  <Thumb src={this.state.Voting=="no"? ThumbDownWhite: ThumbsDownRed} alt="" onClick={() => this.handleClick("no")}></Thumb>
+                <ThumbDiv className={this.state.Voting==="no"? "activeButton":""}>
+                  <Thumb src={this.state.Voting==="no"? ThumbDownWhite: ThumbsDownRed} alt="" onClick={() => this.handleClick("no")}></Thumb>
                 </ThumbDiv>
               </ThumbsContainer>
-              {this.state.Voting == "no" && 
+              {this.state.Voting === "no" && 
                 <NoMessage>
                   <p>Fékkstu ekki svarið sem þú varst að leita að? <br/> Endilega sendu línu á <Bolda>live chatið </Bolda> okkar og þú færð svar eins fljótt og auðið er, nafnlaust!</p>
                 </NoMessage> 

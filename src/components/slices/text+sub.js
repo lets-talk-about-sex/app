@@ -1,7 +1,4 @@
 import React from 'react';
-import { get } from 'lodash';
-import { RichText } from 'prismic-reactjs';
-import { graphql } from 'gatsby';
 import styled from '@emotion/styled/macro';
 
 const SubHeading = styled.div`
@@ -12,7 +9,6 @@ const SubHeading = styled.div`
     margin-bottom: 15px;
     margin-top: 30px;
 `
-
 const Par = styled.p`
     ul{
         li{
@@ -31,5 +27,4 @@ const SliceTextSub = ({subheader, paragraph}) => {
         </div>
     )};
     
-
 export default SliceTextSub;

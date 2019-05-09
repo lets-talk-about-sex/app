@@ -1,9 +1,5 @@
 import React from 'react';
 import styled from '@emotion/styled/macro';
-import { ThemeProvider } from 'emotion-theming'
-import { theme } from 'components/theme/theme';
-import Global from 'components/base/base';
-import { Link } from "gatsby";
 import { keyframes } from 'emotion'
 import Mynstur from '../assets/icon/mynstur.svg';
 

@@ -3,7 +3,6 @@ import styled from '@emotion/styled/macro';
 import { RichText } from 'prismic-reactjs';
 import didyouknow from 'assets/icon/question.svg';
 
-
 const DidYouKnowContainer = styled.div`
     display:flex;
     flex-direction:column;

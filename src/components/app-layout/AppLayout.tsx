@@ -12,13 +12,11 @@ interface IAppLayoutProps {
 const isDev = process.env.NODE_ENV === 'development';
 
 export default ({ children }: IAppLayoutProps) => {
-  console.log("breytti um router")
+  // console.log("breytti um router")
   return(
     <div className={s.layout}>
     <Helmet {...helmet} />
-
-   
-
+    
     {children}
 
   {/* footer kemur hér */}

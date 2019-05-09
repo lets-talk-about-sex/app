@@ -3,17 +3,16 @@ import { get } from 'lodash';
 import { RichText } from 'prismic-reactjs';
 import styled from '@emotion/styled/macro';
 import { Link, navigate } from "gatsby"
-import closeButton from '../../assets/icon/article/close.svg';
-import Footer from 'components/footer/Footer';
-import SmallCard from '../../components/cards/small-card.js';
-import Helpful from 'components/cards/helpful';
-import ShareComponent from 'components/cards/share';
-import OutsideLinks from 'components/slices/outsideLinks';
 import { renderSlices } from '../../components/slices/index.js';
 import { ThemeProvider } from 'emotion-theming'
 import { theme } from 'components/theme/theme';
 import Global from 'components/base/base';
 import {keyframes} from 'emotion';
+import closeButton from '../../assets/icon/article/close.svg';
+import Footer from 'components/footer/Footer';
+import SmallCard from '../../components/cards/small-card.js';
+import Helpful from 'components/cards/helpful';
+import ShareComponent from 'components/cards/share';
 
 // keyframe fyrir hvernig article á að opnast
 const ContentAnimation = keyframes`
@@ -45,14 +44,12 @@ const Animation = styled.div`
       display:none;
   }
 `
-
 // Bannermynd
 const HeroBanner = styled.div`
     margin-left: -30px;
     width: calc(100% + 60px);
     height: 60vh;
     position: relative;
-
 `
 const HeroImg = styled.img`
     width: 100%;
@@ -158,9 +155,8 @@ const Read = styled.p`
 const Intro = styled.p`
  margin-bottom: 30px;
 `
-
 class Article extends React.Component {
-  constructor() {
+  constructor( ) {
     super();
     this.state = {
       className: "",
@@ -201,32 +197,23 @@ class Article extends React.Component {
                   }
                 </HeroBanner>
                     <FirstSectionDiv>
-
                     <CategoryDiv>
-                       {/* spurning um að gera function hér sem gerir það að verkum að ef article er með fleiri en eitt tag þá birtast þau öll? */}
                        <Link to="/feed"
                        state={{categoryTag:props.pageContext.node._meta.tags[0]}}>
                        <Category>{props.pageContext.node._meta.tags[0]}</Category>
                        </Link>
                      </CategoryDiv>
-
                       <TitleDiv>
                         <Title>{props.pageContext.node.title[0].text}</Title>
                         <ShareComponent location={props.location}></ShareComponent> 
-
                       </TitleDiv>
-
-
                   {props.pageContext.node.synonyms[0].text &&
                   <SynonymDiv>
                     <Synonym>Samheiti</Synonym>
                     <p>{props.pageContext.node.synonyms[0].text}</p>
                   </SynonymDiv>
                   }
-
                   <Intro>{RichText.render(props.pageContext.node.intro_text)}</Intro>
-
-
                 </FirstSectionDiv>
                 {props.pageContext.node.link &&
                 <Link to={props.pageContext.node.link._meta.uid}>
@@ -236,16 +223,12 @@ class Article extends React.Component {
                   </LongCard>
                 </Link>
                 }
-
                 {slices}
-
                 <Helpful></Helpful>
-
                 <Read>LESTU LÍKA</Read>
               </Animation>
             </Container>
             ):<div>loading</div>}
-            
           </Global>
         </ThemeProvider> 
             <Link to={get(props, "pageContext.node.small_card[0].link_to_article._meta.uid", "")}>

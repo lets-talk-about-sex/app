@@ -65,7 +65,6 @@ class App extends Component {
 
   //þegar er smellt er á flokka þá keyrist þetta fall
   RenderByFilter = (filter, search) => {
-    console.log(filter)
     this.setState({
       activefilter: filter,
       activesearch: search,
@@ -79,7 +78,6 @@ class App extends Component {
   let ChatlioReact = [];
   function chat () {
     var t = document.getElementById("chatlio-widget-embed");
-    console.log(t)
     if (t && window.ChatlioReact && _chatlio.init) return void _chatlio.init(t, ChatlioReact);
     for (var e = function (t) { return function () { _chatlio.push([t].concat(arguments)) } }, i = ["configure", "identify", "track", "show", "hide", "isShown", "isOnline", "page", "open", "showOrHide"], a = 0; a < i.length; a++)_chatlio[i[a]] || (_chatlio[i[a]] = e(i[a]));
     var n = document.createElement("script"), c = document.getElementsByTagName("script")[0];
@@ -100,7 +98,7 @@ class App extends Component {
       })
       const results = this.props.data.prismic.allArticles.edges.filter(card => {
       if (card.node.synonyms.text) {
-        console.log("hello", card.node.synonyms.text[0])}
+      }
         return card.node.title[0].text.toUpperCase().includes(searchTerm.toUpperCase()) ||
         (card.node.synonyms && card.node.synonyms[0].text.toUpperCase().includes(searchTerm.toUpperCase()))
     })
