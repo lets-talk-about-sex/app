@@ -10,10 +10,10 @@ import { Link } from "gatsby";
 import closeButton from '../assets/icon/article/close.svg';
 
 //Photos of the team
-import Hugrun from '../assets/images/hugrun.jpg';
-import Birgitta from '../assets/images/birgitta.jpg';
-// import Anna from '../assets/images/anna.jpg';
-// import Ragnhildur from '../assets/images/ragnhildur.jpg';
+import Hugrun from '../assets/images/TheTeam/hugrun_bw.jpg';
+import Birgitta from '../assets/images/TheTeam/birgitta_bw2.jpg';
+import Anna from '../assets/images/TheTeam/anna_bw.jpg';
+import Ragnhildur from '../assets/images/TheTeam/ragnhildur_bw.jpg';
 
 const Container = styled.div`
    margin: 0 30px;
@@ -57,10 +57,11 @@ const TeamTitle = styled.h6`
 `
 const TeamMember = styled.div`
     margin-right: 20px;
+    
 `
 const TeamImageDiv = styled.div`
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     position: relative;
     overflow: hidden;
     border-radius: 50%;
@@ -109,16 +110,16 @@ const About = () => {
                 <TeamContainer>
                 <TeamMember>
                     <TeamImageDiv>
-                        <TeamImage src={Hugrun} alt="Anna Sóley Karlsdóttir"></TeamImage>
+                        <TeamImage src={Anna} alt="Anna Sóley Karlsdóttir"></TeamImage>
                     </TeamImageDiv>
-                    <NameTitle>Anna Sóley</NameTitle>
-                    <JobTitle>Forritari <br/> & móðir</JobTitle>
+                    <NameTitle>Anna Sóley Karlsdóttir</NameTitle>
+                    <JobTitle>Forritari & móðir</JobTitle>
                 </TeamMember>
                 <TeamMember>
                     <TeamImageDiv>
                         <TeamImage src={Birgitta} alt="Birgitta Rún Sveinbjörnsdóttir"></TeamImage>
                     </TeamImageDiv>
-                    <NameTitle>Birgitta Rún</NameTitle>
+                    <NameTitle>Birgitta Rún Sveinbjörnsdóttir</NameTitle>
                     <JobTitle>Vefhönnuður</JobTitle>
                 </TeamMember>
 
@@ -126,16 +127,16 @@ const About = () => {
                     <TeamImageDiv>
                         <TeamImage src={Hugrun} alt="Hugrún Rúnarsdóttir"></TeamImage>
                     </TeamImageDiv>
-                    <NameTitle>Hugrún</NameTitle>
+                    <NameTitle>Hugrún <br/>Rúnarsdóttir</NameTitle>
                     <JobTitle>Vefhönnuður</JobTitle>
                 </TeamMember>
 
                 <TeamMember>
                     <TeamImageDiv>
-                        <TeamImage src={Hugrun} alt="Ragnhildur Rós Guðmundsdóttir"></TeamImage>
+                        <TeamImage src={Ragnhildur} alt="Ragnhildur Rós Guðmundsdóttir"></TeamImage>
                     </TeamImageDiv>
-                    <NameTitle>Ragnhildur</NameTitle>
-                    <JobTitle>Forritari <br/> & móðir</JobTitle>
+                    <NameTitle>Ragnhildur Rós Guðmundsdóttir</NameTitle>
+                    <JobTitle>Forritari & móðir</JobTitle>
                 </TeamMember>
             </TeamContainer>
             <Footer/>
