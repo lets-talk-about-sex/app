@@ -1,14 +1,11 @@
-import React, {Component} from 'react';
-// import { graphql } from 'gatsby';
+import React from 'react';
 import styled from '@emotion/styled/macro';
-
-// kalla á allar myndir 
 import shareButton from '../../assets/icon/article/share.svg';
 import MessengerButton from '../../assets/icon/article/messenger.svg';
 import GmailButton from '../../assets/icon/article/gmail.svg';
 import ExitButton from '../../assets/icon/article/closeshare.svg';
 
-// share animations button container
+// deilivirkni -  animations button container
 const ShareAnimation = styled.div`
   position: absolute;
   right: 70px;
@@ -27,7 +24,6 @@ const ShareAnimation = styled.div`
     }
   }
 `
-
 // share button container
 const ShareDiv = styled.div`
    height: 50px;
@@ -57,7 +53,6 @@ const Share = styled.img`
   transform: translate(-50%, -50%);
   z-index: 99;
 `
-
 // messenger logo
 const MessengerLogo = styled.img`
   width: 100px;
@@ -68,7 +63,6 @@ const GmailLogo = styled.img`
   width: 100px;
   cursor: pointer;
 `
-
 // exit share logo 
 const Exit = styled.img`
   height: auto;
@@ -79,14 +73,10 @@ const Exit = styled.img`
   top: 50%;
   transform: translate(-50%, -50%);
 `
-
 class ShareComponent extends React.Component {
-
     constructor(props) {
       super(props);
-      console.log(this.props.location)
       this.state = {isToggleOn: false};
-  
       // This binding is necessary to make `this` work in the callback
       this.handleClick = this.handleClick.bind(this);
     }
@@ -97,19 +87,18 @@ class ShareComponent extends React.Component {
       }));
     }
 
-  
     render() {
         return (
             <div>   
                 <ShareAnimation className={this.state.isToggleOn ? "active":""}>
-                    <ShareDiv onClick={this.handleClick} className={"firstState"}>
+                  <ShareDiv onClick={this.handleClick} className={"firstState"}>
                     <Share src={shareButton} alt="" ></Share>
                   </ShareDiv>
                   <ShareDiv className={"messengerButton"}>
-                  <a href={"fb-messenger://share/?link="+this.props.location.href+"&app_id=470392137039381"}><MessengerLogo src={MessengerButton} alt=""></MessengerLogo></a> 
+                    <a href={"fb-messenger://share/?link="+this.props.location.href+"&app_id=470392137039381"}><MessengerLogo src={MessengerButton} alt=""></MessengerLogo></a> 
                   </ShareDiv>
                   <ShareDiv className={"gmailButton"}>
-                  <a href={"https://mail.google.com/mail/?view=cm&fs=1&tf=1&body="+this.props.location.href+"&ui=2&tf=1&pli=1"} ><GmailLogo src={GmailButton} alt=""></GmailLogo> </a>
+                    <a href={"https://mail.google.com/mail/?view=cm&fs=1&tf=1&body="+this.props.location.href+"&ui=2&tf=1&pli=1"} ><GmailLogo src={GmailButton} alt=""></GmailLogo> </a>
                   </ShareDiv>
                   <ShareDiv onClick={this.handleClick} className={"closeShareButton"}>
                     <Exit src={ExitButton} alt=""></Exit>
@@ -117,9 +106,7 @@ class ShareComponent extends React.Component {
                 </ShareAnimation> 
             </div>
         )
-    }
-  
-};
+      } 
+  };
     
-
 export default ShareComponent;

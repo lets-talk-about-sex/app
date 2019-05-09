@@ -1,23 +1,13 @@
 import React from 'react';
-
-import { ThemeProvider, withTheme } from 'emotion-theming'
+import { ThemeProvider} from 'emotion-theming'
 import { theme } from 'components/theme/theme';
 import Global from 'components/base/base';
-import { get } from 'lodash';
-import { RichText } from 'prismic-reactjs';
-import { graphql } from 'gatsby';
 import styled from '@emotion/styled/macro';
-import About from 'pages/about';
-import Contact from 'pages/contact'
-
 //font awesome import
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebookF, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons'
 import { faStroopwafel } from '@fortawesome/free-solid-svg-icons'
-import * as faSolid from 'emotion-icons/fa-solid'
-
-
 
 library.add(faStroopwafel)
 
@@ -33,11 +23,9 @@ const SocialMediaContainer = styled.div`
     width: 103px;
     margin: 0 auto;
 `
-
 const FooterLinkContainer = styled.div`
     margin-top: 30px;
 `
-
 const FooterPageLink = styled.a`
     color: white; 
     font-weight: 600;
@@ -57,11 +45,7 @@ const FooterPageLink = styled.a`
         color: #FFB800;
     }
 `
-
-// const IconStyle = {color: white , size: 16px}
-
 const Footer = (props) => {
-    console.log(props)
     return (
         <div> 
             <ThemeProvider theme={theme}>
@@ -74,9 +58,7 @@ const Footer = (props) => {
                         </SocialMediaContainer>
                         <FooterLinkContainer>
                             <FooterPageLink href="/about">Um okkur</FooterPageLink>
-                            {/* <FooterPageLink href="#">Algengar spurningar</FooterPageLink> */}
                             <FooterPageLink href="/contact">Hafa samband</FooterPageLink>
-                            {/* <FooterPageLink href="#">Styrktaraðilar</FooterPageLink> */}
                         </FooterLinkContainer>
                     </FooterContainer>
                 </Global>
@@ -84,5 +66,4 @@ const Footer = (props) => {
         </div>
     )};
     
-
 export default Footer;

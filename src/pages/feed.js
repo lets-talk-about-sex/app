@@ -8,7 +8,6 @@ import Search from 'components/search/search';
 import AllCards from 'components/cards/allCards';
 import Footer from 'components/footer/Footer';
 
-
 export const query = graphql`
   query {
     prismic {
@@ -51,7 +50,6 @@ export const query = graphql`
     }
 }
 `
-
 class App extends Component {
   constructor(props){
     super(props);
@@ -67,7 +65,6 @@ class App extends Component {
 
   //þegar er smellt er á flokka þá keyrist þetta fall
   RenderByFilter = (filter, search) => {
-    console.log(filter)
     this.setState({
       activefilter: filter,
       activesearch: search,
@@ -75,7 +72,6 @@ class App extends Component {
   }
 
   componentDidMount () {
-
   //Chatbot
   let _chatlio =_chatlio || [];
   let ChatlioReact = [];
@@ -91,6 +87,7 @@ class App extends Component {
     n.setAttribute('data-widget-id', '2c5a506b-18b2-407e-5dc3-dfebac4d8b9b');
     c.parentNode.insertBefore(n, c);
   }
+
 chat();
 
   }
@@ -103,8 +100,9 @@ chat();
     // console.log(this.props.data.prismic.allArticles)
     const results = this.props.data.prismic.allArticles.edges.filter(card => {
       // console.log(card.node.synonyms)
+
       if (card.node.synonyms.text) {
-        console.log("hello", card.node.synonyms.text[0])}
+      }
         return card.node.title[0].text.toUpperCase().includes(searchTerm.toUpperCase()) ||
         (card.node.synonyms && card.node.synonyms[0].text.toUpperCase().includes(searchTerm.toUpperCase()))
     })
@@ -112,14 +110,9 @@ chat();
       results,
       resultsCounter: results.length 
     })
-    console.log(results)
-    console.log(searchTerm)
-
   }
 
   render() {
-    console.log(this.props);
-
     let data;
     if (this.state.results.length) {
       data = {
@@ -139,22 +132,20 @@ chat();
     else {
       data = this.props.data
     }
-    console.log("data", data)
-    console.log("props", this.props)
     return (
-     <ThemeProvider theme={theme}>
-        <Search 
-          renderbyfilter={this.RenderByFilter}
-          update={this.update}
-          showResults={this.state.resultsCounter}
-          searchStringIsEmpty={this.state.searchIsEmpty}
-          linkState={this.props.location.state}/>
-        <Global>
-         <Container>
-           <AllCards filtering={this.state.activefilter} data={data} />
-          </Container>
-        </Global>
-        <Footer/>
+      <ThemeProvider theme={theme}>
+          <Search 
+              renderbyfilter={this.RenderByFilter}
+              update={this.update}
+              showResults={this.state.resultsCounter}
+              searchStringIsEmpty={this.state.searchIsEmpty}
+              linkState={this.props.location.state}/>
+          <Global>
+            <Container>
+              <AllCards filtering={this.state.activefilter} data={data} />
+            </Container>
+          </Global>
+          <Footer/>
       </ThemeProvider> 
     );
   }

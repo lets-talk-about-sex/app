@@ -1,5 +1,4 @@
 import React from 'react';
-import { graphql } from 'gatsby';
 import styled from '@emotion/styled/macro';
 
 const Subtitle = styled.h3`

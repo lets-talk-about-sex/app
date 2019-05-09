@@ -18,51 +18,34 @@ class Global extends React.Component {
       margin: 0 auto;  
      }
 
-     /* ::-webkit-scrollbar , ::-webkit-scrollbar-thumb  {
-            display: none !important; 
-            -webkit-appearance: none;
-            -webkit-overflow-scrolling: touch;
-            
-    } */
-
      h1, h2, h3, h4, h5 {
          font-family: 'Poppins', sans-serif;
+         font-weight: 600;
          color: #000;
      }
 
      /* Titill á undirsíðu með stöku orði */
      h1 {
          font-size: 32px;
-         font-weight: 600;
-     }
-
-     /* Flokkar */
-     h2 {
-      font-size: 26px;
-      font-weight: 600;
      }
 
      /* Titlar á spjöldum */
      h2 {
          font-size: 20px;
-         font-weight: 600;
      }
 
      h3 {
          font-size: 18px;
-         font-weight: 600;
      }
 
       /* Small card */
       h4 {
           font-size: 16px;
-          font-weight: 600;
       }
 
-        /* Heading info card */
+        /* Info card */
       h5 {
         font-size: 16px;
-        font-weight: 600;
         color: #FC4255;
       }
 
@@ -79,10 +62,6 @@ class Global extends React.Component {
         color: #000;
       }
 
-      /* // li {
-      //      color: #C7C7C7;
-      // } */
-
       a {
         text-decoration:none;
         color:#C7C7C7;
@@ -90,6 +69,7 @@ class Global extends React.Component {
           color:#C7C7C7;
           }
       }
+
        input {
          font-family: 'Poppins', sans-serif;
          font-size: 20px;

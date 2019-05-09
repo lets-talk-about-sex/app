@@ -8,20 +8,19 @@ const CardContainer = styled.div`
     padding-bottom: 24px;
     margin-bottom: 30px;
     box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.1);
-    border-radius:  15px;
-    background-color: #fff;
+    border-radius: 15px;
+    background-color: ${props => props.theme.baseColors.white};
 `
 const ImgWrapper = styled.div`
-    height:350px;
+    height: 350px;
     width: 100%;
 `
 const SexImg = styled.img`
     width: 100%;
     height: 100%;
-    border-radius:  15px 15px 0 0;
+    border-radius: 15px 15px 0 0;
     object-fit: cover;
 `
-//muna að þegar spjald er með slug þá þarf height að vera 100px;
 const TitleWrapper = styled.div`
     height: 90px; 
     padding: 30px 0 30px 29px; 
@@ -32,10 +31,7 @@ const Slug = styled.p`
     font-size: 14px;
     font-weight: 600;
     text-transform: uppercase;
-    color: #FC4255;
-`
-
-const CardTitle = styled.h2`  
+    color: ${props => props.theme.baseColors.coral};
 `
 const Hot = styled.img`
   position: absolute;
@@ -51,11 +47,9 @@ const Card = (props) => {
                     <SexImg src={props.node.article_img?props.node.article_img.url:""}></SexImg>
                 </ImgWrapper>
                 <TitleWrapper>
-                    {props.node.hot &&
-                    <Hot src={props.node.hot.url}></Hot>
-                    }
+                    {props.node.hot && <Hot src={props.node.hot.url}></Hot>}
                     <Slug>{props.node.filter?"":props.node._meta.tags[0]}</Slug>
-                    <CardTitle>{RichText.asText(props.node.title)}</CardTitle>
+                    <h2>{RichText.asText(props.node.title)}</h2>
                 </TitleWrapper>
             </CardContainer>
         </div>

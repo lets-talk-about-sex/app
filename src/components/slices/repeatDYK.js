@@ -1,7 +1,4 @@
 import React from 'react';
-// import { get } from 'lodash';
-// import { RichText } from 'prismic-reactjs';
-import { graphql } from 'gatsby';
 import styled from '@emotion/styled/macro';
 import didyouknow from 'assets/icon/question.svg';
 
@@ -19,7 +16,6 @@ const DidYouKnowContainer = styled.div`
     margin: 30px auto;
     background-color: #fff;
 `
-
 const Title = styled.p`
     color: ${props => props.theme.baseColors.coral};
     text-transform: uppercase;
@@ -36,7 +32,6 @@ const Text = styled.p`
 const Icon = styled.img`
   margin-bottom: 5px;
 `
-
 
 const SliceRepeatDYK = ({repeat}) => {
   

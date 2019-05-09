@@ -1,13 +1,10 @@
 import React from 'react';
-// import Article from 'template/article/article-template';
-// import Footer from 'components/footer/Footer';
 import styled from '@emotion/styled/macro';
 import { ThemeProvider } from 'emotion-theming'
 import { theme } from 'components/theme/theme';
 import Global from 'components/base/base';
 import { Link } from "gatsby";
 import LoadingPage from './loadingPage';
-
 //Photos 
 import Mynstur_dark from '../assets/icon/mynstur_dark.svg';
 import ChatIcon from '../assets/icon/chaticon.svg';
@@ -20,16 +17,15 @@ const OnBoardingContainer = styled.div`
   height: 100vh;
   background-image: url(${Mynstur_dark});
 `
-
 const SkipButton = styled.a`
     margin-left: 30px;
     display: block;
     font-size: 18px;
-    color: #FC4255 !important;
+    color: ${props => props.theme.baseColors.coral} !important;
     font-weight: 600;
     z-index: 99;
     &:visited {
-        color: #FC4255 !important;
+        color: ${props => props.theme.baseColors.coral} !important;
     }
     &:active {
         color: #D13847;
@@ -44,7 +40,7 @@ const ButtonDiv = styled.div`
 const ArrowDiv = styled.div`
     height: 27px;
     width: 27px;
-    background-color: #FC4255;
+    background-color: ${props => props.theme.baseColors.coral};
     border-radius: 50%;
     position: relative;
     position: absolute;
@@ -92,20 +88,13 @@ const OBCardContainer = styled.div`
     padding-bottom: 24px;
     box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.1);
     border-radius:15px;
-    background-color: #fff;
+    background-color: ${props => props.theme.baseColors.white};
     margin-left: 30px;
     position: relative;
 `
-const MynsturImg = styled.img`
-    width: 100vw;
-    height: calc(100vh + 80px);
-    position: absolute;
-    top:-80px;
-    left:0;
-`
 const IconDiv = styled.div`
     border-radius: 50%;
-    background-color: #FC4255;
+    background-color: ${props => props.theme.baseColors.coral};
     width: 48px;
     height: 48px;
     position: absolute;
@@ -124,7 +113,7 @@ const SturlIconImg = styled.img`
     top: 11px;
 `
 const TitleOnCard = styled.h1`
-    color: #FC4255;
+    color: ${props => props.theme.baseColors.coral};
     line-height: 30px;
     margin-bottom: 20px;
 `
@@ -139,8 +128,8 @@ const CarouselIndicator = styled.div`
     width: 100px;
     height: auto;
 `
-const LineTheFine1 = styled.span`
-    background-color: #C7C7C7;
+const LineTheFine = styled.span`
+    background-color: ${props => props.theme.baseColors.categoryText};
     height: 4px;
     width: 27px;
     border-radius: 50px; 
@@ -148,46 +137,28 @@ const LineTheFine1 = styled.span`
     bottom: 30%;
     left: 30px;
     &.red {
-        background-color:#FC4255; 
-    }
+        background-color:${props => props.theme.baseColors.coral}; 
+    } 
 `
-const LineTheFine2 = styled.span`
-    background-color: #C7C7C7;
-    height: 4px;
-    width: 27px;
-    border-radius: 50px; 
-    position: absolute;
-    bottom: 30%;
+const LineTheFine2 = styled(props => <LineTheFine {...props} />)`
     left: 60px;
-    &.red {
-        background-color:#FC4255; 
-    }
 `
-const LineTheFine3 = styled.span`
-    background-color: #C7C7C7;
-    height: 4px;
-    width: 27px;
-    border-radius: 50px; 
-    position: absolute;
-    bottom: 30%;
+const LineTheFine3 = styled(props => <LineTheFine {...props} />)`
     left: 90px;
-    &.red {
-        background-color:#FC4255; 
-  }
   `
-  class Onboarding extends React.Component {
+class Onboarding extends React.Component {
     constructor() {
         super();
         this.state = {
-          scrolling: 0
+            scrolling: 0
         };
-      }
+    }
 
-        scrolling =(e) => {
-            this.setState({scrolling:Math.floor(e.target.scrollLeft/250)})
-      }
+    scrolling =(e) => {
+        this.setState({scrolling:Math.floor(e.target.scrollLeft/250)})
+    }
 
-      render() {
+    render() {
         return (
             <div>
                 <ThemeProvider theme={theme}>
@@ -201,17 +172,17 @@ const LineTheFine3 = styled.span`
                                             <IconImg src={ChatIcon} alt=""></IconImg>
                                         </IconDiv>
                                         <TextDiv>
-                                        <TitleOnCard>Netspjall</TitleOnCard>
-                                        <h4>Nafnlaust spjall svarað af hjúkrunar- og kynfræðingum</h4>
+                                            <TitleOnCard>Netspjall</TitleOnCard>
+                                            <h4>Nafnlaust spjall svarað af hjúkrunar- og kynfræðingum</h4>
                                         </TextDiv>
                                     </OBCardContainer>
                                     <OBCardContainer>
                                         <IconDiv>
-                                        <IconImg src={Ordabanki} alt=""></IconImg>
+                                            <IconImg src={Ordabanki} alt=""></IconImg>
                                         </IconDiv>
                                         <TextDiv>
-                                        <TitleOnCard>Orðabanki</TitleOnCard>
-                                        <h4>Í appinu er hægt að finna yfir 500 orð um allt  sem tengist kynheilbrigði</h4>
+                                            <TitleOnCard>Orðabanki</TitleOnCard>
+                                            <h4>Í appinu er hægt að finna yfir 500 orð um allt  sem tengist kynheilbrigði</h4>
                                         </TextDiv>
                                     </OBCardContainer>
                                     <OBCardContainer>
@@ -219,16 +190,16 @@ const LineTheFine3 = styled.span`
                                             <SturlIconImg src={SturlStad} alt=""></SturlIconImg>
                                         </IconDiv>
                                         <TextDiv className="sturladurTitle">
-                                        <TitleOnCard>Sturlaðar staðreyndir</TitleOnCard>
-                                        <h4>Staðreyndir tengdar kynheilbrigði sem þú hefur aldrei heyrt áður</h4>
+                                            <TitleOnCard>Sturlaðar staðreyndir</TitleOnCard>
+                                            <h4>Staðreyndir tengdar kynheilbrigði sem þú hefur aldrei heyrt áður</h4>
                                         </TextDiv>
                                     </OBCardContainer>
                                 </OBCards>
                             </OBCardsWrapper>
                             <CarouselIndicator>
-                                <LineTheFine1 className={this.state.scrolling == 0? 'red' : ""}></LineTheFine1>
-                                <LineTheFine2 className={this.state.scrolling == 1? 'red' : ""}></LineTheFine2>
-                                <LineTheFine3 className={this.state.scrolling == 2? 'red' : ""}></LineTheFine3>
+                                <LineTheFine className={this.state.scrolling === 0? 'red' : ""}></LineTheFine>
+                                <LineTheFine2 className={this.state.scrolling === 1? 'red' : ""}></LineTheFine2>
+                                <LineTheFine3 className={this.state.scrolling === 2? 'red' : ""}></LineTheFine3>
                             </CarouselIndicator>
                             <Link to={"/feed"}>
                                 <ButtonDiv>
@@ -242,7 +213,7 @@ const LineTheFine3 = styled.span`
                     </Global>
                 </ThemeProvider> 
             </div>
-     ) 
+        ) 
     }
 };
 

@@ -1,6 +1,4 @@
 import React from 'react';
-import { graphql } from 'gatsby';
-// import styled from '@emotion/styled/macro';
 
 const SliceText = ({text}) => {
   
@@ -10,5 +8,4 @@ const SliceText = ({text}) => {
         </div>
     )};
     
-
 export default SliceText;
