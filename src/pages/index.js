@@ -5,7 +5,8 @@ import { theme } from 'components/theme/theme';
 import Global from 'components/base/base';
 import { Link } from "gatsby";
 import LoadingPage from './loadingPage';
-//Photos 
+
+//Icons  
 import Mynstur_dark from '../assets/icon/mynstur_dark.svg';
 import ChatIcon from '../assets/icon/chaticon.svg';
 import Ordabanki from '../assets/icon/ordabankaicon.svg';
@@ -145,7 +146,7 @@ const LineTheFine2 = styled(props => <LineTheFine {...props} />)`
 `
 const LineTheFine3 = styled(props => <LineTheFine {...props} />)`
     left: 90px;
-  `
+`
 class Onboarding extends React.Component {
     constructor() {
         super();

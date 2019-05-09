@@ -6,7 +6,7 @@ const Container = styled.div`
    height: 100%;
    padding: 0 30px;
    margin: 0 auto;
-   background-color: ${props => props.theme.baseColors.bodyBackground}
+   background-color: ${props => props.theme.baseColors.bodyBackground};
 `
 
 export { Container };

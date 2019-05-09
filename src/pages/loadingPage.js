@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from '@emotion/styled/macro';
 import { keyframes } from 'emotion'
+
+//Background for loading page
 import Mynstur from '../assets/icon/mynstur.svg';
 
 const LoadingContainer = styled.div`

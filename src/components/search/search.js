@@ -1,6 +1,8 @@
 import React, { Component} from 'react'
 import styled from '@emotion/styled/macro';
 import search from 'assets/icon/search.svg';
+
+//Icon for closebutton
 import closeButton from '../../assets/icon/article/close.svg';
 const breakpoints = [480]
 
@@ -8,6 +10,7 @@ const mq = breakpoints.map(
     bp => `@media (min-width: ${bp}px)`
   )
 
+//container and styles for search card
 const SearchContainer = styled.div`
     display:flex;
     justify-content:flex-end;
@@ -154,7 +157,7 @@ class Search extends Component {
         }
 
         this.searchInput = React.createRef();
-        //verðum að nota bind hér til þess að this sem notum í update function muni vísa í class Search
+        //use bind here so „this" that is used in update function will refer to class Search 
         this.toggleSearch = this.toggleSearch.bind(this)
         this.update = this.update.bind(this)
         this.handleScroll = this.handleScroll.bind(this)
@@ -231,8 +234,8 @@ class Search extends Component {
         var searchContainerClasses;
         var isSearching = false;
 
-        //ef search inniheldur engan texta í input þá sýna öll spjöldin (update sýnir öll)
-        //búa til function setTimeout sem setur focus á input field(músarbendill sé auo í input field) eftir að hann er búin að animate-ast inn, því setum 400 millisec.
+        //if search contains no text in input then show all the cards (update shows them all)
+        //make a function setTimeout that puts focus on input field(so the mouse pointer is on input field) after it has animated for 1000 ms.
         if ( searchOpen ) {
             searchContainerClasses = {
                 ...this.state.searchContainerClasses,
@@ -271,7 +274,7 @@ class Search extends Component {
         return (
             <div>
                 <SearchContainer
-                className={this.classNames(this.state.searchContainerClasses)}> 
+                    className={this.classNames(this.state.searchContainerClasses)}> 
                     <SearchInput 
                     onKeyUp={this.update}
                     ref={this.searchInput}
@@ -293,10 +296,10 @@ class Search extends Component {
                             <li className={this.state.activeCategory==='kynþroski'?'active':''} onClick={() => { this.handleClick('kynþroski') }}>Kynþroski</li>
                             <li className={this.state.activeCategory==='samskipti'?'active':''} onClick={() => { this.handleClick('samskipti') }}>Samskipti</li>
                             <li className={this.state.activeCategory==='kynhneigð'?'active':''} onClick={() => { this.handleClick('kynhneigð') }}>Kynverund</li>
-                            {/* <li className={this.state.activeCategory==='myndefni'?'active':''} onClick={() => { this.handleClick('myndefni') }}>Myndefni</li> */} 
                         </ul>:
                         <SearchResults> 
-                        <span className="color">{this.props.showResults}</span> orð fundust</SearchResults>
+                            <span className="color">{this.props.showResults}</span> orð fundust
+                        </SearchResults>
                     }
                     </CategoryWrapper> 
                 </div>

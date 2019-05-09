@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled/macro';
+
+//icon for didyouknow card
 import didyouknow from 'assets/icon/question.svg';
 
 const DidYouKnowContainer = styled.div`
@@ -28,11 +30,9 @@ const Text = styled.p`
     font-weight: 600;
     text-align: center;
 `
-
 const Icon = styled.img`
   margin-bottom: 5px;
 `
-
 const SliceRepeatDYK = ({repeat}) => {
   
     return (

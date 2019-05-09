@@ -5,8 +5,9 @@ import { ThemeProvider } from 'emotion-theming'
 import { theme } from 'components/theme/theme';
 import Global from 'components/base/base';
 import { Link } from "gatsby";
+
+//Icons for contact and closebutton
 import closeButton from '../assets/icon/article/close.svg';
-//Photos for contact
 import Phone from '../assets/icon/phone.svg';
 import Email from '../assets/icon/envelope.svg';
 import LandingPage from '../assets/icon/browser.svg';

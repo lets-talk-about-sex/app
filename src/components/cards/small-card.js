@@ -2,6 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled/macro';
 import {Link} from 'gatsby';
 
+//container and styles for smallCard
 const SmallCardContainer = styled.div`
     width: 140px;
     height: 196px;
