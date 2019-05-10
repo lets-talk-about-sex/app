@@ -17,13 +17,15 @@ const OnBoardingContainer = styled.div`
   width: 100vw;
   height: 100vh;
   background-image: url(${Mynstur_dark});
+  position: relative;
 `
 const SkipButton = styled.a`
-    margin-left: 30px;
+    padding-right: 90px;
     display: block;
-    font-size: 18px;
-    color: ${props => props.theme.baseColors.coral} !important;
-    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #000;
+    font-weight: 900;
     z-index: 99;
     &:visited {
         color: ${props => props.theme.baseColors.coral} !important;
@@ -37,25 +39,44 @@ const SkipButton = styled.a`
 `
 const ButtonDiv = styled.div`
     display: flex;
+    border-radius: 10px;
+    align-items: center;
+    margin-right: 30px;
+    justify-content: flex-end;
+    // margin: 30px;
+    // justify-content: space-between;
+    // background-color: ${props => props.theme.baseColors.coral} !important;
+    // height: 60px;
+    // width: 286px;+
+    // position: relative;
+    // right: 0;
+`
+
+const Forward = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
 `
 const ArrowDiv = styled.div`
-    height: 27px;
-    width: 27px;
+    height: 60px;
+    width: 60px;
     background-color: ${props => props.theme.baseColors.coral};
     border-radius: 50%;
-    position: relative;
     position: absolute;
-    right: 40%;
+    // right: 50%;
     &:active {
         background-color: #D13847;
     }
 `
 const ArrowImg = styled.img`
+    height: 15px;
+    width: auto;
     cursor: pointer;
-    position: absolute; 
-    left: 50%;
+    position: absolute;
     top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
+    
 `
 const OBCardsWrapper = styled.div`
     position: relative;
@@ -74,10 +95,11 @@ const OBCards = styled.div`
     overflow-x: auto;   
     position: relative;
     display: flex;
-    height: 550px;
+    height: 400px;
     width: auto;
     scroll-behavior: smooth;
-    padding-top: 40%;
+    padding-top: 50px;
+    // margin-bottom: 50px;
     &::-webkit-scrollbar , &::-webkit-scrollbar-thumb {
         display: none;
     } 
@@ -127,25 +149,41 @@ const TextDiv = styled.div`
 `
 const CarouselIndicator = styled.div`
     width: 100px;
-    height: auto;
+    display:flex;
+    margin: 0px 0px 0px 30px;
+    align-items: center;
+`
+const IntroductionText = styled.div`
+    margin-left: 30px;
+    padding-top: 20%;
+`
+const WelcomeText = styled.h2`
+    margin-bottom: 5px;
+    font-size: 30px;
+    color: ${props => props.theme.baseColors.coral};
+`
+const SubHeadWelcome = styled.h4`
+    font-size: 20px;
+    font-weight: 400;
 `
 const LineTheFine = styled.span`
     background-color: ${props => props.theme.baseColors.categoryText};
     height: 4px;
     width: 27px;
     border-radius: 50px; 
-    position: absolute;
+    // position: absolute;
     bottom: 30%;
     left: 30px;
+    margin-right: 5px;
     &.red {
         background-color:${props => props.theme.baseColors.coral}; 
     } 
 `
 const LineTheFine2 = styled(props => <LineTheFine {...props} />)`
-    left: 60px;
+    // left: 60px;
 `
 const LineTheFine3 = styled(props => <LineTheFine {...props} />)`
-    left: 90px;
+    // left: 90px;
 `
 class Onboarding extends React.Component {
     constructor() {
@@ -167,6 +205,10 @@ class Onboarding extends React.Component {
                     <Global>
                         <OnBoardingContainer>
                             <OBCardsWrapper onScroll={this.scrolling}>
+                                <IntroductionText>
+                                    <WelcomeText>Let's talk about sex </WelcomeText>
+                                    <SubHeadWelcome>Kynfræðslu vefapp</SubHeadWelcome>
+                                </IntroductionText>
                                 <OBCards>
                                     <OBCardContainer>
                                         <IconDiv>
@@ -197,19 +239,21 @@ class Onboarding extends React.Component {
                                     </OBCardContainer>
                                 </OBCards>
                             </OBCardsWrapper>
-                            <CarouselIndicator>
-                                <LineTheFine className={this.state.scrolling === 0? 'red' : ""}></LineTheFine>
-                                <LineTheFine2 className={this.state.scrolling === 1? 'red' : ""}></LineTheFine2>
-                                <LineTheFine3 className={this.state.scrolling === 2? 'red' : ""}></LineTheFine3>
-                            </CarouselIndicator>
-                            <Link to={"/feed"}>
-                                <ButtonDiv>
-                                    <SkipButton>Let's talk about sex</SkipButton>
-                                    <ArrowDiv>
-                                        <ArrowImg src={ArrowRight} alt=""></ArrowImg>
-                                    </ArrowDiv>
-                                </ButtonDiv>
-                            </Link>
+                            <Forward>
+                                <CarouselIndicator>
+                                    <LineTheFine className={this.state.scrolling === 0? 'red' : ""}></LineTheFine>
+                                    <LineTheFine2 className={this.state.scrolling === 1? 'red' : ""}></LineTheFine2>
+                                    <LineTheFine3 className={this.state.scrolling === 2? 'red' : ""}></LineTheFine3>
+                                </CarouselIndicator>
+                                <Link to={"/feed"}>
+                                    <ButtonDiv>
+                                        <SkipButton>Halda áfram</SkipButton>
+                                        <ArrowDiv>
+                                            <ArrowImg src={ArrowRight} alt=""></ArrowImg>
+                                        </ArrowDiv>
+                                    </ButtonDiv>
+                                </Link>
+                            </Forward>
                         </OnBoardingContainer>
                     </Global>
                 </ThemeProvider> 
