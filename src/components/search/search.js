@@ -6,7 +6,7 @@ import search from 'assets/icon/search.svg';
 import closeButton from '../../assets/icon/article/close.svg';
 
 
-//container and styles for search card
+//container and styles for search 
 const SearchContainer = styled.div`
     display:flex;
     justify-content:flex-end;
@@ -37,7 +37,7 @@ const SearchContainer = styled.div`
             border-top-right-radius: 10px;
             border-bottom-right-radius: 10px;
         }
-    },
+    }
 
 `
 const SearchInput = styled.input`

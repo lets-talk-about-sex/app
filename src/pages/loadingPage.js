@@ -86,19 +86,19 @@ const LoadingBar = styled.div`
     border-radius: 5px;
     margin-right: 5px;
     animation: ${Loader} 1s ease-in-out infinite;
-    &:nth-child(1) {
+    &:nth-of-type(1) {
         background-color: ${props => props.theme.baseColors.white};
         animation-delay: 0;
     }
-    &:nth-child(2) {
+    &:nth-of-type(2) {
         background-color: ${props => props.theme.baseColors.white};
         animation-delay: 0.09s;
     }
-    &:nth-child(3) {
+    &:nth-of-type(3) {
         background-color: ${props => props.theme.baseColors.white};
         animation-delay: 0.18s;
     }
-    &:nth-child(4) {
+    &:nth-of-type(4) {
         background-color: ${props => props.theme.baseColors.white};
         animation-delay: 0.27s;
     }

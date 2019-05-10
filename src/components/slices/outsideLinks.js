@@ -36,7 +36,7 @@ const LineTheFine = styled.span`
     width: 4px;
     border-radius: 50px; 
 `
-const LinkName = styled.p`
+const LinkName = styled.div`
     margin-left: 20px;    
 `
 const SliceLink = ({link, heading}) => {

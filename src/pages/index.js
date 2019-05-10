@@ -19,8 +19,9 @@ const OnBoardingContainer = styled.div`
   background-image: url(${Mynstur_dark});
   position: relative;
 `
-const SkipButton = styled.a`
-    padding-right: 90px;
+
+const SkipButton = styled.div`
+    margin-left: 30px;
     display: block;
     font-size: 12px;
     text-transform: uppercase;
@@ -43,13 +44,6 @@ const ButtonDiv = styled.div`
     align-items: center;
     margin-right: 30px;
     justify-content: flex-end;
-    // margin: 30px;
-    // justify-content: space-between;
-    // background-color: ${props => props.theme.baseColors.coral} !important;
-    // height: 60px;
-    // width: 286px;+
-    // position: relative;
-    // right: 0;
 `
 
 const Forward = styled.div`
@@ -179,12 +173,7 @@ const LineTheFine = styled.span`
         background-color:${props => props.theme.baseColors.coral}; 
     } 
 `
-const LineTheFine2 = styled(props => <LineTheFine {...props} />)`
-    // left: 60px;
-`
-const LineTheFine3 = styled(props => <LineTheFine {...props} />)`
-    // left: 90px;
-`
+
 class Onboarding extends React.Component {
     constructor() {
         super();

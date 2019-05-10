@@ -73,7 +73,8 @@ class App extends Component {
 
   componentDidMount () {
   //Chatbot
-  let _chatlio =_chatlio || [];
+  let _chatlio = [];
+  window._chatlio=_chatlio;
   let ChatlioReact = [];
   function chat () {
     var t = document.getElementById("chatlio-widget-embed");
