@@ -2,6 +2,12 @@ import React from 'react';
 import styled from '@emotion/styled/macro';
 import {Link} from 'gatsby';
 
+
+const SmallCardWrapper = styled.div`
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+`
 //container and styles for smallCard
 const SmallCardContainer = styled.div`
     width: 140px;
@@ -32,24 +38,13 @@ const SmallTitleWrapper = styled.div`
 const SmallCardCarousel = styled.div`
     display: flex;
     height: 250px;
+    height: 280px;
     width: 100% !important;
-    margin-bottom: 50px;
     overflow-x: auto;
     scroll-behavior: smooth;
     padding-left: 30px;
     position: relative;
     z-index: 999;
-    
-    &:after {
-        content: '';
-        display: block;
-        width: 100%;
-        height: 10px;
-        background-color: #f9f9f9 !important;
-        position: absolute;
-        left: 0;
-        bottom: 0;
-    }
     &::-webkit-scrollbar {
         display: none;
     }
@@ -57,21 +52,23 @@ const SmallCardCarousel = styled.div`
 
 const SmallCard = (props) => {
     return (
-        <SmallCardCarousel> 
-            {props.smallCards.map((item, i) => {
-            return  item.link_to_article && 
-                <Link key={i} to={"/"+item.link_to_article._meta.uid}>
-                    <SmallCardContainer>
-                        <SmallImgWrapper>
-                            <SmallSexImg src={item.link_to_article.article_img.url} />
-                        </SmallImgWrapper>
-                        <SmallTitleWrapper>
-                            <SmallCardTitle>{item.link_to_article.title[0].text}</SmallCardTitle>
-                        </SmallTitleWrapper>
-                    </SmallCardContainer>
-                </Link>
-            })}
-        </SmallCardCarousel>
+        <SmallCardWrapper>
+            <SmallCardCarousel> 
+                {props.smallCards.map((item, i) => {
+                return  item.link_to_article && 
+                    <Link key={i} to={"/"+item.link_to_article._meta.uid}>
+                        <SmallCardContainer>
+                            <SmallImgWrapper>
+                                <SmallSexImg src={item.link_to_article.article_img.url} />
+                            </SmallImgWrapper>
+                            <SmallTitleWrapper>
+                                <SmallCardTitle>{item.link_to_article.title[0].text}</SmallCardTitle>
+                            </SmallTitleWrapper>
+                        </SmallCardContainer>
+                    </Link>
+                })}
+            </SmallCardCarousel>
+        </SmallCardWrapper>
     )};
     
 export default SmallCard;

@@ -23,7 +23,7 @@ const SkipButton = styled.h6`
     display: block;
     font-size: 12px;
     text-transform: uppercase;
-    color: #000;
+    color: ${props => props.theme.baseColors.black};
     font-weight: 700;
     z-index: 99;
     &:visited {

@@ -5,7 +5,6 @@ import search from 'assets/icon/search.svg';
 //Icon for closebutton
 import closeButton from '../../assets/icon/article/close.svg';
 
-
 //container and styles for search 
 const SearchContainer = styled.div`
     display:flex;
@@ -38,7 +37,6 @@ const SearchContainer = styled.div`
             border-bottom-right-radius: 10px;
         }
     }
-
 `
 const SearchInput = styled.input`
     position: relative;
@@ -288,7 +286,7 @@ class Search extends Component {
                             <li className={this.state.activeCategory==='kynlíf'?'active':''} onClick={() => { this.handleClick('kynlíf') }}>Kynlíf</li>
                             <li className={this.state.activeCategory==='kynþroski'?'active':''} onClick={() => { this.handleClick('kynþroski') }}>Kynþroski</li>
                             <li className={this.state.activeCategory==='samskipti'?'active':''} onClick={() => { this.handleClick('samskipti') }}>Samskipti</li>
-                            <li className={this.state.activeCategory==='kynhneigð'?'active':''} onClick={() => { this.handleClick('kynhneigð') }}>Kynverund</li>
+                            <li className={this.state.activeCategory==='kynverund'?'active':''} onClick={() => { this.handleClick('kynverund') }}>Kynverund</li>
                         </ul>:
                         <SearchResults> 
                             <span className="color">{this.props.showResults}</span> orð fundust
