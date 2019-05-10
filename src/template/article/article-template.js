@@ -15,6 +15,8 @@ import ShareComponent from 'components/cards/share';
 import { Container } from 'components/theme/container';
 import closeButton from '../../assets/icon/article/close.svg';
 
+
+
 // keyframe for when every article opens
 const ContentAnimation = keyframes`
     0% {
@@ -44,6 +46,12 @@ const Animation = styled.div`
     &.transitionIsDone {
       display:none;
   }
+`
+
+const Pstyle = styled.div`
+      font-family: 'PT Sans', sans-serif;
+      font-size: 16px;
+      color: #000;
 `
 // Banner image
 const HeroBanner = styled.div`
@@ -103,7 +111,7 @@ const TitleDiv = styled.div`
   justify-content: space-between;
 `
 // synonyms
-const Synonym = styled.p`
+const Synonym = styled.div`
   font-family: Poppins;
   font-style: normal;
   font-weight: bold;
@@ -140,7 +148,7 @@ const LongCardTitle = styled.h4`
   font-weight: 600;
   font-size: 16px;
 `
-const Read = styled.p`
+const Read = styled.div`
   font-family: Poppins;
   font-style: normal;
   font-weight: 600;
@@ -149,7 +157,7 @@ const Read = styled.p`
   color: #FC4255;
   margin-top: 30px;
 `
-const Intro = styled.p`
+const Intro = styled.div`
  margin-bottom: 30px;
 `
 class Article extends React.Component {
@@ -205,13 +213,13 @@ class Article extends React.Component {
                     {props.pageContext.node.synonyms[0].text &&
                     <SynonymDiv>
                       <Synonym>Samheiti</Synonym>
-                      <p>{props.pageContext.node.synonyms[0].text}</p>
+                      <Pstyle>{props.pageContext.node.synonyms[0].text}</Pstyle>
                     </SynonymDiv>
                     }
                     <Intro>{RichText.render(props.pageContext.node.intro_text)}</Intro>
                   </FirstSectionDiv>
                   {props.pageContext.node.link &&
-                  <Link to={props.pageContext.node.link._meta.uid}>
+                  <Link to={"/"+props.pageContext.node.link._meta.uid}>
                     <LongCard>
                       <LongCardImg src={props.pageContext.node.link.article_img.url}></LongCardImg>
                       <LongCardTitle>{props.pageContext.node.link.title[0].text}</LongCardTitle>
@@ -226,9 +234,7 @@ class Article extends React.Component {
               ):<div>loading</div>}
             </Global>
           </ThemeProvider> 
-          <Link to={get(props, "pageContext.node.small_card[0].link_to_article._meta.uid", "")}>
             <SmallCard smallCards={get(props, "pageContext.node.small_card", [])}/>
-          </Link>
           <Footer/>
       </div>
       )

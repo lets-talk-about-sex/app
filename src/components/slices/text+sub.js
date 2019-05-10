@@ -9,7 +9,7 @@ const SubHeading = styled.div`
     margin-bottom: 15px;
     margin-top: 30px;
 `
-const Par = styled.p`
+const Par = styled.div`
     ul{
         li{
             margin-left: 20px;

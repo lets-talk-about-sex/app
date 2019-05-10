@@ -10,7 +10,7 @@ const mq = breakpoints.map(
     bp => `@media (min-width: ${bp}px)`
   )
 
-//container and styles for search card
+//container and styles for search 
 const SearchContainer = styled.div`
     display:flex;
     justify-content:flex-end;
@@ -42,7 +42,7 @@ const SearchContainer = styled.div`
             border-top-right-radius: 10px;
             border-bottom-right-radius: 10px;
         }
-    },
+    }
 
 `
 const SearchInput = styled.input`

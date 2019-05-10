@@ -62,10 +62,10 @@ const AllCards = (props) => {
            
            //add props in node object, then add the key that´s a filter, so slugs are showing only when the category Allt is active
            edge.node.filter=props.filtering
-           
+        //    to={"/"+edge.node._meta.uid}
             return(
                 <React.Fragment key={i}>
-                    {edge.node.article_img?( <Link to={edge.node._meta.uid} key={i} duration={3}> 
+                    {edge.node.article_img?( <Link to={"/"+edge.node._meta.uid} key={i} duration={3}> 
                         <SomeCard key={i} node={edge.node}/>
                     </Link> ): <SomeCard key={i} node={edge.node}/> }
                 </React.Fragment>

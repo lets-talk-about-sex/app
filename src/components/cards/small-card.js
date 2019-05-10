@@ -38,12 +38,14 @@ const SmallCardCarousel = styled.div`
     scroll-behavior: smooth;
     padding-left: 30px;
     position: relative;
+    z-index: 999;
+    
     &:after {
         content: '';
         display: block;
         width: 100%;
         height: 10px;
-        background-color: #f9f9f9;
+        background-color: #f9f9f9 !important;
         position: absolute;
         left: 0;
         bottom: 0;
@@ -58,7 +60,7 @@ const SmallCard = (props) => {
         <SmallCardCarousel> 
             {props.smallCards.map((item, i) => {
             return  item.link_to_article && 
-                <Link to={item.link_to_article._meta.uid}>
+                <Link key={i} to={"/"+item.link_to_article._meta.uid}>
                     <SmallCardContainer>
                         <SmallImgWrapper>
                             <SmallSexImg src={item.link_to_article.article_img.url} />

@@ -95,7 +95,7 @@ class Helpful extends Component {
                 </ThumbsContainer>
                 {this.state.Voting === "no" && 
                   <NoMessage>
-                      <p>Fékkstu ekki svarið sem þú varst að leita að? <br/> Endilega sendu línu á <Bolda>live chatið </Bolda> okkar og þú færð svar eins fljótt og auðið er, nafnlaust!</p>
+                      <p>Fékkstu ekki svarið sem þú varst að leita að? <br/> Endilega sendu línu á <Bolda>netspjallið </Bolda> og þú færð svar eins fljótt og auðið er, nafnlaust!</p>
                   </NoMessage> 
                 } 
             </HelpfulDiv> 
