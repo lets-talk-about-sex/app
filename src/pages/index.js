@@ -5,7 +5,6 @@ import { theme } from 'components/theme/theme';
 import Global from 'components/base/base';
 import { Link } from "gatsby";
 import LoadingPage from './loadingPage';
-
 //Icons  
 import Mynstur_dark from '../assets/icon/mynstur_dark.svg';
 import ChatIcon from '../assets/icon/chaticon.svg';
@@ -19,14 +18,13 @@ const OnBoardingContainer = styled.div`
   background-image: url(${Mynstur_dark});
   position: relative;
 `
-
-const SkipButton = styled.div`
-    margin-left: 30px;
+const SkipButton = styled.h6`
+    padding-right: 90px;
     display: block;
     font-size: 12px;
     text-transform: uppercase;
     color: #000;
-    font-weight: 900;
+    font-weight: 700;
     z-index: 99;
     &:visited {
         color: ${props => props.theme.baseColors.coral} !important;
@@ -45,7 +43,6 @@ const ButtonDiv = styled.div`
     margin-right: 30px;
     justify-content: flex-end;
 `
-
 const Forward = styled.div`
     display: flex;
     justify-content: space-between;
@@ -57,7 +54,6 @@ const ArrowDiv = styled.div`
     background-color: ${props => props.theme.baseColors.coral};
     border-radius: 50%;
     position: absolute;
-    // right: 50%;
     &:active {
         background-color: #D13847;
     }
@@ -93,7 +89,6 @@ const OBCards = styled.div`
     width: auto;
     scroll-behavior: smooth;
     padding-top: 50px;
-    // margin-bottom: 50px;
     &::-webkit-scrollbar , &::-webkit-scrollbar-thumb {
         display: none;
     } 
@@ -165,7 +160,6 @@ const LineTheFine = styled.span`
     height: 4px;
     width: 27px;
     border-radius: 50px; 
-    // position: absolute;
     bottom: 30%;
     left: 30px;
     margin-right: 5px;
@@ -173,7 +167,6 @@ const LineTheFine = styled.span`
         background-color:${props => props.theme.baseColors.coral}; 
     } 
 `
-
 class Onboarding extends React.Component {
     constructor() {
         super();
@@ -181,11 +174,9 @@ class Onboarding extends React.Component {
             scrolling: 0
         };
     }
-
     scrolling =(e) => {
         this.setState({scrolling:Math.floor(e.target.scrollLeft/250)})
     }
-
     render() {
         return (
             <div>
@@ -231,8 +222,8 @@ class Onboarding extends React.Component {
                             <Forward>
                                 <CarouselIndicator>
                                     <LineTheFine className={this.state.scrolling === 0? 'red' : ""}></LineTheFine>
-                                    <LineTheFine2 className={this.state.scrolling === 1? 'red' : ""}></LineTheFine2>
-                                    <LineTheFine3 className={this.state.scrolling === 2? 'red' : ""}></LineTheFine3>
+                                    <LineTheFine className={this.state.scrolling === 1? 'red' : ""}></LineTheFine>
+                                    <LineTheFine className={this.state.scrolling === 2? 'red' : ""}></LineTheFine>
                                 </CarouselIndicator>
                                 <Link to={"/feed"}>
                                     <ButtonDiv>
@@ -250,7 +241,4 @@ class Onboarding extends React.Component {
         ) 
     }
 };
-
 export default Onboarding;
-
-
