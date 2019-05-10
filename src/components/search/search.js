@@ -2,11 +2,7 @@ import React, { Component} from 'react'
 import styled from '@emotion/styled/macro';
 import search from 'assets/icon/search.svg';
 import closeButton from '../../assets/icon/article/close.svg';
-const breakpoints = [480]
 
-const mq = breakpoints.map(
-    bp => `@media (min-width: ${bp}px)`
-  )
 
 const SearchContainer = styled.div`
     display:flex;
@@ -95,7 +91,6 @@ const SearchResults = styled.li`
 const CategoryWrapper = styled.div`
     position:relative;
     display:flex;
-    padding-left: 25px;
     list-style-type: none;
     justify-content:flex-start;
     font-family: 'Poppins', sans-serif;
@@ -130,6 +125,9 @@ const CategoryWrapper = styled.div`
         padding: 14px;
         text-decoration: none;
         color: #C7C7C7;
+        &:first-of-type{
+            padding-left: 30px;
+        }
     } 
          li.active {
             color:#000;
