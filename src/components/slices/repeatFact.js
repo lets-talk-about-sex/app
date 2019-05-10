@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled/macro';
+
+//icon for didyouknow card
 import quote from 'assets/icon/quote.svg';
 
 const DidYouKnowContainer = styled.div`
@@ -14,7 +16,7 @@ const DidYouKnowContainer = styled.div`
     box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.1);
     border-radius:  15px;
     margin: 30px auto;
-    background-color: #fff;
+    background-color: ${props => props.theme.baseColors.white};
 `
 const Title = styled.p`
     color: ${props => props.theme.baseColors.coral};

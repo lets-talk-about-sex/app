@@ -2,6 +2,7 @@ import React from 'react';
 import { RichText } from 'prismic-reactjs';
 import styled from '@emotion/styled/macro';
 
+//container and styles for each card
 const CardContainer = styled.div`
     width: 100%;
     height: 450px;

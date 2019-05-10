@@ -1,8 +1,11 @@
 import React from 'react';
 import styled from '@emotion/styled/macro';
 import { RichText } from 'prismic-reactjs';
+
+//Icon for didyouknow card
 import didyouknow from 'assets/icon/question.svg';
 
+//container and styles for didyouknow/fact card
 const DidYouKnowContainer = styled.div`
     display:flex;
     flex-direction:column;
