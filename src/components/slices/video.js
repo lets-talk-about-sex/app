@@ -12,7 +12,7 @@ const SliceVideo = ({url, iframe}) => {
     return (
         <div> 
             <FrameContainer>
-                <iframe title="video" width="100%" height="250" src={" https://www.youtube.com/embed/"+youtube+"?feature=oembed"} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                <iframe title="video" width="100%" height="250" src={" https://www.youtube.com/embed/"+youtube+"?feature=oembed"} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen>
                 </iframe>
    
             </FrameContainer>
