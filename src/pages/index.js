@@ -18,7 +18,7 @@ const OnBoardingContainer = styled.div`
   height: 100vh;
   background-image: url(${Mynstur_dark});
 `
-const SkipButton = styled.a`
+const SkipButton = styled.div`
     margin-left: 30px;
     display: block;
     font-size: 18px;
