@@ -18,7 +18,7 @@ const LoadingContainer = styled.div`
    }
 `
 const LoadingBackground = styled.div`
-   background-color: ${props => props.theme.baseColors.coral};
+   background-color: ${props => get(props,"theme.baseColors.coral","")};
    width: 100vw;
    height: calc(100vh + 80px);
    z-index:9999; 
@@ -89,19 +89,19 @@ const LoadingBar = styled.div`
     margin-right: 5px;
     animation: ${Loader} 1s ease-in-out infinite;
     &:nth-of-type(1) {
-        background-color: ${props => props.theme.baseColors.white};
+        background-color: ${props => get(props,"theme.baseColors.white", "")};
         animation-delay: 0;
     }
     &:nth-of-type(2) {
-        background-color: ${props => props.theme.baseColors.white};
+        background-color: ${props => get(props,"theme.baseColors.white", "")};
         animation-delay: 0.09s;
     }
     &:nth-of-type(3) {
-        background-color: ${props => props.theme.baseColors.white};
+        background-color: ${props => get(props,"theme.baseColors.white", "")};
         animation-delay: 0.18s;
     }
     &:nth-of-type(4) {
-        background-color: ${props => props.theme.baseColors.white};
+        background-color: ${props => get(props,"theme.baseColors.white", "")};
         animation-delay: 0.27s;
     }
 `
