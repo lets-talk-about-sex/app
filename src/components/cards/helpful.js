@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import styled from '@emotion/styled/macro';
+import { get } from 'lodash';
 
 //Icons for helpful card
 import ThumbsUpRed from '../../assets/icon/article/thumbsup.svg';
@@ -33,12 +34,12 @@ const ThumbDiv = styled.div`
   height: 36px;
   width: 36px;
   border-radius: 50%;
-  border: solid 1px ${props => props.theme.baseColors.coral};
+  border: solid 1px ${props => get(props,"theme.baseColors.coral", "")};
   position: relative;
   margin-right: 5px;
   display: block;
   &.activeButton {
-    background-color: ${props => props.theme.baseColors.coral};
+    background-color: ${props => get(props,"theme.baseColors.coral", "")};
   }
 `
 // thumbs icons 
@@ -56,7 +57,7 @@ const HelpfulText = styled.h3`
 `
 const Bolda = styled.span`
   font-weight: 700;
-  color: ${props => props.theme.baseColors.coral};
+  color: ${props => get(props,"theme.baseColors.coral", "")};
 `
 
 class Helpful extends Component {

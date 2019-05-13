@@ -1,6 +1,7 @@
 import React, { Component} from 'react'
 import styled from '@emotion/styled/macro';
 import search from 'assets/icon/search.svg';
+import { get } from 'lodash';
 
 //Icon for closebutton
 import closeButton from '../../assets/icon/article/close.svg';
@@ -78,7 +79,7 @@ const SearchInput = styled.input`
         text-indent: -10000px;
         outline: none;
         border-radius: 50%;
-        background-color: ${props => props.theme.baseColors.bodyBackground};
+        background-color: ${props => get(props,"theme.baseColors.bodyBackground","")};
     }
     &[type="submit"]:hover {
         opacity: 1;
@@ -86,7 +87,7 @@ const SearchInput = styled.input`
 `
 const SearchResults = styled.li`
   & span {
-      color: ${props => props.theme.baseColors.coral};
+      color: ${props => get(props,"theme.baseColors.coral", "")};
   }
 `
 const CategoryWrapper = styled.div`
@@ -108,7 +109,7 @@ const CategoryWrapper = styled.div`
         display: block;
         width: 100%;
         height: 10px;
-        background-color: ${props => props.theme.baseColors.bodyBackground};
+        background-color: ${props => get(props,"theme.baseColors.bodyBackground", "")};
         position: absolute;
         left: 0;
         bottom: 0;

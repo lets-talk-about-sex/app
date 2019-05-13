@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled/macro';
+import { get } from 'lodash';
 
 //icon for didyouknow card
 import didyouknow from 'assets/icon/question.svg';
@@ -19,7 +20,7 @@ const DidYouKnowContainer = styled.div`
     background-color: #fff;
 `
 const Title = styled.p`
-    color: ${props => props.theme.baseColors.coral};
+    color: ${props => get(props, "theme.baseColors.coral", "")};
     text-transform: uppercase;
     font-weight: 600;
     margin-bottom: 20px;

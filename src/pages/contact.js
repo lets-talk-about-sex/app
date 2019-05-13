@@ -5,6 +5,7 @@ import { ThemeProvider } from 'emotion-theming'
 import { theme } from 'components/theme/theme';
 import Global from 'components/base/base';
 import { Link } from "gatsby";
+import { get } from 'lodash';
 
 //Icons for contact and closebutton
 import closeButton from '../assets/icon/article/close.svg';
@@ -21,7 +22,7 @@ const SubHeaderFooterPage = styled.h3`
     margin-bottom: 10px;
 `
 const TitleFooterPage = styled.h1`
-    color: ${props => props.theme.baseColors.coral};
+    color: ${props => get(props, "theme.baseColors.coral", "")};
     padding-top: 50px;
     margin-bottom: 90px;
 `

@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from '@emotion/styled/macro';
 import { RichText } from 'prismic-reactjs';
+import { get } from 'lodash';
+
 
 //Icon for didyouknow card
 import didyouknow from 'assets/icon/question.svg';
@@ -18,10 +20,10 @@ const DidYouKnowContainer = styled.div`
     box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.1);
     border-radius:  15px;
     margin-bottom: 30px ;
-    background-color: ${props => props.theme.baseColors.white};
+    background-color: ${props => get(props,"theme.baseColors.white", "")};
 `
 const Title = styled.p`
-    color: ${props => props.theme.baseColors.coral};
+    color: ${props => get(props,"theme.baseColors.coral", "")};
     text-transform: uppercase;
     font-weight: 600;
     margin-bottom: 20px;

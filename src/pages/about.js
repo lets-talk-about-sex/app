@@ -6,6 +6,7 @@ import { theme } from 'components/theme/theme';
 import Global from 'components/base/base';
 import { Link } from "gatsby";
 import closeButton from '../assets/icon/article/close.svg';
+import { get } from 'lodash';
 
 //Photos of the team
 import Hugrun from '../assets/images/TheTeam/hugrun_bw.jpg';
@@ -32,7 +33,7 @@ const TeamContainer = styled.div`
         }
 `
 const TitleFooterPage = styled.h1`
-    color: ${props => props.theme.baseColors.coral};
+    color: ${props => get(props,"theme.baseColors.coral", "")};
     padding-top: 50px;
     margin-bottom: 90px;
 `

@@ -5,6 +5,7 @@ import { theme } from 'components/theme/theme';
 import Global from 'components/base/base';
 import { Link } from "gatsby";
 import LoadingPage from './loadingPage';
+import { get } from 'lodash';
 //Icons  
 import Mynstur_dark from '../assets/icon/mynstur_dark.svg';
 import ChatIcon from '../assets/icon/chaticon.svg';
@@ -23,11 +24,11 @@ const SkipButton = styled.h6`
     display: block;
     font-size: 12px;
     text-transform: uppercase;
-    color: ${props => props.theme.baseColors.black};
+    color: ${props => get(props,"theme.baseColors.black", "")};
     font-weight: 700;
     z-index: 99;
     &:visited {
-        color: ${props => props.theme.baseColors.coral} !important;
+        color: ${props => get(props,"theme.baseColors.coral", "")} !important;
     }
     &:active {
         color: #D13847;
@@ -51,7 +52,7 @@ const Forward = styled.div`
 const ArrowDiv = styled.div`
     height: 60px;
     width: 60px;
-    background-color: ${props => props.theme.baseColors.coral};
+    background-color: ${props => get(props,"theme.baseColors.coral","")};
     border-radius: 50%;
     position: absolute;
     &:active {
@@ -74,7 +75,7 @@ const OBCardsWrapper = styled.div`
         content: '';
         display: block;
         height: 10px;
-        background-color: ${props => props.theme.baseColors.bodyBackground};
+        background-color: ${props => get(props, "theme.baseColors.bodyBackground", "")};
         position: absolute;
         left: 0;
         right: 0;
@@ -100,13 +101,13 @@ const OBCardContainer = styled.div`
     padding-bottom: 24px;
     box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.1);
     border-radius:15px;
-    background-color: ${props => props.theme.baseColors.white};
+    background-color: ${props => get(props, "theme.baseColors.white", "")};
     margin-left: 30px;
     position: relative;
 `
 const IconDiv = styled.div`
     border-radius: 50%;
-    background-color: ${props => props.theme.baseColors.coral};
+    background-color: ${props => get(props, "theme.baseColors.coral", "")};
     width: 48px;
     height: 48px;
     position: absolute;
@@ -125,7 +126,7 @@ const SturlIconImg = styled.img`
     top: 11px;
 `
 const TitleOnCard = styled.h1`
-    color: ${props => props.theme.baseColors.coral};
+    color: ${props => get(props,"theme.baseColors.coral", "")};
     line-height: 30px;
     margin-bottom: 20px;
 `
@@ -149,14 +150,14 @@ const IntroductionText = styled.div`
 const WelcomeText = styled.h2`
     margin-bottom: 5px;
     font-size: 30px;
-    color: ${props => props.theme.baseColors.coral};
+    color: ${props => get(props,"theme.baseColors.coral", "")};
 `
 const SubHeadWelcome = styled.h4`
     font-size: 20px;
     font-weight: 400;
 `
 const LineTheFine = styled.span`
-    background-color: ${props => props.theme.baseColors.categoryText};
+    background-color: ${props => get(props,"theme.baseColors.categoryText", "")};
     height: 4px;
     width: 27px;
     border-radius: 50px; 
@@ -164,7 +165,7 @@ const LineTheFine = styled.span`
     left: 30px;
     margin-right: 5px;
     &.red {
-        background-color:${props => props.theme.baseColors.coral}; 
+        background-color:${props => get(props,"theme.baseColors.coral")}; 
     } 
 `
 class Onboarding extends React.Component {

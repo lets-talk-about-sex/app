@@ -1,6 +1,7 @@
 import React from 'react';
 import { RichText } from 'prismic-reactjs';
 import styled from '@emotion/styled/macro';
+import { get } from 'lodash';
 
 //container and styles for each card
 const CardContainer = styled.div`
@@ -10,7 +11,7 @@ const CardContainer = styled.div`
     margin-bottom: 30px;
     box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.1);
     border-radius: 15px;
-    background-color: ${props => props.theme.baseColors.white};
+    background-color: ${props => get(props, "theme.baseColors.white", "")};
 `
 const ImgWrapper = styled.div`
     height: 350px;
@@ -32,7 +33,7 @@ const Slug = styled.p`
     font-size: 14px;
     font-weight: 600;
     text-transform: uppercase;
-    color: ${props => props.theme.baseColors.coral};
+    color: ${props => get(props,"theme.baseColors.coral", "")};
 `
 const Hot = styled.img`
   position: absolute;

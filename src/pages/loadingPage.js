@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled/macro';
-import { keyframes } from 'emotion'
+import { keyframes } from 'emotion';
+import { get } from 'lodash';
 
 //Background for loading page
 import Mynstur from '../assets/icon/mynstur.svg';
@@ -50,7 +51,8 @@ const LogoAnimate = keyframes`
     }
 `
 const AppLogo = styled.h3`
-   color: ${props => props.theme.baseColors.white}; 
+    
+   color: ${props => get(props,"theme.baseColors.white","")}; 
    line-height: 45px;
    z-index: 9999;
    position: absolute;
